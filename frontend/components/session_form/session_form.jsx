@@ -63,7 +63,6 @@ class SessionForm extends React.Component {
           <h2 className="login-header">{this.props.header}</h2>
           <p className="login-text">{this.props.headertext}</p>
             <div className="login-form">
-              <br/>
 
               {this.renderName()}
 
@@ -73,6 +72,7 @@ class SessionForm extends React.Component {
                 placeholder="Email Address"
                 onChange={this.update('email')}
                 className="session-form"
+                required
                 />
               </label><br />
 
@@ -82,6 +82,7 @@ class SessionForm extends React.Component {
                 value={this.state.password}
                 onChange={this.update('password')}
                 className="session-form"
+                required
                 />
               </label><br />
 

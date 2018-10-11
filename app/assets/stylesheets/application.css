@@ -28,10 +28,10 @@
 
 
 .login-form-box{
-  background-color: white;
+  background-color: inherit;
   position: absolute;
   padding: 15px;
-  top: 20%;
+  top: 15%;
   width: 50%;
 }
 
@@ -43,7 +43,7 @@
 }
 
 .login-header{
-  color: #ef6236;
+  color: #eb652f;
   font-family: "canada-type-gibson", "Gibson", "Helvetica Neue", sans-serif;
   font-size: 27px;
 
@@ -52,30 +52,49 @@
 .login-text{
   font-family: "canada-type-gibson", "Gibson", "Helvetica Neue", sans-serif;
   color: #333;
-  font-size: 18px;
+  font-size: 20px;
+  display: flex;
+  line-height: 1.6;
 
 }
+
 .session-form{
+  background-color: white;
   width: 90%;
-  float: left;
-  border: 1px solid;
+  border: 1px solid grey;
   height: 21px;
   padding: 18px;
-  margin: 5px;
+  margin: 10px 0px;
   /* background-color: green; */
   font-size: 18px;
+  border-radius: 6px;
+
 }
+
+/* .session-form:enabled{
+  background-color: #faffbd
+} */
 
 .session-submit{
   width: 100%;
   background-color: #eb652f;
   color: white;
-  height: 50px;
-  font-size: 18px;
+  height: 70px;
+  font-size: 24px;
+  border-radius: 12px;
+  border: 2px;
+  margin: 10px 0px;
 }
 
-.alternate{
+
+.session-submit:hover{
+  background-color: #c93c10;
+  cursor: pointer;
+}
+
+.alternate {
   text-align: center;
-  color: #EF6236;
+  color: #0060B6;
   text-decoration: none;
+  font-size: 18px;
 }
