@@ -4,12 +4,9 @@ class Api::SessionsController < ApplicationController
       params[:user][:email],
       params[:user][:password]
     )
-    debugger
 
     if @user
-      debugger
       sign_in(@user)
-      debugger
       render "api/users/show"
     else
       render json: ["Wrong email/ password"], status: 401
