@@ -13,3 +13,69 @@
  *= require_tree .
  *= require_self
  */
+
+.login-form-container {
+  background: #f9f6e7;
+  height: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+}
+
+
+.login-form-box{
+  background-color: white;
+  position: absolute;
+  padding: 15px;
+  top: 20%;
+  width: 50%;
+}
+
+.login-form{
+  /* background: in; */
+  margin: 10px;
+  text-align: center;
+  /* width: 100%; */
+}
+
+.login-header{
+  color: #ef6236;
+  font-family: "canada-type-gibson", "Gibson", "Helvetica Neue", sans-serif;
+  font-size: 27px;
+
+}
+
+.login-text{
+  font-family: "canada-type-gibson", "Gibson", "Helvetica Neue", sans-serif;
+  color: #333;
+  font-size: 18px;
+
+}
+.session-form{
+  width: 90%;
+  float: left;
+  border: 1px solid;
+  height: 21px;
+  padding: 18px;
+  margin: 5px;
+  /* background-color: green; */
+  font-size: 18px;
+}
+
+.session-submit{
+  width: 100%;
+  background-color: #eb652f;
+  color: white;
+  height: 50px;
+  font-size: 18px;
+}
+
+.alternate{
+  text-align: center;
+  color: #EF6236;
+  text-decoration: none;
+}

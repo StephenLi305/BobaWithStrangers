@@ -10,6 +10,7 @@ class SessionForm extends React.Component {
       password: '',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.renderName = this.renderName.bind(this);
   }
 
   update(field){
@@ -36,24 +37,48 @@ class SessionForm extends React.Component {
     );
   }
 
+  renderName(){
+    if (this.props.formType === "LET'S GET BOBA"){
+      return (
+        <label>
+          <input type="text"
+          value={this.state.name}
+          placeholder="Name"
+          onChange={this.update('name')}
+          className="session-form"
+          />
+        </label>
+
+      )
+    }
+  }
+
+
+
   render(){
     return(
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box" >
           {this.renderErrors()}
+          <h2 className="login-header">{this.props.header}</h2>
+          <p className="login-text">{this.props.headertext}</p>
             <div className="login-form">
               <br/>
 
-              <label> Email:
+              {this.renderName()}
+
+              <label>
                 <input type="text"
                 value={this.state.email}
+                placeholder="Email Address"
                 onChange={this.update('email')}
                 className="session-form"
                 />
               </label><br />
 
-              <label> Password:
+              <label>
                 <input type="password"
+                placeholder="Password"
                 value={this.state.password}
                 onChange={this.update('password')}
                 className="session-form"
@@ -65,6 +90,7 @@ class SessionForm extends React.Component {
                 value={this.props.formType}/>
 
             </div>
+            <p className="alternate">{this.props.navLink}</p>
         </form>
       </div>
 
