@@ -10,11 +10,6 @@ const Root = ({ store }) => (
     <HashRouter>
       <div>
         <App />
-        <br/>
-        <br/>
-        <h1>Frontend Root component: This here from the store connected to backend</h1>
-        <h1>down there</h1>
-
       </div>
     </HashRouter>
   </Provider>

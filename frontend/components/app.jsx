@@ -13,14 +13,10 @@ import SignInFormContainer from './session_form/sign_IN_container'
 
 const App = () => (
   <div>
-
-  <Route path="/signup" component={SignUpFormContainer} />
-  <Route exact path="/signin" component={SignInFormContainer} />
-
-    <h1>Tiffani is my GIRLFRIENDDDD</h1>
-    <h1>i got a higher score than Tim</h1>
-    <h1>BobaWithStrangers</h1>
-    <h1>App Page under Roots: this is where I'll put all the Apps</h1>
+    <Switch>
+      <Route path="/signup" component={SignUpFormContainer} />
+      <Route exact path="/signin" component={SignInFormContainer} />
+    </Switch>
   </div>
 )
 

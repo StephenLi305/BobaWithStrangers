@@ -13,21 +13,18 @@ class SessionForm extends React.Component {
   }
 
   update(field){
-    debugger
     return e => this.setState({
         [field]:e.target.value
     });
   }
 
   handleSubmit(e){
-    debugger
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
   }
 
   renderErrors(){
-    debugger
     return(
       <ul>
         {this.props.errors.map((error, i) => (
@@ -43,7 +40,7 @@ class SessionForm extends React.Component {
     return(
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box" >
-          {this.renderErrors}
+          {this.renderErrors()}
             <div className="login-form">
               <br/>
 
