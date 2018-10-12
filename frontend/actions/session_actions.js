@@ -21,12 +21,14 @@ export const receiveErrors = errors => ({
 })
 
 export const signup = user => dispatch => (
-  APIUtil.fetchSignUp(user).then( user => (
-    dispatch(receiveCurrentUser(user)), err => (
-      dispatch(receiveErrors(err.responseJSON))
-    )
-  ))
+  APIUtil.fetchSignUp(user).then(
+    user => (
+    dispatch(receiveCurrentUser(user))),
+    err => (
+      dispatch(receiveErrors(err.responseJSON)))
+  )
 )
+
 export const signin = user => dispatch => (
   APIUtil.fetchSignIn(user).then( user => (
     dispatch(receiveCurrentUser(user)), err => (

@@ -11,12 +11,16 @@ class SessionForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderName = this.renderName.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
   }
 
   update(field){
     return e => this.setState({
         [field]:e.target.value
     });
+  }
+
+  componentDidMount(){
   }
 
   handleSubmit(e){
@@ -43,7 +47,7 @@ class SessionForm extends React.Component {
         <label>
           <input type="text"
           value={this.state.name}
-          placeholder="Name"
+          placeholder="First name (or nickname)"
           onChange={this.update('name')}
           className="session-form"
           />
@@ -55,12 +59,32 @@ class SessionForm extends React.Component {
 
 
 
+  demoLogin(){
+    if (this.props.formType === "SIGN IN"){
+
+      return(
+      <input className="session-submit"
+      onClick={() => {
+        this.setState  ({
+          email: "Stephen1",
+          password: "password"})
+          this.handleSubmit()
+      }
+
+        }
+      type="submit"
+      value="DEMO SIGN IN"
+      />
+    )
+  }
+}
+
   render(){
     return(
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box" >
           {this.renderErrors()}
-          <h2 className="login-header">{this.props.header}</h2>
+          <h1 className="login-header">{this.props.header}</h1>
           <p className="login-text">{this.props.headertext}</p>
             <div className="login-form">
 
@@ -89,6 +113,8 @@ class SessionForm extends React.Component {
                 <input className="session-submit"
                 type="submit"
                 value={this.props.formType}/>
+
+                {this.demoLogin()}
 
             </div>
             <p className="alternate">{this.props.navLink}</p>

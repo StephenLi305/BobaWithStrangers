@@ -31,6 +31,7 @@ constructor(props){
 handleSubmit(e){
   e.preventDefault();
   this.props.logout();
+  <Redirect to="/signup" />
 }
 
 // logoutButton(){

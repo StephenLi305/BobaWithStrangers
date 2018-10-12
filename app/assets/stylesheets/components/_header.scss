@@ -1,0 +1,32 @@
+
+
+html{
+  width: 100%
+}
+
+.main-nav{
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  background-color: $header-footer;
+  padding-top:10px;
+  margin: 0;
+  border: 0;
+  height: 58px;
+  width: 100%;
+
+}
+
+.fa-bars{
+  background-color: green;
+  width: 36px;
+  margin: 20px;
+  position: static;
+  z-index: 5;
+  // font-weight:
+}
+
+.boba-logo{
+  height: 100px;
+  width: 100px;
+}
