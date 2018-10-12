@@ -13,16 +13,17 @@ import { AuthRoute } from '../util/route_util'
 import SignUpFormContainer from './session_form/sign_UP_container'
 import SignInFormContainer from './session_form/sign_IN_container'
 import SplashContainer from './splash_page/splash_container'
-import HeaderContainer from './header/header_container'
+import HeaderContainer from './header/header'
 
 
 const App = () => (
   <div className="app-container">
     <HeaderContainer />
-    <Route exact path="/" component={SplashContainer} />
     <Switch>
       <AuthRoute exact path="/signup" component={SignUpFormContainer} />
       <AuthRoute exact path="/signin" component={SignInFormContainer} />
+      <Route exact path="/" component={SplashContainer} />
+      <Redirect to="/" />
     </Switch>
   </div>
 )

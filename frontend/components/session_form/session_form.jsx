@@ -10,7 +10,7 @@ class SessionForm extends React.Component {
       password: '',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.renderName = this.renderName.bind(this);
+    this.renderNameForm = this.renderNameForm.bind(this);
     this.demoLogin = this.demoLogin.bind(this);
   }
 
@@ -21,6 +21,7 @@ class SessionForm extends React.Component {
   }
 
   componentDidMount(){
+    this.props.clearErrors();
   }
 
   handleSubmit(e){
@@ -31,17 +32,17 @@ class SessionForm extends React.Component {
 
   renderErrors(){
     return(
-      <ul>
-        {this.props.errors.map((error, i) => (
-          <li key={i} >
-            {error}
-          </li>
-        ))}
-      </ul>
+        <ul>
+          {this.props.errors.map((error, i) => (
+            <li key={i} className="session-errors">
+              {error}
+            </li>
+          ))}
+        </ul>
     );
   }
 
-  renderName(){
+  renderNameForm(){
     if (this.props.formType === "LET'S GET BOBA"){
       return (
         <label>
@@ -50,6 +51,7 @@ class SessionForm extends React.Component {
           placeholder="First name (or nickname)"
           onChange={this.update('name')}
           className="session-form"
+          required
           />
         </label>
 
@@ -82,13 +84,13 @@ class SessionForm extends React.Component {
   render(){
     return(
       <div className="login-form-container">
+      {this.renderErrors()}
         <form onSubmit={this.handleSubmit} className="login-form-box" >
-          {this.renderErrors()}
           <h1 className="login-header">{this.props.header}</h1>
           <p className="login-text">{this.props.headertext}</p>
             <div className="login-form">
+            {this.renderNameForm()}
 
-              {this.renderName()}
 
               <label>
                 <input type="text"

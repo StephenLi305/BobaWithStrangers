@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom'
+import { Link, withRouter, Redirect } from 'react-router-dom'
 import { logout } from '../../actions/session_actions';
 import { connect } from 'react-redux';
 
@@ -25,13 +25,14 @@ constructor(props){
   super(props);
   // this.logoutButton = this.logoutButton.bind(this)
   console.log(this.props);
+  this.handleSubmit = this.handleSubmit.bind(this);
 
 }
 
 handleSubmit(e){
-  e.preventDefault();
-  this.props.logout();
-  <Redirect to="/signup" />
+  // this.props.logout().then(this.props.history.push("/signup"));
+
+  this.props.logout().then(() => this.props.history.push("/signup"));
 }
 
 // logoutButton(){
@@ -54,7 +55,7 @@ handleSubmit(e){
         <br />
         <Link to="/signin">Sign In</Link>
         <br />
-        <button onClick={this.handleSubmit.bind(this)}>Logout</button>
+        <button onClick={this.handleSubmit}>Logout</button>
       </div>
     )
   }

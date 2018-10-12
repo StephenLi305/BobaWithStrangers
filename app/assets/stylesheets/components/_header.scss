@@ -12,21 +12,36 @@ html{
   padding-top:10px;
   margin: 0;
   border: 0;
-  height: 58px;
+  height: 68px;
   width: 100%;
 
 }
 
-.fa-bars{
-  background-color: green;
-  width: 36px;
-  margin: 20px;
-  position: static;
-  z-index: 5;
-  // font-weight:
+.left-nav {
+  margin: 12px 24px;
+  font-size: 30px;
 }
 
-.boba-logo{
-  height: 100px;
-  width: 100px;
+
+.left-nav:hover{
+  cursor: pointer;
+
+}
+
+.right-nav {
+  margin: 12px 24px;
+  font-size: 30px;
+  position: relative;
+
+}
+
+.right-nav:hover{
+  cursor: pointer;
+
+}
+
+.dropdown-signed-out{
+  position: absolute;
+  font-size: 15px;
+  color:black;
 }

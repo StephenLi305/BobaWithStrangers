@@ -6,17 +6,22 @@
   width: 100%;
   margin: 0 auto;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  // justify-content: center;
   align-items: center;
-  overflow: auto;
+  // overflow: auto;
+
+  ul {
+    width: 100%;
+  }
 }
 //
 //
 .login-form-box{
   background-color: inherit;
-  position: absolute;
+  // position: absolute;
   padding: 15px;
-  top: 15%;
+  margin-top: 80px;
   width: 70%;
 }
 //
@@ -84,10 +89,22 @@
   text-decoration: none;
   font-size: 18px;
   font-family: sans-serif;
-  padding-top: 15px; 
+  padding-top: 15px;
 }
 
 a:visited {
   color:#eb652f;
   text-decoration: inherit;
+}
+
+
+.session-errors{
+    background-color: #eb652f;
+    color: white;
+    height: 60px;
+    font-size: 22px;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
