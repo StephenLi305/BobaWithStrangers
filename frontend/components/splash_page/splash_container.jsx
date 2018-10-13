@@ -28,7 +28,7 @@ constructor(props){
 
 }
 
-handleSubmit(e){
+handleSubmit(){
   this.props.logout().then(() => this.props.history.push("/signup"));
 }
 

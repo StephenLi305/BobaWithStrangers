@@ -22,6 +22,9 @@ html{
   font-size: 30px;
 }
 
+.boba-times-logo{
+  background-image: url(https://drive.google.com/open?id=1AvOhLHQb8XFaiZ_GdHLyX0UHcwjvcMG7)
+}
 
 .left-nav:hover{
   cursor: pointer;
@@ -32,6 +35,7 @@ html{
   margin: 12px 24px;
   position: relative;
   width: 35%;
+
   ul{
     display: flex;
     justify-content: space-around;
@@ -40,8 +44,8 @@ html{
     color: white;
     font-family: $header-font;
     font-size: 20px;
-
   }
+
 
 }
 

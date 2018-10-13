@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
-import { signin } from '../../actions/session_actions';
+import { signin, logout } from '../../actions/session_actions';
 
 
-const mapStateToProps = ({session, entities: { users }}) => {
+const mapStateToProps = ({session }) => {
+
   return {
     logged_in: session.id
   };
@@ -13,6 +14,7 @@ const mapStateToProps = ({session, entities: { users }}) => {
 const mapDispatchToProps = dispatch => {
   return {
     signin: (user) => dispatch(signin(user)),
+    logout: () => dispatch(logout()),
   };
 };
 
@@ -20,60 +22,60 @@ const mapDispatchToProps = dispatch => {
 class Header extends React.Component {
   constructor(props){
     super(props);
-    this.state = {
-      showDropDown: false,
-    }
+
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleLogout = this.handleLogout.bind(this);
   }
 
 
 handleSubmit(){
   const user = Object.assign({}, this.state);
   this.props.signin(user);
-  debugger
+}
+
+handleLogout(){
+  this.props.logout().then(() => (<Link to="/signup"></Link>))
 }
 
 rightNav() {
-  if(this.state.logged_in) {
-    debugger
+  if(this.props.logged_in) {
     return (
       <nav className="right-nav">
-        <ul className="dropdown-signed-out" >
-
-          <Link to="/signin">
-            <li>SIGN OUT</li>
+        <ul className="header-signed-in" >
+          <li> </li>
+          <li> </li>
+          <Link to="/signup">
+            <li onClick={this.handleLogout}>SIGN OUT</li>
           </Link>
-
         </ul>
       </nav>
     )
   } else {
-    debugger
     return (
     <nav className="right-nav">
-      <ul className="dropdown-signed-out" >
+      <nav className="right-nav-signed-out">
+        <ul className="right-nav-signed-out-list" >
 
-        <Link to="/signin">
-          <li>SIGN IN</li>
-        </Link>
+          <Link to="/signin">
+            <li>SIGN IN</li>
+          </Link>
 
-        <Link to="/signup">
-          <li>SIGN UP</li>
-        </Link>
+          <Link to="/signup">
+            <li>SIGN UP</li>
+          </Link>
 
-        <li onClick ={ () => {
-          (this.setState (
-            {email: "Stephen1",
-            password: "password"},
-            () => {
-              this.handleSubmit()
-            }
-          ))}
-        }>
-        DEMO</li>
-      </ul>
-
-
+          <li onClick ={ () => {
+            (this.setState (
+              {email: "Stephen1",
+              password: "password"},
+              () => {
+                this.handleSubmit()
+              }
+            ))}
+          }>
+          DEMO</li>
+        </ul>
+      </nav>
     </nav>
   )
   }
@@ -93,8 +95,8 @@ rightNav() {
       <header className="main-nav">
 
         <nav className="left-nav" >
-          <Link to="/" >
-            <img scr="https://drive.google.com/open?id=1AvOhLHQb8XFaiZ_GdHLyX0UHcwjvcMG7" />
+          <Link to="/"
+          className="boba-times-logo">
           </Link>
         </nav>
 

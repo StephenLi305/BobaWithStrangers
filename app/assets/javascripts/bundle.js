@@ -373,8 +373,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 
 
 var mapStateToProps = function mapStateToProps(_ref) {
-  var session = _ref.session,
-      users = _ref.entities.users;
+  var session = _ref.session;
   return {
     logged_in: session.id
   };
@@ -384,6 +383,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     signin: function signin(user) {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_3__["signin"])(user));
+    },
+    logout: function logout() {
+      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_3__["logout"])());
     }
   };
 };
@@ -399,10 +401,8 @@ function (_React$Component) {
     _classCallCheck(this, Header);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Header).call(this, props));
-    _this.state = {
-      showDropDown: false
-    };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _this.handleLogout = _this.handleLogout.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     return _this;
   }
 
@@ -411,28 +411,38 @@ function (_React$Component) {
     value: function handleSubmit() {
       var user = Object.assign({}, this.state);
       this.props.signin(user);
-      debugger;
+    }
+  }, {
+    key: "handleLogout",
+    value: function handleLogout() {
+      this.props.logout().then(function () {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+          to: "/signup"
+        });
+      });
     }
   }, {
     key: "rightNav",
     value: function rightNav() {
       var _this2 = this;
 
-      if (this.state.logged_in) {
-        debugger;
+      if (this.props.logged_in) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
           className: "right-nav"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-          className: "dropdown-signed-out"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-          to: "/signin"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "SIGN OUT"))));
+          className: "header-signed-in"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+          to: "/signup"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          onClick: this.handleLogout
+        }, "SIGN OUT"))));
       } else {
-        debugger;
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
           className: "right-nav"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
+          className: "right-nav-signed-out"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-          className: "dropdown-signed-out"
+          className: "right-nav-signed-out-list"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
           to: "/signin"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "SIGN IN")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
@@ -446,7 +456,7 @@ function (_React$Component) {
               _this2.handleSubmit();
             });
           }
-        }, "DEMO")));
+        }, "DEMO"))));
       }
     } // <i className="fa fa-coffee">
     // Boba With Strangers
@@ -460,10 +470,9 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
         className: "left-nav"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        scr: "https://drive.google.com/open?id=1AvOhLHQb8XFaiZ_GdHLyX0UHcwjvcMG7"
-      }))), this.rightNav());
+        to: "/",
+        className: "boba-times-logo"
+      })), this.rightNav());
     }
   }]);
 
@@ -841,7 +850,7 @@ function (_React$Component) {
 
   _createClass(Splash, [{
     key: "handleSubmit",
-    value: function handleSubmit(e) {
+    value: function handleSubmit() {
       var _this2 = this;
 
       this.props.logout().then(function () {
