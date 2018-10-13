@@ -331,11 +331,79 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Good Conversations"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "They're hard to find.")));
     }
   }, {
+    key: "body",
+    value: function body() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "boba-times-body"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "boba-times-body"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "Boba With Strangers is boba, with strangers."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "For two hours, five-ish strangers sit at a boba shop (or some other public place) with a host to talk. Not about anything in particular. The circumstances are unsual, but that's the point.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "If none of these work for you, you can come back next month to see the boba times. You can create an event here!")));
+    }
+  }, {
+    key: "cityListIndex",
+    value: function cityListIndex() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "city-list-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "city-list-title"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Jump To Your City's Boba Time!")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "city-list"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "cities"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "SF/BAY AREA"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "LONDON"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "NEW YORK CITY"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "LOS ANGELES"))));
+    }
+  }, {
+    key: "citiesList",
+    value: function citiesList() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "SF-List"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "San Francisco/Bay Area"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, this.events())));
+    }
+  }, {
+    key: "events",
+    value: function events() {
+      var tannca = {
+        city: "San Francisco",
+        event_data: [{
+          id: 1,
+          date: "Oct 13",
+          time: "11:00AM",
+          address: "a/A office: 825 Battery Street, San Francisco",
+          host_id: 4,
+          max_cap: 6,
+          seat_taken: 1
+        }, {
+          id: 2,
+          date: "Oct 13",
+          time: "11:00AM",
+          address: "a/A office: 825 Battery Street, San Francisco",
+          host_id: 4,
+          max_cap: 6,
+          seat_taken: 1
+        }, {
+          id: 3,
+          date: "Oct 13",
+          time: "11:00AM",
+          address: "a/A office: 825 Battery Street, San Francisco",
+          host_id: 4,
+          max_cap: 6,
+          seat_taken: 1
+        }]
+      };
+      var mapovertannca = tannca.event_data.map(function (event) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "SF-event",
+          key: event.id
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, event.date), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, event.time), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, event.address), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "host: ", event.host_id), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, event.max_cap - event.seat_taken, " seat left")));
+      });
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, mapovertannca);
+    }
+  }, {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "boba-times"
-      }, this.title(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "Boba With Strangers is boba, with strangers."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "For two hours, five-ish strangers sit at a boba shop (or some other public place) with a host to talk. Not about anything in particular. The circumstances are unsual, but that's the point.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "If none of these work for you, you can come back next month to see the boba times. You can create an event here!")));
+      }, this.title(), this.body(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.cityListIndex(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.citiesList(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null));
     }
   }]);
 
@@ -483,9 +551,11 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
         className: "left-nav"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/",
+        to: "/signup",
         className: "boba-times-logo"
-      })), this.rightNav());
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "/app/assets/images/BobaWithStrangersLogo.png"
+      }))), this.rightNav());
     }
   }]);
 

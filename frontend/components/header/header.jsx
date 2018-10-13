@@ -99,12 +99,15 @@ rightNav() {
       <header className="main-nav">
 
         <nav className="left-nav" >
-          <Link to="/"
+          <Link to="/signup"
           className="boba-times-logo">
+          <img src="/app/assets/images/BobaWithStrangersLogo.png" />
           </Link>
         </nav>
 
         {this.rightNav()}
+
+        
       </header>
 
     )
