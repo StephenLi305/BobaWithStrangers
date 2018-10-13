@@ -60,70 +60,137 @@ cityListIndex(){
 }
 
 citiesList(){
+  const seedData = [
+
+    {city_name: "San Francisco",
+    event_data:[
+      { id: 1,
+        date: "Oct 13",
+        time: "11:00AM",
+        address: "a/A office: 825 Battery Street, San Francisco",
+        host_id: 4,
+        max_cap: 6,
+        seat_taken: 1
+      },
+      { id: 2,
+        date: "Oct 13",
+        time: "11:00AM",
+        address: "a/A office: 825 Battery Street, San Francisco",
+        host_id: 4,
+        max_cap: 6,
+        seat_taken: 1
+      },
+      { id: 3,
+        date: "Oct 13",
+        time: "11:00AM",
+        address: "a/A office: 825 Battery Street, San Francisco",
+        host_id: 4,
+        max_cap: 6,
+        seat_taken: 1
+      }
+    ]},
+    {city_name: "Los Angeles",
+    event_data:[
+      { id: 1,
+        date: "Oct 13",
+        time: "11:00AM",
+        address: "a/A office: 825 Battery Street, Los Angeles",
+        host_id: 4,
+        max_cap: 6,
+        seat_taken: 1
+      },
+      { id: 2,
+        date: "Oct 13",
+        time: "11:00AM",
+        address: "a/A office: 825 Battery Street, Los Angeles",
+        host_id: 4,
+        max_cap: 6,
+        seat_taken: 1
+      },
+      { id: 3,
+        date: "Oct 13",
+        time: "11:00AM",
+        address: "a/A office: 825 Battery Street, Los Angeles",
+        host_id: 4,
+        max_cap: 6,
+        seat_taken: 1
+      }
+    ]},
+    {city_name: "New York",
+    event_data:[
+      { id: 1,
+        date: "Oct 13",
+        time: "11:00AM",
+        address: "a/A office: 825 Battery Street, New York",
+        host_id: 4,
+        max_cap: 6,
+        seat_taken: 1
+      },
+      { id: 2,
+        date: "Oct 13",
+        time: "11:00AM",
+        address: "a/A office: 825 Battery Street, New York",
+        host_id: 4,
+        max_cap: 6,
+        seat_taken: 1
+      },
+      { id: 3,
+        date: "Oct 13",
+        time: "11:00AM",
+        address: "a/A office: 825 Battery Street, New York",
+        host_id: 4,
+        max_cap: 6,
+        seat_taken: 1
+      }
+    ]}
+  ]
 
 
+   const mapCities =
+    seedData.map( city => {
 
-  return(
-    <div className="SF-List">
-      <ul>
-        <li>San Francisco/Bay Area</li>
-        <li>{this.events()}</li>
-      </ul>
-    </div>
-  )
-}
-
-
-events(){
-    const tannca = {
-      city: "San Francisco",
-      event_data:[
-        { id: 1,
-          date: "Oct 13",
-          time: "11:00AM",
-          address: "a/A office: 825 Battery Street, San Francisco",
-          host_id: 4,
-          max_cap: 6,
-          seat_taken: 1
-        },
-        { id: 2,
-          date: "Oct 13",
-          time: "11:00AM",
-          address: "a/A office: 825 Battery Street, San Francisco",
-          host_id: 4,
-          max_cap: 6,
-          seat_taken: 1
-        },
-        { id: 3,
-          date: "Oct 13",
-          time: "11:00AM",
-          address: "a/A office: 825 Battery Street, San Francisco",
-          host_id: 4,
-          max_cap: 6,
-          seat_taken: 1
-        }
-      ]
-    }
-
-    const mapovertannca =
-      tannca.event_data.map( event => {
-        return(
-          <div className="SF-event" key = {event.id}>
-            <ul>
-              <li>{event.date}</li>
-              <li>{event.time}</li>
-              <li>{event.address}</li>
-              <li>host: {event.host_id}</li>
-              <li>{event.max_cap - event.seat_taken} seat left</li>
-            </ul>
-          </div>
-        )
-      })
-
+      return(
+        <div className="citys-container">
+          <ul>
+            <li>{city.city_name}</li>
+            <li>{this.events(city)}</li>
+          </ul>
+        </div>
+      )
+    })
 
   return (
     <div>
-      {mapovertannca}
+      {mapCities}
+    </div>
+  )
+ }
+
+
+events(city){
+  console.log(city)
+  console.log(city.event_data)
+
+  const citydata =
+    city.event_data.map( detail => {
+      return(
+
+        <div key={detail.id}>
+          <ul>
+            <li>{detail.date}</li>
+            <li>{detail.time}</li>
+            <li>{detail.address}</li>
+            <li>Host by : {detail.host_id}</li>
+            <li>{detail.max_cap - detail.seat_taken} seats left</li>
+          </ul>
+        <br/>
+        </div>
+      )
+    })
+
+  return (
+    <div>
+      {citydata}
     </div>
   )
 }

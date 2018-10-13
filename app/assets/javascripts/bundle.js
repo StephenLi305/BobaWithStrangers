@@ -355,15 +355,10 @@ function (_React$Component) {
   }, {
     key: "citiesList",
     value: function citiesList() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "SF-List"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "San Francisco/Bay Area"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, this.events())));
-    }
-  }, {
-    key: "events",
-    value: function events() {
-      var tannca = {
-        city: "San Francisco",
+      var _this = this;
+
+      var seedData = [{
+        city_name: "San Francisco",
         event_data: [{
           id: 1,
           date: "Oct 13",
@@ -389,14 +384,79 @@ function (_React$Component) {
           max_cap: 6,
           seat_taken: 1
         }]
-      };
-      var mapovertannca = tannca.event_data.map(function (event) {
+      }, {
+        city_name: "Los Angeles",
+        event_data: [{
+          id: 1,
+          date: "Oct 13",
+          time: "11:00AM",
+          address: "a/A office: 825 Battery Street, Los Angeles",
+          host_id: 4,
+          max_cap: 6,
+          seat_taken: 1
+        }, {
+          id: 2,
+          date: "Oct 13",
+          time: "11:00AM",
+          address: "a/A office: 825 Battery Street, Los Angeles",
+          host_id: 4,
+          max_cap: 6,
+          seat_taken: 1
+        }, {
+          id: 3,
+          date: "Oct 13",
+          time: "11:00AM",
+          address: "a/A office: 825 Battery Street, Los Angeles",
+          host_id: 4,
+          max_cap: 6,
+          seat_taken: 1
+        }]
+      }, {
+        city_name: "New York",
+        event_data: [{
+          id: 1,
+          date: "Oct 13",
+          time: "11:00AM",
+          address: "a/A office: 825 Battery Street, New York",
+          host_id: 4,
+          max_cap: 6,
+          seat_taken: 1
+        }, {
+          id: 2,
+          date: "Oct 13",
+          time: "11:00AM",
+          address: "a/A office: 825 Battery Street, New York",
+          host_id: 4,
+          max_cap: 6,
+          seat_taken: 1
+        }, {
+          id: 3,
+          date: "Oct 13",
+          time: "11:00AM",
+          address: "a/A office: 825 Battery Street, New York",
+          host_id: 4,
+          max_cap: 6,
+          seat_taken: 1
+        }]
+      }];
+      var mapCities = seedData.map(function (city) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "SF-event",
-          key: event.id
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, event.date), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, event.time), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, event.address), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "host: ", event.host_id), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, event.max_cap - event.seat_taken, " seat left")));
+          className: "citys-container"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, city.city_name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, _this.events(city))));
       });
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, mapovertannca);
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, mapCities);
+    }
+  }, {
+    key: "events",
+    value: function events(city) {
+      console.log(city);
+      console.log(city.event_data);
+      var citydata = city.event_data.map(function (detail) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          key: detail.id
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, detail.date), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, detail.time), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, detail.address), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Host by : ", detail.host_id), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, detail.max_cap - detail.seat_taken, " seats left")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null));
+      });
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, citydata);
     }
   }, {
     key: "render",
