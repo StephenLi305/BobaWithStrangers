@@ -1,96 +1,109 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
-import { Link, withRouter, Redirect } from 'react-router-dom'
+import { signin } from '../../actions/session_actions';
 
 
+const mapStateToProps = ({session, entities: { users }}) => {
+  return {
+    logged_in: session.id
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    signin: (user) => dispatch(signin(user)),
+  };
+};
 
 
 class Header extends React.Component {
   constructor(props){
     super(props);
-
     this.state = {
       showDropDown: false,
     }
-
-    this.showDropDown = this.showDropDown.bind(this)
-    this.closeDropDown = this.closeDropDown.bind(this)
-
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
 
-showDropDown(event){
-  event.preventDefault();
-  this.setState({ showDropDown: true}, () => {
-    document.addEventListener('click', this.closeDropDown);
-  });
+handleSubmit(){
+  const user = Object.assign({}, this.state);
+  this.props.signin(user);
+  debugger
 }
 
-closeDropDown(){
+rightNav() {
+  if(this.state.logged_in) {
+    debugger
+    return (
+      <nav className="right-nav">
+        <ul className="dropdown-signed-out" >
 
-  if (!this.dropdownMenu.contains(event.target)){
+          <Link to="/signin">
+            <li>SIGN OUT</li>
+          </Link>
 
-    this.setState({ showDropDown: false }, () => {
-      document.removeEventListener('click', this.closeDropDown);
+        </ul>
+      </nav>
+    )
+  } else {
+    debugger
+    return (
+    <nav className="right-nav">
+      <ul className="dropdown-signed-out" >
 
-    });
+        <Link to="/signin">
+          <li>SIGN IN</li>
+        </Link>
+
+        <Link to="/signup">
+          <li>SIGN UP</li>
+        </Link>
+
+        <li onClick ={ () => {
+          (this.setState (
+            {email: "Stephen1",
+            password: "password"},
+            () => {
+              this.handleSubmit()
+            }
+          ))}
+        }>
+        DEMO</li>
+      </ul>
+
+
+    </nav>
+  )
   }
 }
 
 
 
+
+
+// <i className="fa fa-coffee">
+// Boba With Strangers
+// </i>
 
   render(){
     return(
 
       <header className="main-nav">
 
-
         <nav className="left-nav" >
           <Link to="/" >
-            <i className="fa fa-coffee">
-              Boba With Strangers
-            </i>
+            <img scr="https://drive.google.com/open?id=1AvOhLHQb8XFaiZ_GdHLyX0UHcwjvcMG7" />
           </Link>
         </nav>
 
-        <nav className="right-nav">
-          <i className="fa fa-bars" onClick={this.showDropDown}>
-          </i>
-
-          {
-            this.state.showDropDown ? (
-
-              <ul
-              className="dropdown-signed-out"
-              ref={(element) => {
-                this.dropdownMenu = element;
-              }}
-              >
-                <li>HOME</li>
-                <li>BOBA TIMES</li>
-                <li>SIGN IN</li>
-                <li>SIGN UP</li>
-              </ul>
-            ) : (
-              null
-            )
-          }
-
-
-
-          </nav>
+        {this.rightNav()}
       </header>
 
     )
-
   }
 }
 
-
-
-
-
-
-
-export default Header
+export default connect(mapStateToProps, mapDispatchToProps)(Header)
+// export default Header

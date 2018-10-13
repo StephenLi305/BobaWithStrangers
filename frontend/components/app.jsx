@@ -14,6 +14,7 @@ import SignUpFormContainer from './session_form/sign_UP_container'
 import SignInFormContainer from './session_form/sign_IN_container'
 import SplashContainer from './splash_page/splash_container'
 import HeaderContainer from './header/header'
+import BobaTimesContainer from './boba_times/boba_times'
 
 
 const App = () => (
@@ -23,6 +24,7 @@ const App = () => (
       <AuthRoute exact path="/signup" component={SignUpFormContainer} />
       <AuthRoute exact path="/signin" component={SignInFormContainer} />
       <Route exact path="/" component={SplashContainer} />
+      <Route exact path="/boba_times" component={BobaTimesContainer} />
       <Redirect to="/" />
     </Switch>
   </div>

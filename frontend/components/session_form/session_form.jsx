@@ -71,9 +71,8 @@ class SessionForm extends React.Component {
           email: "Stephen1",
           password: "password"})
           this.handleSubmit()
-      }
-
         }
+      }
       type="submit"
       value="DEMO SIGN IN"
       />

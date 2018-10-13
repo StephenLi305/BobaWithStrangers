@@ -23,26 +23,15 @@ const mapDispatchToProps = dispatch => {
 class Splash extends React.Component {
 constructor(props){
   super(props);
-  // this.logoutButton = this.logoutButton.bind(this)
   console.log(this.props);
   this.handleSubmit = this.handleSubmit.bind(this);
 
 }
 
 handleSubmit(e){
-  // this.props.logout().then(this.props.history.push("/signup"));
-
   this.props.logout().then(() => this.props.history.push("/signup"));
 }
 
-// logoutButton(){
-//   debugger
-//   if (this.props.session.id){
-//     return (
-//       <button onClick={this.handleSubmit.bind(this)}>Logout</button>
-//     )
-//   }
-// }
 
   render(){
     const { logout } = this.props
@@ -55,6 +44,8 @@ handleSubmit(e){
         <br />
         <Link to="/signin">Sign In</Link>
         <br />
+        <Link to="/boba_times">BOBA TIMEE!!!</Link>
+        <br />
         <button onClick={this.handleSubmit}>Logout</button>
       </div>
     )
@@ -64,6 +55,3 @@ handleSubmit(e){
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Splash)
-
-// {this.logoutButton()}
-// <h1>Hi, {this.props.currentUser.email}</h1>
