@@ -14,7 +14,7 @@ const mapStateToProps = ({session }) => {
 const mapDispatchToProps = dispatch => {
   return {
     signin: (user) => dispatch(signin(user)),
-    logout: () => dispatch(logout()),
+    logout: () => dispatch(logout())
   };
 };
 
@@ -43,7 +43,11 @@ rightNav() {
       <nav className="right-nav">
         <ul className="header-signed-in" >
           <li> </li>
-          <li> </li>
+
+          <Link to="/boba_times">
+            <li>BOBA TIMES</li>
+          </Link>
+
           <Link to="/signup">
             <li onClick={this.handleLogout}>SIGN OUT</li>
           </Link>

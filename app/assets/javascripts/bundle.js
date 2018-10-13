@@ -315,16 +315,27 @@ var BobaTimes =
 function (_React$Component) {
   _inherits(BobaTimes, _React$Component);
 
-  function BobaTimes() {
+  function BobaTimes(props) {
     _classCallCheck(this, BobaTimes);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(BobaTimes).apply(this, arguments));
+    return _possibleConstructorReturn(this, _getPrototypeOf(BobaTimes).call(this, props));
   }
 
   _createClass(BobaTimes, [{
+    key: "title",
+    value: function title() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "boba-times-title"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "boba-times-title-text"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Good Conversations"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "They're hard to find.")));
+    }
+  }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("wrapper", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("title", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Good Conversations"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "They're hard to find.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("bio", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Boba With Strangers is boba, with strangers."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "For two hours, five-ish strangers sit at a boba shop")));
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "boba-times"
+      }, this.title(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "Boba With Strangers is boba, with strangers."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "For two hours, five-ish strangers sit at a boba shop (or some other public place) with a host to talk. Not about anything in particular. The circumstances are unsual, but that's the point.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "If none of these work for you, you can come back next month to see the boba times. You can create an event here!")));
     }
   }]);
 
@@ -431,7 +442,9 @@ function (_React$Component) {
           className: "right-nav"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
           className: "header-signed-in"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+          to: "/boba_times"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "BOBA TIMES")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
           to: "/signup"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           onClick: this.handleLogout
