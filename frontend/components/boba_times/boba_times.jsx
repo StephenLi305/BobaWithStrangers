@@ -23,7 +23,7 @@ title(){
 
 body(){
   return(
-    <div className="boba-times-body">
+    <div className="boba-times-body-container">
       <div className="boba-times-body">
         <h4>Boba With Strangers is boba, with strangers.</h4>
 
@@ -150,7 +150,7 @@ citiesList(){
     seedData.map( city => {
 
       return(
-        <div className="citys-container">
+        <div className="citys-container" key={city.city_name.length}>
           <ul>
             <li>{city.city_name}</li>
             <li>{this.events(city)}</li>
@@ -183,7 +183,7 @@ events(city){
             <li>Host by : {detail.host_id}</li>
             <li>{detail.max_cap - detail.seat_taken} seats left</li>
           </ul>
-        <br/>
+          <br/>
         </div>
       )
     })
