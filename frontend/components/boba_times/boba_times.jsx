@@ -49,15 +49,17 @@ cityListIndex(){
       </div>
       <div className="city-list">
         <ul className="cities">
-          <li>SF/BAY AREA</li>
-          <li>LONDON</li>
-          <li>NEW YORK CITY</li>
+          <li>
+          SF/BAY AREA
+          </li>
           <li>LOS ANGELES</li>
+          <li>NEW YORK CITY</li>
         </ul>
       </div>
     </div>
   )
 }
+// <a href="#San Francisco">SF/BAY AREA</a>
 
 citiesList(){
   const seedData = [
@@ -73,6 +75,22 @@ citiesList(){
         seat_taken: 1
       },
       { id: 2,
+        date: "Oct 13",
+        time: "11:00AM",
+        address: "a/A office: 825 Battery Street, San Francisco",
+        host_id: 4,
+        max_cap: 6,
+        seat_taken: 1
+      },
+      { id: 5,
+        date: "Oct 13",
+        time: "11:00AM",
+        address: "a/A office: 825 Battery Street, San Francisco",
+        host_id: 4,
+        max_cap: 6,
+        seat_taken: 1
+      },
+      { id: 4,
         date: "Oct 13",
         time: "11:00AM",
         address: "a/A office: 825 Battery Street, San Francisco",
@@ -150,9 +168,11 @@ citiesList(){
     seedData.map( city => {
 
       return(
-        <div className="citys-container" key={city.city_name.length}>
+        <div className="citys-container" key={city.city_name.length} id={city.city_name}>
           <ul>
-            <li>{city.city_name}</li>
+            <li>
+            {city.city_name}
+            </li>
             <li>{this.events(city)}</li>
           </ul>
         </div>

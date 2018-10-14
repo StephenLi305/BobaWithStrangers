@@ -350,8 +350,9 @@ function (_React$Component) {
         className: "city-list"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "cities"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "SF/BAY AREA"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "LONDON"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "NEW YORK CITY"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "LOS ANGELES"))));
-    }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "SF/BAY AREA"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "LOS ANGELES"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "NEW YORK CITY"))));
+    } // <a href="#San Francisco">SF/BAY AREA</a>
+
   }, {
     key: "citiesList",
     value: function citiesList() {
@@ -369,6 +370,22 @@ function (_React$Component) {
           seat_taken: 1
         }, {
           id: 2,
+          date: "Oct 13",
+          time: "11:00AM",
+          address: "a/A office: 825 Battery Street, San Francisco",
+          host_id: 4,
+          max_cap: 6,
+          seat_taken: 1
+        }, {
+          id: 5,
+          date: "Oct 13",
+          time: "11:00AM",
+          address: "a/A office: 825 Battery Street, San Francisco",
+          host_id: 4,
+          max_cap: 6,
+          seat_taken: 1
+        }, {
+          id: 4,
           date: "Oct 13",
           time: "11:00AM",
           address: "a/A office: 825 Battery Street, San Francisco",
@@ -442,7 +459,8 @@ function (_React$Component) {
       var mapCities = seedData.map(function (city) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "citys-container",
-          key: city.city_name.length
+          key: city.city_name.length,
+          id: city.city_name
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, city.city_name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, _this.events(city))));
       });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, mapCities);

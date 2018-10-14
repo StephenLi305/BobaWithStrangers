@@ -10,6 +10,8 @@ show json builder page
   json.image_url url_for(@post.image)
 end
 
+
+#add scroll feature.
 const seedData = [
 
   {city_name: "San Francisco",
