@@ -50,7 +50,7 @@ cityListIndex(){
       <div className="city-list">
         <ul className="cities">
           <li>
-          SF/BAY AREA
+          <a href="#san_francisco">SF/BAY AREA</a>
           </li>
           <li>LOS ANGELES</li>
           <li>NEW YORK CITY</li>
@@ -59,7 +59,7 @@ cityListIndex(){
     </div>
   )
 }
-// <a href="#San Francisco">SF/BAY AREA</a>
+// SF/BAY AREA
 
 citiesList(){
   const seedData = [
@@ -167,12 +167,12 @@ citiesList(){
    const mapCities =
     seedData.map( city => {
 
+      // <a name={city.city_name.toLowerCase().replace(' ', '_')}  />
       return(
-        <div className="citys-container" key={city.city_name.length} id={city.city_name}>
+        <div className="citys-event-card-container" key={city.city_name.length}>
           <ul>
-            <li>
-            {city.city_name}
-            </li>
+            <li className="city-event-card">{city.city_name}</li>
+            <br/>
             <li>{this.events(city)}</li>
           </ul>
         </div>
@@ -188,8 +188,8 @@ citiesList(){
 
 
 events(city){
-  console.log(city)
-  console.log(city.event_data)
+  // console.log(city)
+  // console.log(city.event_data)
 
   const citydata =
     city.event_data.map( detail => {

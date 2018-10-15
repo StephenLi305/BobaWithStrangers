@@ -237,6 +237,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _splash_page_splash_container__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./splash_page/splash_container */ "./frontend/components/splash_page/splash_container.jsx");
 /* harmony import */ var _header_header__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./header/header */ "./frontend/components/header/header.jsx");
 /* harmony import */ var _boba_times_boba_times__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./boba_times/boba_times */ "./frontend/components/boba_times/boba_times.jsx");
+/* harmony import */ var _boba_times_event_boba_times_event__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./boba_times_event/boba_times_event */ "./frontend/components/boba_times_event/boba_times_event.jsx");
+/* harmony import */ var _profile_profile__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./profile/profile */ "./frontend/components/profile/profile.jsx");
+
+
 
 
 
@@ -266,6 +270,12 @@ var App = function App() {
     exact: true,
     path: "/boba_times",
     component: _boba_times_boba_times__WEBPACK_IMPORTED_MODULE_8__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+    path: "/boba_times/:eventId",
+    component: _boba_times_event_boba_times_event__WEBPACK_IMPORTED_MODULE_9__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+    path: "/profile",
+    component: _profile_profile__WEBPACK_IMPORTED_MODULE_10__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Redirect"], {
     to: "/"
   })));
@@ -350,8 +360,10 @@ function (_React$Component) {
         className: "city-list"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "cities"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "SF/BAY AREA"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "LOS ANGELES"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "NEW YORK CITY"))));
-    } // <a href="#San Francisco">SF/BAY AREA</a>
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "#san_francisco"
+      }, "SF/BAY AREA")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "LOS ANGELES"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "NEW YORK CITY"))));
+    } // SF/BAY AREA
 
   }, {
     key: "citiesList",
@@ -457,19 +469,21 @@ function (_React$Component) {
         }]
       }];
       var mapCities = seedData.map(function (city) {
+        // <a name={city.city_name.toLowerCase().replace(' ', '_')}  />
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "citys-container",
-          key: city.city_name.length,
-          id: city.city_name
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, city.city_name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, _this.events(city))));
+          className: "citys-event-card-container",
+          key: city.city_name.length
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          className: "city-event-card"
+        }, city.city_name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, _this.events(city))));
       });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, mapCities);
     }
   }, {
     key: "events",
     value: function events(city) {
-      console.log(city);
-      console.log(city.event_data);
+      // console.log(city)
+      // console.log(city.event_data)
       var citydata = city.event_data.map(function (detail) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           key: detail.id
@@ -490,6 +504,117 @@ function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (BobaTimes);
+
+/***/ }),
+
+/***/ "./frontend/components/boba_times_event/boba_times_event.jsx":
+/*!*******************************************************************!*\
+  !*** ./frontend/components/boba_times_event/boba_times_event.jsx ***!
+  \*******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+
+
+
+var SEED_EVENT_DATA = {
+  id: 3,
+  date: "Oct 13",
+  time: "11:00AM",
+  address: "a/A office: 825 Battery Street, New York",
+  host_id: 4,
+  max_cap: 6,
+  seat_taken: 1,
+  host: {
+    name: "Danny da host",
+    bio: "We talking about mayo and Pokemon",
+    image: "this is an image of me"
+  }
+};
+var SEED_SESSION_DATA = {
+  id: 7,
+  name: "Danny da logged in person"
+};
+
+var BobaTimesEvent =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(BobaTimesEvent, _React$Component);
+
+  function BobaTimesEvent(props) {
+    var _this;
+
+    _classCallCheck(this, BobaTimesEvent);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(BobaTimesEvent).call(this, props));
+    _this.state = {
+      event: SEED_EVENT_DATA,
+      session: SEED_SESSION_DATA
+    };
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    return _this;
+  }
+
+  _createClass(BobaTimesEvent, [{
+    key: "eventData",
+    value: function eventData() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, this.state.event.date), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, this.state.event.time), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "This is the address: ", this.state.event.address), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "There are ", this.state.event.max_cap - this.state.event.seat_taken, " seats left.")));
+    }
+  }, {
+    key: "signUpButton",
+    value: function signUpButton() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.handleSubmit
+      }, "SIGN ME UP"));
+    }
+  }, {
+    key: "handleSubmit",
+    value: function handleSubmit() {
+      //post request that creates join table between this.state.session.id and this.state.event.id
+      console.log("Signed Up!");
+    }
+  }, {
+    key: "hostBio",
+    value: function hostBio() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Hi, my name is ", this.state.event.host.name, "."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "This is how I look! (", this.state.event.host.image, ")."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, this.state.event.host.bio, ".")));
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return (//Event information
+        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.eventData()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.signUpButton()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.hostBio()))
+      );
+    }
+  }]);
+
+  return BobaTimesEvent;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (BobaTimesEvent);
 
 /***/ }),
 
@@ -642,6 +767,129 @@ function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, mapDispatchToProps)(Header)); // export default Header
+
+/***/ }),
+
+/***/ "./frontend/components/profile/profile.jsx":
+/*!*************************************************!*\
+  !*** ./frontend/components/profile/profile.jsx ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+
+
+
+var SEED_EVENT_DATA = [{
+  id: 3,
+  date: "Oct 13",
+  time: "11:00AM",
+  address: "a/A office: 825 Battery Street, San Francisco",
+  host_id: 4,
+  max_cap: 6,
+  seat_taken: 1,
+  host: {
+    name: "Danny da host",
+    bio: "We talking about mayo and Pokemon",
+    image: "this is an image of me"
+  }
+}, {
+  id: 4,
+  date: "Oct 14",
+  time: "11:00AM",
+  address: "a/A office: 825 Battery Street, New York",
+  host_id: 4,
+  max_cap: 6,
+  seat_taken: 1,
+  host: {
+    name: "Danny da second best host",
+    bio: "We talking about mayo and Pokemon",
+    image: "this is an image of me"
+  }
+}];
+var SEED_SESSION_DATA = {
+  id: 7,
+  name: "Danny da logged in person"
+};
+
+var Profile =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(Profile, _React$Component);
+
+  function Profile() {
+    var _this;
+
+    _classCallCheck(this, Profile);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Profile).call(this));
+    _this.state = {
+      events: SEED_EVENT_DATA,
+      session: SEED_SESSION_DATA
+    };
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    return _this;
+  }
+
+  _createClass(Profile, [{
+    key: "welcomeHome",
+    value: function welcomeHome() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Welcome Home, ", this.state.session.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "What are you grateful for?"));
+    }
+  }, {
+    key: "bobaTimesButton",
+    value: function bobaTimesButton() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.handleSubmit
+      }, "Go to Bobatimes"));
+    }
+  }, {
+    key: "handleSubmit",
+    value: function handleSubmit() {
+      console.log("You're going to the Bobatimes page");
+    }
+  }, {
+    key: "eventsAttending",
+    value: function eventsAttending() {
+      return this.state.events.map(function (event) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, event.date), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, event.time), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, event.address), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, event.host.name)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null));
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.welcomeHome(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.bobaTimesButton(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.eventsAttending());
+    }
+  }]);
+
+  return Profile;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (Profile);
 
 /***/ }),
 

@@ -96,3 +96,38 @@ const seedData = [
     }
   ]}
 ]
+
+const SeedEventData =
+const SEED_EVENT_DATA = [
+  {
+    id: 3,
+    date: "Oct 13",
+    time: "11:00AM",
+    address: "a/A office: 825 Battery Street, San Francisco",
+    host_id: 4,
+    max_cap: 6,
+    seat_taken: 1,
+    host:{
+      name: "Danny da host",
+      bio: "We talking about mayo and Pokemon",
+      image: "this is an image of me"
+    },
+
+    id: 4,
+    date: "Oct 14",
+    time: "11:00AM",
+    address: "a/A office: 825 Battery Street, New York",
+    host_id: 4,
+    max_cap: 6,
+    seat_taken: 1,
+    host:{
+      name: "Danny da second best host",
+      bio: "We talking about mayo and Pokemon",
+      image: "this is an image of me"
+    }
+  };
+
+]
+
+
+const SeedSessionData = { id: 7 }

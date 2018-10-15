@@ -15,6 +15,8 @@ import SignInFormContainer from './session_form/sign_IN_container'
 import SplashContainer from './splash_page/splash_container'
 import HeaderContainer from './header/header'
 import BobaTimesContainer from './boba_times/boba_times'
+import BobaTimesEventContainer from './boba_times_event/boba_times_event'
+import ProfileContainer from './profile/profile'
 
 
 const App = () => (
@@ -25,6 +27,8 @@ const App = () => (
       <AuthRoute exact path="/signin" component={SignInFormContainer} />
       <Route exact path="/" component={SplashContainer} />
       <Route exact path="/boba_times" component={BobaTimesContainer} />
+      <Route path="/boba_times/:eventId" component={BobaTimesEventContainer} />
+      <Route path="/profile" component={ProfileContainer} />
       <Redirect to="/" />
     </Switch>
   </div>

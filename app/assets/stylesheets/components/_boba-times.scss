@@ -47,7 +47,6 @@
     height: 34px;
     font-weight: 600;
     text-align: left;
-    // margin-top: 70px;
     margin-bottom: 10px;
   }
 
@@ -108,5 +107,13 @@
   .city-list li:visited{
     color: $header-footer;
   }
+}
+
+
+
+.citys-event-card-container ul{
+  width: 35%;
+  display: flex;
+  flex-direction: row;
 
 }
