@@ -115,6 +115,14 @@ citiesList(){
         host_id: "https://i.imgur.com/y5jTA0P.jpg",
         max_cap: 6,
         seat_taken: 1
+      },
+      { id: 3,
+        date: "Oct 13",
+        time: "11:00AM",
+        address: "a/A office: 825 Battery Street, Los Angeles",
+        host_id: "https://i.imgur.com/ywAiTk1.jpg",
+        max_cap: 6,
+        seat_taken: 1
       }
     ]},
     {city_name: "New York",
