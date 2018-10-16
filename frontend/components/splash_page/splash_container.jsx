@@ -73,13 +73,16 @@ whatIsBobaTime(){
         {this.whatIsBobaTime()}
 
         <br />
-        <Link to="/boba_times">BOBA TIMEE!!!</Link>
+          <Link to="/boba_times">BOBA TIMEE!!!</Link>
         <br />
         <br />
-        <Link to="/boba_times/1">BOBA TIMEE!!! SPECIFIC EVENT</Link>
+          <Link to="/boba_times/1">BOBA TIMEE!!! SPECIFIC EVENT</Link>
         <br />
         <br />
-        <Link to="/profile">Your Profile</Link>
+          <Link to="/profile">Your Profile</Link>
+        <br />
+        <br />
+          <Link to="/create">Host Event</Link>
         <br />
         <button onClick={this.handleSubmit}>Logout</button>
       </div>

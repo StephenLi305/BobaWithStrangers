@@ -17,6 +17,7 @@ import HeaderContainer from './header/header'
 import BobaTimesContainer from './boba_times/boba_times'
 import BobaTimesEventContainer from './boba_times_event/boba_times_event'
 import ProfileContainer from './profile/profile'
+import CreateContainer from './create/create_event'
 
 
 const App = () => (
@@ -28,6 +29,7 @@ const App = () => (
       <Route exact path="/boba_times" component={BobaTimesContainer} />
       <Route exact path="/boba_times/:eventId" component={BobaTimesEventContainer} />
       <Route exact path="/profile" component={ProfileContainer} />
+      <Route exact path="/create" component={CreateContainer} />
       <Route exact path="/" component={SplashContainer} />
       <Redirect to="/" />
     </Switch>

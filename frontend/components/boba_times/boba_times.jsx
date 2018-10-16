@@ -99,7 +99,7 @@ citiesList(){
     ]},
     {city_name: "Los Angeles",
     event_data:[
-      { id: 1,
+      { id: 111,
         date: "Oct 13",
         time: "11:00AM",
         address: "a/A office: 825 Battery Street, Los Angeles",
@@ -108,13 +108,13 @@ citiesList(){
         seat_taken: 1
       },
 
-      { id: 3,
+      { id: 31,
         date: "Oct 13",
         time: "11:00AM",
         address: "a/A office: 825 Battery Street, Los Angeles",
         host_id: "https://i.imgur.com/y5jTA0P.jpg",
         max_cap: 6,
-        seat_taken: 1
+        seat_taken: 9
       },
       { id: 3,
         date: "Oct 13",
@@ -127,7 +127,7 @@ citiesList(){
     ]},
     {city_name: "New York",
     event_data:[
-      { id: 1,
+      { id: 12,
         date: "Oct 13",
         time: "11:00AM",
         address: "a/A office: 825 Battery Street, New York",
@@ -135,7 +135,7 @@ citiesList(){
         max_cap: 6,
         seat_taken: 1
       },
-      { id: 1,
+      { id: 17,
         date: "Oct 13",
         time: "11:00AM",
         address: "a/A office: 825 Battery Street, New York",

@@ -239,6 +239,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _boba_times_boba_times__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./boba_times/boba_times */ "./frontend/components/boba_times/boba_times.jsx");
 /* harmony import */ var _boba_times_event_boba_times_event__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./boba_times_event/boba_times_event */ "./frontend/components/boba_times_event/boba_times_event.jsx");
 /* harmony import */ var _profile_profile__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./profile/profile */ "./frontend/components/profile/profile.jsx");
+/* harmony import */ var _create_create_event__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./create/create_event */ "./frontend/components/create/create_event.jsx");
+
 
 
 
@@ -274,6 +276,10 @@ var App = function App() {
     exact: true,
     path: "/profile",
     component: _profile_profile__WEBPACK_IMPORTED_MODULE_10__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+    exact: true,
+    path: "/create",
+    component: _create_create_event__WEBPACK_IMPORTED_MODULE_11__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     exact: true,
     path: "/",
@@ -406,7 +412,7 @@ function (_React$Component) {
       }, {
         city_name: "Los Angeles",
         event_data: [{
-          id: 1,
+          id: 111,
           date: "Oct 13",
           time: "11:00AM",
           address: "a/A office: 825 Battery Street, Los Angeles",
@@ -414,13 +420,13 @@ function (_React$Component) {
           max_cap: 6,
           seat_taken: 1
         }, {
-          id: 3,
+          id: 31,
           date: "Oct 13",
           time: "11:00AM",
           address: "a/A office: 825 Battery Street, Los Angeles",
           host_id: "https://i.imgur.com/y5jTA0P.jpg",
           max_cap: 6,
-          seat_taken: 1
+          seat_taken: 9
         }, {
           id: 3,
           date: "Oct 13",
@@ -433,7 +439,7 @@ function (_React$Component) {
       }, {
         city_name: "New York",
         event_data: [{
-          id: 1,
+          id: 12,
           date: "Oct 13",
           time: "11:00AM",
           address: "a/A office: 825 Battery Street, New York",
@@ -441,7 +447,7 @@ function (_React$Component) {
           max_cap: 6,
           seat_taken: 1
         }, {
-          id: 1,
+          id: 17,
           date: "Oct 13",
           time: "11:00AM",
           address: "a/A office: 825 Battery Street, New York",
@@ -617,6 +623,188 @@ function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (BobaTimesEvent);
+
+/***/ }),
+
+/***/ "./frontend/components/create/create_event.jsx":
+/*!*****************************************************!*\
+  !*** ./frontend/components/create/create_event.jsx ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+
+
+
+var CreateEvent =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(CreateEvent, _React$Component);
+
+  function CreateEvent(props) {
+    var _this;
+
+    _classCallCheck(this, CreateEvent);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(CreateEvent).call(this, props));
+    _this.state = {
+      host_id: '',
+      date: '',
+      time: '',
+      boba_shop: "",
+      address: '',
+      city: '',
+      max_cap: '',
+      bio: '',
+      image: ''
+    };
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    return _this;
+  }
+
+  _createClass(CreateEvent, [{
+    key: "handleSubmit",
+    value: function handleSubmit(e) {
+      e.preventDefault(); // const user = Object.assign({}, this.state);
+      // this.props.processForm(user);
+    }
+  }, {
+    key: "update",
+    value: function update(field) {
+      var _this2 = this;
+
+      return function (e) {
+        return _this2.setState(_defineProperty({}, field, e.target.value));
+      };
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "create-event-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        onSubmit: this.handleSubmit,
+        className: "create-event-form-box"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "create-event-header"
+      }, "Host a Boba Event"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "create-event-text"
+      }, "Fill out this form to host your own boba event!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "create-event-form"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "create-event-field-text"
+      }, "Date of Boba Event!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "date",
+        placeholder: "01/01/2001",
+        value: this.state.date,
+        onChange: this.update('date'),
+        className: "create-event-field",
+        required: true
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "create-event-field-text"
+      }, "Time of Boba Event!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "time",
+        placeholder: "6:30PM",
+        value: this.state.time,
+        onChange: this.update('time'),
+        className: "create-event-field",
+        required: true
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "create-event-field-text"
+      }, "Boba Shop:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        value: this.state.boba_shop,
+        placeholder: "Boba Shop Name",
+        onChange: this.update('boba_shop'),
+        className: "create-event-field",
+        required: true
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "create-event-field-text"
+      }, "Address:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        value: this.state.address,
+        placeholder: "Address",
+        onChange: this.update('address'),
+        className: "create-event-field",
+        required: true
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "create-event-field-text"
+      }, "City:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+        className: "create-city-selector"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "{this.state.city}"
+      }, "San Francisco"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "{this.state.city}"
+      }, "Los Angeles"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "{this.state.city}"
+      }, "New York")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "create-event-field-text"
+      }, "Max Number of Seats:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+        className: "create-city-selector"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "{this.state.max_cap}"
+      }, "3"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "{this.state.max_cap}"
+      }, "4"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "{this.state.max_cap}"
+      }, "5"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "{this.state.max_cap}"
+      }, "6")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "create-event-field-text"
+      }, "Write about YOU!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
+        row: "5",
+        cols: "50",
+        className: "create-event-field-bio",
+        value: this.state.bio,
+        onChange: this.update('bio'),
+        placeholder: "Write a quick bio about yourself, how you got here, and some topics you might talk about as a host!",
+        required: true
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "create-event-field-text"
+      }, "Image URL:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        value: this.state.image,
+        placeholder: "Paste a IMAGE URL of yourself!",
+        onChange: this.update('image'),
+        className: "create-event-field",
+        required: true
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "create-event-submit",
+        type: "submit",
+        value: "Host an Event!"
+      }))));
+    }
+  }]);
+
+  return CreateEvent;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (CreateEvent);
 
 /***/ }),
 
@@ -1174,6 +1362,7 @@ var mapStateToProps = function mapStateToProps(_ref) {
 };
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  debugger;
   return {
     processForm: function processForm(user) {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_3__["signup"])(user));
@@ -1182,6 +1371,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_3__["clearErrors"])());
     }
   };
+  debugger;
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_session_form__WEBPACK_IMPORTED_MODULE_4__["default"]));
@@ -1298,7 +1488,9 @@ function (_React$Component) {
         to: "/boba_times/1"
       }, "BOBA TIMEE!!! SPECIFIC EVENT"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/profile"
-      }, "Your Profile"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, "Your Profile"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/create"
+      }, "Host Event"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: this.handleSubmit
       }, "Logout"));
     }
@@ -1573,6 +1765,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchSignIn", function() { return fetchSignIn; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchLogOut", function() { return fetchLogOut; });
 var fetchSignUp = function fetchSignUp(user) {
+  debugger;
   return $.ajax({
     url: "/api/users",
     method: "POST",

@@ -196,6 +196,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 2px solid $login-header;
+  padding: 43px 4px;
+  border-radius: 10px;
+
+  img{
+    border-radius: 10px;
+  }
 }
 
 .card-address{
