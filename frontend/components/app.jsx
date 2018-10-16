@@ -25,13 +25,13 @@ const App = () => (
     <Switch>
       <AuthRoute exact path="/signup" component={SignUpFormContainer} />
       <AuthRoute exact path="/signin" component={SignInFormContainer} />
-      <Route exact path="/" component={SplashContainer} />
       <Route exact path="/boba_times" component={BobaTimesContainer} />
-      <Route path="/boba_times/:eventId" component={BobaTimesEventContainer} />
-      <Route path="/profile" component={ProfileContainer} />
+      <Route exact path="/boba_times/:eventId" component={BobaTimesEventContainer} />
+      <Route exact path="/profile" component={ProfileContainer} />
+      <Route exact path="/" component={SplashContainer} />
+      <Redirect to="/" />
     </Switch>
   </div>
 )
-// <Redirect to="/" />
 
 export default App
