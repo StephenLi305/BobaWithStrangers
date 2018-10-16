@@ -19,10 +19,11 @@ html{
 .left-nav {
   margin: 12px 24px;
   font-size: 30px;
+  color: white;
 }
 
-.boba-times-logo{
-  background-image: url(https://drive.google.com/open?id=1AvOhLHQb8XFaiZ_GdHLyX0UHcwjvcMG7)
+.boba-times-logo img{
+  width: 42%;
 }
 
 .left-nav:hover{
@@ -39,7 +40,7 @@ html{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 100%;
+    // height: 100%;
     color: white;
     font-family: $header-font;
     font-size: 20px;

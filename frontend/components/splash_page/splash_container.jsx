@@ -42,9 +42,17 @@ handleSubmit(){
         <h1>Welcome to BobaWithStrangers</h1>
         <Link to="/signup">Sign Up</Link>
         <br />
+        <br />
         <Link to="/signin">Sign In</Link>
         <br />
+        <br />
         <Link to="/boba_times">BOBA TIMEE!!!</Link>
+        <br />
+        <br />
+        <Link to="/boba_times/1">BOBA TIMEE!!! SPECIFIC EVENT</Link>
+        <br />
+        <br />
+        <Link to="/profile">Your Profile</Link>
         <br />
         <button onClick={this.handleSubmit}>Logout</button>
       </div>

@@ -276,10 +276,9 @@ var App = function App() {
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     path: "/profile",
     component: _profile_profile__WEBPACK_IMPORTED_MODULE_10__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Redirect"], {
-    to: "/"
   })));
-};
+}; // <Redirect to="/" />
+
 
 /* harmony default export */ __webpack_exports__["default"] = (App);
 
@@ -360,9 +359,13 @@ function (_React$Component) {
         className: "city-list"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "cities"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "#san_francisco"
-      }, "SF/BAY AREA")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "LOS ANGELES"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "NEW YORK CITY"))));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+        to: "/boba_times/#san_francisco"
+      }, "SF/BAY AREA")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+        to: "/boba_times/#los_angeles"
+      }, "LOS ANGELES")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+        to: "/boba_times/#new_york"
+      }, "NEW YORK")))));
     } // SF/BAY AREA
 
   }, {
@@ -377,7 +380,7 @@ function (_React$Component) {
           date: "Oct 13",
           time: "11:00AM",
           address: "a/A office: 825 Battery Street, San Francisco",
-          host_id: 4,
+          host_id: "https://i.imgur.com/nYxqinx.jpg",
           max_cap: 6,
           seat_taken: 1
         }, {
@@ -385,7 +388,7 @@ function (_React$Component) {
           date: "Oct 13",
           time: "11:00AM",
           address: "a/A office: 825 Battery Street, San Francisco",
-          host_id: 4,
+          host_id: "https://i.imgur.com/SXA3Ihy.jpg",
           max_cap: 6,
           seat_taken: 1
         }, {
@@ -393,23 +396,7 @@ function (_React$Component) {
           date: "Oct 13",
           time: "11:00AM",
           address: "a/A office: 825 Battery Street, San Francisco",
-          host_id: 4,
-          max_cap: 6,
-          seat_taken: 1
-        }, {
-          id: 4,
-          date: "Oct 13",
-          time: "11:00AM",
-          address: "a/A office: 825 Battery Street, San Francisco",
-          host_id: 4,
-          max_cap: 6,
-          seat_taken: 1
-        }, {
-          id: 3,
-          date: "Oct 13",
-          time: "11:00AM",
-          address: "a/A office: 825 Battery Street, San Francisco",
-          host_id: 4,
+          host_id: "https://i.imgur.com/7xEGbPX.jpg",
           max_cap: 6,
           seat_taken: 1
         }]
@@ -420,15 +407,7 @@ function (_React$Component) {
           date: "Oct 13",
           time: "11:00AM",
           address: "a/A office: 825 Battery Street, Los Angeles",
-          host_id: 4,
-          max_cap: 6,
-          seat_taken: 1
-        }, {
-          id: 2,
-          date: "Oct 13",
-          time: "11:00AM",
-          address: "a/A office: 825 Battery Street, Los Angeles",
-          host_id: 4,
+          host_id: "https://i.imgur.com/sbRXPj8.jpg",
           max_cap: 6,
           seat_taken: 1
         }, {
@@ -436,7 +415,7 @@ function (_React$Component) {
           date: "Oct 13",
           time: "11:00AM",
           address: "a/A office: 825 Battery Street, Los Angeles",
-          host_id: 4,
+          host_id: "https://i.imgur.com/y5jTA0P.jpg",
           max_cap: 6,
           seat_taken: 1
         }]
@@ -447,49 +426,61 @@ function (_React$Component) {
           date: "Oct 13",
           time: "11:00AM",
           address: "a/A office: 825 Battery Street, New York",
-          host_id: 4,
+          host_id: "https://i.imgur.com/AxPggXR.jpg",
           max_cap: 6,
           seat_taken: 1
         }, {
-          id: 2,
+          id: 1,
           date: "Oct 13",
           time: "11:00AM",
           address: "a/A office: 825 Battery Street, New York",
-          host_id: 4,
-          max_cap: 6,
-          seat_taken: 1
-        }, {
-          id: 3,
-          date: "Oct 13",
-          time: "11:00AM",
-          address: "a/A office: 825 Battery Street, New York",
-          host_id: 4,
+          host_id: "https://i.imgur.com/CWbTORL.jpg",
           max_cap: 6,
           seat_taken: 1
         }]
       }];
       var mapCities = seedData.map(function (city) {
-        // <a name={city.city_name.toLowerCase().replace(' ', '_')}  />
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        var city_tag = city.city_name.toLowerCase().replace(' ', '_');
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
           className: "citys-event-card-container",
-          key: city.city_name.length
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          key: city.city_name.length,
+          id: city_tag
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           className: "city-event-card"
-        }, city.city_name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, _this.events(city))));
+        }, city.city_name, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          role: "img",
+          "aria-label": "pointer"
+        }, "\uD83D\uDC49\uD83C\uDFFD"), " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, _this.events(city)));
       });
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, mapCities);
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "widget-container"
+      }, mapCities);
     }
   }, {
     key: "events",
     value: function events(city) {
-      // console.log(city)
-      // console.log(city.event_data)
       var citydata = city.event_data.map(function (detail) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
           key: detail.id
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, detail.date), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, detail.time), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, detail.address), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Host by : ", detail.host_id), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, detail.max_cap - detail.seat_taken, " seats left")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null));
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "card-info-box"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "card-date-time"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, detail.date), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, detail.time)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          className: "card-host-image"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          src: detail.host_id
+        }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          className: "card-address"
+        }, detail.address), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          className: "card-seats"
+        }, detail.max_cap - detail.seat_taken, " seats left!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          className: "card-button"
+        }, "check it out"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null));
       });
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, citydata);
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "event-card-container"
+      }, citydata);
     }
   }, {
     key: "render",
@@ -743,10 +734,7 @@ function (_React$Component) {
           }
         }, "DEMO"))));
       }
-    } // <i className="fa fa-coffee">
-    // Boba With Strangers
-    // </i>
-
+    }
   }, {
     key: "render",
     value: function render() {
@@ -758,7 +746,7 @@ function (_React$Component) {
         to: "/signup",
         className: "boba-times-logo"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "/app/assets/images/BobaWithStrangersLogo.png"
+        src: "https://i.imgur.com/YXpFZVK.png"
       }))), this.rightNav());
     }
   }]);
@@ -766,7 +754,7 @@ function (_React$Component) {
   return Header;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, mapDispatchToProps)(Header)); // export default Header
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, mapDispatchToProps)(Header));
 
 /***/ }),
 
@@ -1274,11 +1262,15 @@ function (_React$Component) {
       var currentUser = this.props.currentUser;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Splash Page"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Welcome to BobaWithStrangers"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/signup"
-      }, "Sign Up"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      }, "Sign Up"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/signin"
-      }, "Sign In"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      }, "Sign In"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/boba_times"
-      }, "BOBA TIMEE!!!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, "BOBA TIMEE!!!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/boba_times/1"
+      }, "BOBA TIMEE!!! SPECIFIC EVENT"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/profile"
+      }, "Your Profile"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: this.handleSubmit
       }, "Logout"));
     }

@@ -87,12 +87,6 @@ rightNav() {
 
 
 
-
-
-// <i className="fa fa-coffee">
-// Boba With Strangers
-// </i>
-
   render(){
     return(
 
@@ -101,13 +95,13 @@ rightNav() {
         <nav className="left-nav" >
           <Link to="/signup"
           className="boba-times-logo">
-          <img src="/app/assets/images/BobaWithStrangersLogo.png" />
+          <img src="https://i.imgur.com/YXpFZVK.png" />
           </Link>
         </nav>
 
         {this.rightNav()}
 
-        
+
       </header>
 
     )
@@ -115,4 +109,3 @@ rightNav() {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header)
-// export default Header

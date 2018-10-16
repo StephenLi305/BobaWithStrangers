@@ -29,9 +29,9 @@ const App = () => (
       <Route exact path="/boba_times" component={BobaTimesContainer} />
       <Route path="/boba_times/:eventId" component={BobaTimesEventContainer} />
       <Route path="/profile" component={ProfileContainer} />
-      <Redirect to="/" />
     </Switch>
   </div>
 )
+// <Redirect to="/" />
 
 export default App
