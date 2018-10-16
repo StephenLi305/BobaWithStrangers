@@ -32,14 +32,25 @@ handleSubmit(){
   this.props.logout().then(() => this.props.history.push("/signup"));
 }
 
+title(){
+  return(
+    <div className="splash-title">
+      <div className="splash-title-text">
+        <h3>Everyone is interesing</h3>
+        <p>But you don’t discover that when you’re staring at a screen.</p>
+        <Link to="/boba_times" className="splash-title-button">BOBA TIMEE!!!</Link>
+      </div>
+    </div>
+  )
+}
 
   render(){
     const { logout } = this.props
     const { currentUser } = this.props
     return(
-      <div>
-        <h1>Splash Page</h1>
-        <h1>Welcome to BobaWithStrangers</h1>
+      <div className="splash-page">
+        {this.title()}
+
         <Link to="/signup">Sign Up</Link>
         <br />
         <br />

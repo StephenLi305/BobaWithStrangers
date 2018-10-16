@@ -1264,11 +1264,25 @@ function (_React$Component) {
       });
     }
   }, {
+    key: "title",
+    value: function title() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "splash-title"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "splash-title-text"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Everyone is interesing"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "But you don\u2019t discover that when you\u2019re staring at a screen."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/boba_times",
+        className: "splash-title-button"
+      }, "BOBA TIMEE!!!")));
+    }
+  }, {
     key: "render",
     value: function render() {
       var logout = this.props.logout;
       var currentUser = this.props.currentUser;
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Splash Page"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Welcome to BobaWithStrangers"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "splash-page"
+      }, this.title(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/signup"
       }, "Sign Up"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/signin"
