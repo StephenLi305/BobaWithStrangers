@@ -266,7 +266,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _util_route_util__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../util/route_util */ "./frontend/util/route_util.jsx");
 /* harmony import */ var _session_form_sign_UP_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./session_form/sign_UP_container */ "./frontend/components/session_form/sign_UP_container.jsx");
 /* harmony import */ var _session_form_sign_IN_container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./session_form/sign_IN_container */ "./frontend/components/session_form/sign_IN_container.jsx");
-/* harmony import */ var _splash_page_splash_container__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./splash_page/splash_container */ "./frontend/components/splash_page/splash_container.jsx");
+/* harmony import */ var _splash_page_splash__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./splash_page/splash */ "./frontend/components/splash_page/splash.jsx");
 /* harmony import */ var _header_header__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./header/header */ "./frontend/components/header/header.jsx");
 /* harmony import */ var _boba_times_boba_times__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./boba_times/boba_times */ "./frontend/components/boba_times/boba_times.jsx");
 /* harmony import */ var _boba_times_event_boba_times_event__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./boba_times_event/boba_times_event */ "./frontend/components/boba_times_event/boba_times_event.jsx");
@@ -315,7 +315,7 @@ var App = function App() {
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     exact: true,
     path: "/",
-    component: _splash_page_splash_container__WEBPACK_IMPORTED_MODULE_6__["default"]
+    component: _splash_page_splash__WEBPACK_IMPORTED_MODULE_6__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Redirect"], {
     to: "/"
   })));
@@ -585,14 +585,14 @@ var SEED_EVENT_DATA = {
   id: 3,
   date: "Oct 13",
   time: "11:00AM",
-  address: "a/A office: 825 Battery Street, New York",
+  address: "a/A office: 825 Battery Street",
+  city: "New York City",
   max_cap: 6,
   seat_taken: 1,
   host: {
-    name: "Danny da host",
+    name: "DWebz da host",
     bio: "We talking about mayo and Pokemon",
-    // host_image: "https://i.imgur.com/nYxqinx.jpg",
-    host_image: "image here"
+    host_image: "https://i.imgur.com/nYxqinx.jpg"
   }
 };
 var SEED_SESSION_DATA = {
@@ -624,7 +624,19 @@ function (_React$Component) {
     value: function eventData() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "boba-times-event-data"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Join ", this.state.event.host.name, " for Boba Time"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, this.state.event.date), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, this.state.event.time), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "This is the address: ", this.state.event.address), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "There are ", this.state.event.max_cap - this.state.event.seat_taken, " seats left.")));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "event-card-host"
+      }, "Join ", this.state.event.host.name, " for Boba Time"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "event-card-datetime"
+      }, "\uD83D\uDCC5 ", this.state.event.date), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "event-card-datetime"
+      }, "\u23F0 ", this.state.event.time), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "event-card-location"
+      }, "\uD83D\uDCCD ", this.state.event.address), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "event-card-location"
+      }, "\uD83D\uDDFA ", this.state.event.city), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "event-card-seats"
+      }, "There are ", this.state.event.max_cap - this.state.event.seat_taken, " seats left!")));
     }
   }, {
     key: "signUpButton",
@@ -646,9 +658,17 @@ function (_React$Component) {
     value: function hostBio() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "boba-times-event-host"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Hi, my name is ", this.state.event.host.name, "."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "This is how I look! (", this.state.event.host.host_image, ")."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "boba-times-event-host-title"
+      }, "Meet your host, ", this.state.event.host.name, "."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "event-card-location"
+      }, "(It'll be helpful to know what they look like when you're looking for a group of confused strangers at the cafe.)."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "boba-times-event-host-image"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: this.state.event.host.host_image
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, this.state.event.host.bio, ".")));
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "boba-times-event-bio"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "What's my story and what we might talk about?"), this.state.event.host.bio, ".")));
     }
   }, {
     key: "render",
@@ -1439,10 +1459,10 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 /***/ }),
 
-/***/ "./frontend/components/splash_page/splash_container.jsx":
-/*!**************************************************************!*\
-  !*** ./frontend/components/splash_page/splash_container.jsx ***!
-  \**************************************************************/
+/***/ "./frontend/components/splash_page/splash.jsx":
+/*!****************************************************!*\
+  !*** ./frontend/components/splash_page/splash.jsx ***!
+  \****************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1553,7 +1573,7 @@ function (_React$Component) {
         to: "/create"
       }, "Host Event"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: this.handleSubmit
-      }, "Logout"));
+      }, "Logout"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null));
     }
   }]);
 

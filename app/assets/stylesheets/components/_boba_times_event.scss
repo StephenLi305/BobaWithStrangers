@@ -1,5 +1,6 @@
 .boba-times-event-page-background{
   background-color: $background;
+  height: 1000px
 }
 .boba-times-event-container{
   background-color: $background;
@@ -8,8 +9,7 @@
   display: flex;
   justify-content: center;
   margin: auto;
-  // flex-direction: column;
-  // text-align: center;
+
 }
 
 
@@ -26,11 +26,124 @@
 }
 
 .boba-times-event-data{
-  border: 1px red solid;
+  width: 200px;
+  height: 250px;
+  margin-top: 182px;
+  background-color: #FEFEFE;
+  border: 1px solid #DDD;
+  padding: 10px;
+
 }
+
+
+
+.event-card-host{
+  font-family: $header-font;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 23px;
+  color: $login-header;
+  text-align:center;
+  border-bottom: 1px solid $light-grey;
+  padding-bottom: 10px;
+}
+
+.event-card-datetime{
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  font-family: $header-font;
+  margin:10px;
+}
+.event-card-location{
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  font-family: $header-font;
+  color: $light-grey;
+  margin:10px;
+  line-height: 18px;
+}
+
+.event-card-seats{
+  font-family: $header-font;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 33px;
+  color: $light-grey;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+
 .boba-times-event-signup{
-  border: 1px green solid;
+  padding: 15px 10px;
+  width: 200px;
+  background-color: #eb652f;
+  color: white;
+  font-size: 14px;
+  border-radius: 12px;
+  font-family: sans-serif;
+  text-align: center;
 }
+
+.boba-times-event-signup:hover{
+  background-color: #ed501e;
+  cursor: pointer;
+}
+
+
 .boba-times-event-host{
-  border: 1px blue solid;
+  // border: 1px blue solid;
+  margin-right: -150px;
+  margin-left:-10px;
+  // height:auto;
+  margin-top: -211px;
+}
+
+.boba-times-event-host-title{
+  font-family: $header-font;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 23px;
+  color: $login-header;
+  // text-align:center;
+  // border-bottom: 1px solid $light-grey;
+  padding: 10px;
+}
+
+
+.boba-times-event-host-image{
+  width: 250px;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+  text-align: center;
+  margin:auto;
+  border: 1px solid $light-grey;
+  padding: 10px 10px 60px 10px;
+  background: white;
+
+}
+
+
+.boba-times-event-bio{
+  border: solid 1px $light-grey;
+  color: #333333;
+  padding: 10px;
+  padding-top: 20px;
+  background: $light-white;
+  font-family:$header-font;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 26px;
+  font-style: normal;
+
+  h1{
+    font-size: 16px;
+    font-weight: 600;
+  }
 }

@@ -85,6 +85,14 @@ whatIsBobaTime(){
           <Link to="/create">Host Event</Link>
         <br />
         <button onClick={this.handleSubmit}>Logout</button>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
       </div>
     )
   }

@@ -12,7 +12,7 @@ import { AuthRoute } from '../util/route_util'
 
 import SignUpFormContainer from './session_form/sign_UP_container'
 import SignInFormContainer from './session_form/sign_IN_container'
-import SplashContainer from './splash_page/splash_container'
+import SplashContainer from './splash_page/splash'
 import HeaderContainer from './header/header'
 import BobaTimesContainer from './boba_times/boba_times'
 import BobaTimesEventContainer from './boba_times_event/boba_times_event'

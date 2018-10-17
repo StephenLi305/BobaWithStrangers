@@ -112,7 +112,7 @@
   }
 
   .city-list li:visited{
-    color: $header-footer;
+    color: $light-white;
   }
 }
 
@@ -133,20 +133,20 @@
   display: flex;
   padding: 30px;
 
-  .city-event-card{
-    border: $really-light-orange 2px solid;
-    width: 200px;
-    height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: $login-header;
-    font-family: $header-font;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 28px;
-    font-style: normal;
-  }
+.city-event-card{
+  border: $really-light-orange 2px solid;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $login-header;
+  font-family: $header-font;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+  font-style: normal;
+}
 
 
 }
@@ -156,7 +156,6 @@
   flex-wrap: wrap;
 
   ul{
-    border: red 1px solid;
     width: 200px;
     height: 200px;
     margin-left: 25px;
@@ -253,8 +252,4 @@
   background-color: $header-footer;
   color: $light-white;
   cursor: pointer;
-}
-
-.card-button.visited{
-  color: $header-footer;
 }

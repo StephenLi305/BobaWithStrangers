@@ -10,14 +10,14 @@ const SEED_EVENT_DATA =
     id: 3,
     date: "Oct 13",
     time: "11:00AM",
-    address: "a/A office: 825 Battery Street, New York",
+    address: "a/A office: 825 Battery Street",
+    city: "New York City",
     max_cap: 6,
     seat_taken: 1,
     host:{
-      name: "Danny da host",
+      name: "DWebz da host",
       bio: "We talking about mayo and Pokemon",
-      // host_image: "https://i.imgur.com/nYxqinx.jpg",
-      host_image: "image here",
+      host_image: "https://i.imgur.com/nYxqinx.jpg",
     }
   };
 
@@ -40,11 +40,12 @@ eventData(){
   return(
     <div className="boba-times-event-data">
       <ul>
-        <li>Join {this.state.event.host.name} for Boba Time</li>
-        <li>{this.state.event.date}</li>
-        <li>{this.state.event.time}</li>
-        <li>This is the address: {this.state.event.address}</li>
-        <li>There are {this.state.event.max_cap - this.state.event.seat_taken} seats left.</li>
+        <li className="event-card-host">Join {this.state.event.host.name} for Boba Time</li>
+        <li className="event-card-datetime">📅 {this.state.event.date}</li>
+        <li className="event-card-datetime">⏰ {this.state.event.time}</li>
+        <li className="event-card-location">📍 {this.state.event.address}</li>
+        <li className="event-card-location">🗺 {this.state.event.city}</li>
+        <li className="event-card-seats">There are {this.state.event.max_cap - this.state.event.seat_taken} seats left!</li>
       </ul>
     </div>
   );
@@ -68,12 +69,13 @@ hostBio(){
   return(
     <div className="boba-times-event-host">
       <ul>
-        <li>Hi, my name is {this.state.event.host.name}.</li>
+        <li className="boba-times-event-host-title">Meet your host, {this.state.event.host.name}.</li>
+        <li className="event-card-location">(It'll be helpful to know what they look like when you're looking for a group of confused strangers at the cafe.).</li>
+        <li className="boba-times-event-host-image"><img src={this.state.event.host.host_image} /></li>
         <br/>
-        <li>This is how I look! ({this.state.event.host.host_image}).</li>
-        <li><img src={this.state.event.host.host_image} /></li>
-        <br/>
-        <li>{this.state.event.host.bio}.</li>
+        <li className="boba-times-event-bio">
+        <h1>What's my story and what we might talk about?</h1>
+        {this.state.event.host.bio}.</li>
       </ul>
     </div>
   );
