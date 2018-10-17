@@ -109,7 +109,7 @@ class CreateEvent extends React.Component{
               <h1 className="create-event-field-text">
               Max Number of Seats:</h1>
               <select onChange={this.update('max_cap')} className="create-city-selector">
-                <option value="3">3343</option>
+                <option value="3">3</option>
                 <option value="4">4</option>
                 <option value="5">5</option>
                 <option value="6">6</option>

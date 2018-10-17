@@ -8,7 +8,6 @@ class Api::EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
-    debugger
     @event.host_id = current_user.id
     if @event.save
       render "api/events/show"

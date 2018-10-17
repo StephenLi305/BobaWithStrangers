@@ -831,7 +831,7 @@ function (_React$Component) {
         className: "create-city-selector"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
         value: "3"
-      }, "3343"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+      }, "3"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
         value: "4"
       }, "4"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
         value: "5"
