@@ -1,5 +1,4 @@
 export const fetchSignUp = (user) => {
-  debugger
   return $.ajax({
     url: "/api/users",
     method: "POST",

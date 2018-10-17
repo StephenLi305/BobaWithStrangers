@@ -11,13 +11,13 @@ const SEED_EVENT_DATA =
     date: "Oct 13",
     time: "11:00AM",
     address: "a/A office: 825 Battery Street, New York",
-    host_id: 4,
     max_cap: 6,
     seat_taken: 1,
     host:{
       name: "Danny da host",
       bio: "We talking about mayo and Pokemon",
-      image: "this is an image of me"
+      // host_image: "https://i.imgur.com/nYxqinx.jpg",
+      host_image: "image here",
     }
   };
 
@@ -38,8 +38,9 @@ class BobaTimesEvent extends React.Component{
 
 eventData(){
   return(
-    <div>
+    <div className="boba-times-event-data">
       <ul>
+        <li>Join {this.state.event.host.name} for Boba Time</li>
         <li>{this.state.event.date}</li>
         <li>{this.state.event.time}</li>
         <li>This is the address: {this.state.event.address}</li>
@@ -52,7 +53,7 @@ eventData(){
 
 signUpButton(){
   return(
-    <div>
+    <div className="boba-times-event-signup">
       <button onClick={this.handleSubmit}>SIGN ME UP</button>
     </div>
   );
@@ -65,11 +66,12 @@ handleSubmit(){
 
 hostBio(){
   return(
-    <div>
+    <div className="boba-times-event-host">
       <ul>
         <li>Hi, my name is {this.state.event.host.name}.</li>
         <br/>
-        <li>This is how I look! ({this.state.event.host.image}).</li>
+        <li>This is how I look! ({this.state.event.host.host_image}).</li>
+        <li><img src={this.state.event.host.host_image} /></li>
         <br/>
         <li>{this.state.event.host.bio}.</li>
       </ul>
@@ -82,17 +84,16 @@ hostBio(){
 render(){
   return(
     //Event information
-    <div>
-      <div>
-        {this.eventData()}
-      </div>
-      <br/>
-      <div>
-        {this.signUpButton()}
-      </div>
-      <br/>
-      <div>
-        {this.hostBio()}
+    <div className="boba-times-event-page-background">
+      <div className="boba-times-event-container">
+        <div className="boba-times-event-left">
+          {this.eventData()}
+          <br/>
+          {this.signUpButton()}
+        </div>
+        <div className="boba-times-event-right">
+          {this.hostBio()}
+        </div>
       </div>
     </div>
   );

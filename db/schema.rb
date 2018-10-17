@@ -10,10 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_10_164841) do
+ActiveRecord::Schema.define(version: 2018_10_16_231554) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "events", force: :cascade do |t|
+    t.date "date", null: false
+    t.time "time", null: false
+    t.integer "host_id", null: false
+    t.integer "max_cap", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "boba_shop"
+    t.string "address"
+    t.string "city"
+  end
+
+  create_table "guest_join_tables", force: :cascade do |t|
+    t.integer "guest_id", null: false
+    t.integer "event_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name", null: false
@@ -22,6 +41,8 @@ ActiveRecord::Schema.define(version: 2018_10_10_164841) do
     t.string "session_token", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "bio"
+    t.string "image"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["session_token"], name: "index_users_on_session_token", unique: true
   end

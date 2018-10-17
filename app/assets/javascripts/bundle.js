@@ -142,6 +142,38 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /***/ }),
 
+/***/ "./frontend/actions/event_actions.js":
+/*!*******************************************!*\
+  !*** ./frontend/actions/event_actions.js ***!
+  \*******************************************/
+/*! exports provided: RECEIVE_EVENT, receiveEvent, createEvent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_EVENT", function() { return RECEIVE_EVENT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveEvent", function() { return receiveEvent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createEvent", function() { return createEvent; });
+/* harmony import */ var _util_event_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/event_api_util */ "./frontend/util/event_api_util.js");
+
+var RECEIVE_EVENT = "RECEIVE_EVENT";
+var receiveEvent = function receiveEvent(event) {
+  return {
+    type: RECEIVE_EVENT,
+    event: event
+  };
+};
+var createEvent = function createEvent(formEvent) {
+  return function (dispatch) {
+    return _util_event_api_util__WEBPACK_IMPORTED_MODULE_0__["createEvent"](formEvent).then(function (event) {
+      return dispatch(receiveEvent(event));
+    });
+  };
+}; // err => (
+//   dispatch(receiveErrors(err.responseJSON)))
+
+/***/ }),
+
 /***/ "./frontend/actions/session_actions.js":
 /*!*********************************************!*\
   !*** ./frontend/actions/session_actions.js ***!
@@ -389,7 +421,7 @@ function (_React$Component) {
           date: "Oct 13",
           time: "11:00AM",
           address: "a/A office: 825 Battery Street, San Francisco",
-          host_id: "https://i.imgur.com/nYxqinx.jpg",
+          host_image: "https://i.imgur.com/nYxqinx.jpg",
           max_cap: 6,
           seat_taken: 1
         }, {
@@ -397,7 +429,7 @@ function (_React$Component) {
           date: "Oct 13",
           time: "11:00AM",
           address: "a/A office: 825 Battery Street, San Francisco",
-          host_id: "https://i.imgur.com/SXA3Ihy.jpg",
+          host_image: "https://i.imgur.com/SXA3Ihy.jpg",
           max_cap: 6,
           seat_taken: 1
         }, {
@@ -405,7 +437,7 @@ function (_React$Component) {
           date: "Oct 13",
           time: "11:00AM",
           address: "a/A office: 825 Battery Street, San Francisco",
-          host_id: "https://i.imgur.com/7xEGbPX.jpg",
+          host_image: "https://i.imgur.com/7xEGbPX.jpg",
           max_cap: 6,
           seat_taken: 1
         }]
@@ -416,7 +448,7 @@ function (_React$Component) {
           date: "Oct 13",
           time: "11:00AM",
           address: "a/A office: 825 Battery Street, Los Angeles",
-          host_id: "https://i.imgur.com/sbRXPj8.jpg",
+          host_image: "https://i.imgur.com/sbRXPj8.jpg",
           max_cap: 6,
           seat_taken: 1
         }, {
@@ -424,7 +456,7 @@ function (_React$Component) {
           date: "Oct 13",
           time: "11:00AM",
           address: "a/A office: 825 Battery Street, Los Angeles",
-          host_id: "https://i.imgur.com/y5jTA0P.jpg",
+          host_image: "https://i.imgur.com/y5jTA0P.jpg",
           max_cap: 6,
           seat_taken: 9
         }, {
@@ -432,7 +464,7 @@ function (_React$Component) {
           date: "Oct 13",
           time: "11:00AM",
           address: "a/A office: 825 Battery Street, Los Angeles",
-          host_id: "https://i.imgur.com/ywAiTk1.jpg",
+          host_image: "https://i.imgur.com/ywAiTk1.jpg",
           max_cap: 6,
           seat_taken: 1
         }]
@@ -443,7 +475,7 @@ function (_React$Component) {
           date: "Oct 13",
           time: "11:00AM",
           address: "a/A office: 825 Battery Street, New York",
-          host_id: "https://i.imgur.com/AxPggXR.jpg",
+          host_image: "https://i.imgur.com/AxPggXR.jpg",
           max_cap: 6,
           seat_taken: 1
         }, {
@@ -451,7 +483,7 @@ function (_React$Component) {
           date: "Oct 13",
           time: "11:00AM",
           address: "a/A office: 825 Battery Street, New York",
-          host_id: "https://i.imgur.com/CWbTORL.jpg",
+          host_image: "https://i.imgur.com/CWbTORL.jpg",
           max_cap: 6,
           seat_taken: 1
         }]
@@ -486,7 +518,7 @@ function (_React$Component) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, detail.date), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, detail.time)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           className: "card-host-image"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          src: detail.host_id
+          src: detail.host_image
         }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           className: "card-address"
         }, detail.address), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
@@ -554,13 +586,13 @@ var SEED_EVENT_DATA = {
   date: "Oct 13",
   time: "11:00AM",
   address: "a/A office: 825 Battery Street, New York",
-  host_id: 4,
   max_cap: 6,
   seat_taken: 1,
   host: {
     name: "Danny da host",
     bio: "We talking about mayo and Pokemon",
-    image: "this is an image of me"
+    // host_image: "https://i.imgur.com/nYxqinx.jpg",
+    host_image: "image here"
   }
 };
 var SEED_SESSION_DATA = {
@@ -590,12 +622,16 @@ function (_React$Component) {
   _createClass(BobaTimesEvent, [{
     key: "eventData",
     value: function eventData() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, this.state.event.date), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, this.state.event.time), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "This is the address: ", this.state.event.address), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "There are ", this.state.event.max_cap - this.state.event.seat_taken, " seats left.")));
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "boba-times-event-data"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Join ", this.state.event.host.name, " for Boba Time"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, this.state.event.date), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, this.state.event.time), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "This is the address: ", this.state.event.address), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "There are ", this.state.event.max_cap - this.state.event.seat_taken, " seats left.")));
     }
   }, {
     key: "signUpButton",
     value: function signUpButton() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "boba-times-event-signup"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: this.handleSubmit
       }, "SIGN ME UP"));
     }
@@ -608,13 +644,25 @@ function (_React$Component) {
   }, {
     key: "hostBio",
     value: function hostBio() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Hi, my name is ", this.state.event.host.name, "."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "This is how I look! (", this.state.event.host.image, ")."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, this.state.event.host.bio, ".")));
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "boba-times-event-host"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Hi, my name is ", this.state.event.host.name, "."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "This is how I look! (", this.state.event.host.host_image, ")."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: this.state.event.host.host_image
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, this.state.event.host.bio, ".")));
     }
   }, {
     key: "render",
     value: function render() {
       return (//Event information
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.eventData()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.signUpButton()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.hostBio()))
+        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "boba-times-event-page-background"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "boba-times-event-container"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "boba-times-event-left"
+        }, this.eventData(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.signUpButton()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "boba-times-event-right"
+        }, this.hostBio())))
       );
     }
   }]);
@@ -637,7 +685,9 @@ function (_React$Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+/* harmony import */ var _actions_event_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/event_actions */ "./frontend/actions/event_actions.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -661,6 +711,16 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 
 
 
+
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    createEvent: function createEvent(event) {
+      return dispatch(Object(_actions_event_actions__WEBPACK_IMPORTED_MODULE_3__["createEvent"])(event));
+    }
+  };
+};
+
 var CreateEvent =
 /*#__PURE__*/
 function (_React$Component) {
@@ -678,8 +738,8 @@ function (_React$Component) {
       time: '',
       boba_shop: "",
       address: '',
-      city: '',
-      max_cap: '',
+      city: 'San Francisco',
+      max_cap: '3',
       bio: '',
       image: ''
     };
@@ -691,7 +751,8 @@ function (_React$Component) {
     key: "handleSubmit",
     value: function handleSubmit(e) {
       e.preventDefault(); // const user = Object.assign({}, this.state);
-      // this.props.processForm(user);
+
+      this.props.createEvent(this.state);
     }
   }, {
     key: "update",
@@ -755,25 +816,27 @@ function (_React$Component) {
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "create-event-field-text"
       }, "City:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+        onChange: this.update('city'),
         className: "create-city-selector"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "{this.state.city}"
+        value: "San Francisco"
       }, "San Francisco"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "{this.state.city}"
+        value: "Los Angeles"
       }, "Los Angeles"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "{this.state.city}"
+        value: "New York"
       }, "New York")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "create-event-field-text"
       }, "Max Number of Seats:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+        onChange: this.update('max_cap'),
         className: "create-city-selector"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "{this.state.max_cap}"
-      }, "3"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "{this.state.max_cap}"
+        value: "3"
+      }, "3343"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "4"
       }, "4"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "{this.state.max_cap}"
+        value: "5"
       }, "5"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "{this.state.max_cap}"
+        value: "6"
       }, "6")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "create-event-field-text"
       }, "Write about YOU!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
@@ -804,7 +867,7 @@ function (_React$Component) {
   return CreateEvent;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (CreateEvent);
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(null, mapDispatchToProps)(CreateEvent));
 
 /***/ }),
 
@@ -1362,7 +1425,6 @@ var mapStateToProps = function mapStateToProps(_ref) {
 };
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-  debugger;
   return {
     processForm: function processForm(user) {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_3__["signup"])(user));
@@ -1371,7 +1433,6 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_3__["clearErrors"])());
     }
   };
-  debugger;
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_session_form__WEBPACK_IMPORTED_MODULE_4__["default"]));
@@ -1463,7 +1524,7 @@ function (_React$Component) {
         className: "splash-title"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "splash-title-text"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Everyone is interesing"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "But you don\u2019t discover that when you\u2019re staring at a screen."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Everyone is interesting"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "But you don\u2019t discover that when you\u2019re staring at a screen."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/boba_times",
         className: "splash-title-button"
       }, "BOBA TIMEE!!!")));
@@ -1519,12 +1580,50 @@ function (_React$Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 /* harmony import */ var _users_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./users_reducer */ "./frontend/reducers/entities/users_reducer.js");
+/* harmony import */ var _events_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./events_reducer */ "./frontend/reducers/entities/events_reducer.js");
+
 
 
 var entitiesReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
-  users: _users_reducer__WEBPACK_IMPORTED_MODULE_1__["default"]
+  users: _users_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
+  events: _events_reducer__WEBPACK_IMPORTED_MODULE_2__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (entitiesReducer);
+
+/***/ }),
+
+/***/ "./frontend/reducers/entities/events_reducer.js":
+/*!******************************************************!*\
+  !*** ./frontend/reducers/entities/events_reducer.js ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var lodash_merge__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash/merge */ "./node_modules/lodash/merge.js");
+/* harmony import */ var lodash_merge__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash_merge__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _actions_event_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/event_actions */ "./frontend/actions/event_actions.js");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+var eventsReducer = function eventsReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+  Object.freeze(state);
+
+  switch (action.type) {
+    case _actions_event_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_EVENT"]:
+      return lodash_merge__WEBPACK_IMPORTED_MODULE_0___default()({}, state, _defineProperty({}, action.event.id, action.event));
+
+    default:
+      return state;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (eventsReducer);
 
 /***/ }),
 
@@ -1708,6 +1807,28 @@ var configureStore = function configureStore() {
 
 /***/ }),
 
+/***/ "./frontend/util/event_api_util.js":
+/*!*****************************************!*\
+  !*** ./frontend/util/event_api_util.js ***!
+  \*****************************************/
+/*! exports provided: createEvent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createEvent", function() { return createEvent; });
+var createEvent = function createEvent(event) {
+  return $.ajax({
+    url: "/api/events",
+    method: "POST",
+    data: {
+      event: event
+    }
+  });
+};
+
+/***/ }),
+
 /***/ "./frontend/util/route_util.jsx":
 /*!**************************************!*\
   !*** ./frontend/util/route_util.jsx ***!
@@ -1765,7 +1886,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchSignIn", function() { return fetchSignIn; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchLogOut", function() { return fetchLogOut; });
 var fetchSignUp = function fetchSignUp(user) {
-  debugger;
   return $.ajax({
     url: "/api/users",
     method: "POST",

@@ -15,12 +15,10 @@ const mapStateToProps = ({ errors }) => {
 };
 
 const mapDispatchToProps = dispatch => {
-  debugger
   return {
     processForm: (user) => dispatch(signup(user)),
     clearErrors: () => dispatch(clearErrors())
   };
-  debugger
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(SessionForm);

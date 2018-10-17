@@ -1,5 +1,14 @@
 import React from 'react';
+import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom';
+import { createEvent} from '../../actions/event_actions'
+
+
+const mapDispatchToProps = dispatch => ({
+  createEvent: (event) => dispatch(createEvent(event))
+  })
+
+
 
 
 class CreateEvent extends React.Component{
@@ -11,8 +20,8 @@ class CreateEvent extends React.Component{
       time:'',
       boba_shop:"",
       address:'',
-      city:'',
-      max_cap:'',
+      city:'San Francisco',
+      max_cap:'3',
       bio:'',
       image:'',
     };
@@ -23,7 +32,7 @@ class CreateEvent extends React.Component{
   handleSubmit(e){
     e.preventDefault();
     // const user = Object.assign({}, this.state);
-    // this.props.processForm(user);
+    this.props.createEvent(this.state);
   }
 
   update(field){
@@ -91,19 +100,19 @@ class CreateEvent extends React.Component{
 
               <h1 className="create-event-field-text">
               City:</h1>
-              <select className="create-city-selector">
-                <option value="{this.state.city}">San Francisco</option>
-                <option value="{this.state.city}">Los Angeles</option>
-                <option value="{this.state.city}">New York</option>
+              <select onChange={this.update('city')} className="create-city-selector">
+                <option value="San Francisco" >San Francisco</option>
+                <option value="Los Angeles">Los Angeles</option>
+                <option value="New York">New York</option>
               </select><br/>
 
               <h1 className="create-event-field-text">
               Max Number of Seats:</h1>
-              <select className="create-city-selector">
-                <option value="{this.state.max_cap}">3</option>
-                <option value="{this.state.max_cap}">4</option>
-                <option value="{this.state.max_cap}">5</option>
-                <option value="{this.state.max_cap}">6</option>
+              <select onChange={this.update('max_cap')} className="create-city-selector">
+                <option value="3">3343</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
               </select><br/>
 
               <label>
@@ -143,4 +152,4 @@ class CreateEvent extends React.Component{
   }
 }
 
-export default CreateEvent;
+export default connect(null, mapDispatchToProps)(CreateEvent);

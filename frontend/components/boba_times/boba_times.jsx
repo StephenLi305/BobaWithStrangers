@@ -75,7 +75,7 @@ citiesList(){
         date: "Oct 13",
         time: "11:00AM",
         address: "a/A office: 825 Battery Street, San Francisco",
-        host_id: "https://i.imgur.com/nYxqinx.jpg",
+        host_image: "https://i.imgur.com/nYxqinx.jpg",
         max_cap: 6,
         seat_taken: 1
       },
@@ -83,7 +83,7 @@ citiesList(){
         date: "Oct 13",
         time: "11:00AM",
         address: "a/A office: 825 Battery Street, San Francisco",
-        host_id: "https://i.imgur.com/SXA3Ihy.jpg",
+        host_image: "https://i.imgur.com/SXA3Ihy.jpg",
         max_cap: 6,
         seat_taken: 1
       },
@@ -91,7 +91,7 @@ citiesList(){
         date: "Oct 13",
         time: "11:00AM",
         address: "a/A office: 825 Battery Street, San Francisco",
-        host_id: "https://i.imgur.com/7xEGbPX.jpg",
+        host_image: "https://i.imgur.com/7xEGbPX.jpg",
         max_cap: 6,
         seat_taken: 1
       },
@@ -103,7 +103,7 @@ citiesList(){
         date: "Oct 13",
         time: "11:00AM",
         address: "a/A office: 825 Battery Street, Los Angeles",
-        host_id: "https://i.imgur.com/sbRXPj8.jpg",
+        host_image: "https://i.imgur.com/sbRXPj8.jpg",
         max_cap: 6,
         seat_taken: 1
       },
@@ -112,7 +112,7 @@ citiesList(){
         date: "Oct 13",
         time: "11:00AM",
         address: "a/A office: 825 Battery Street, Los Angeles",
-        host_id: "https://i.imgur.com/y5jTA0P.jpg",
+        host_image: "https://i.imgur.com/y5jTA0P.jpg",
         max_cap: 6,
         seat_taken: 9
       },
@@ -120,7 +120,7 @@ citiesList(){
         date: "Oct 13",
         time: "11:00AM",
         address: "a/A office: 825 Battery Street, Los Angeles",
-        host_id: "https://i.imgur.com/ywAiTk1.jpg",
+        host_image: "https://i.imgur.com/ywAiTk1.jpg",
         max_cap: 6,
         seat_taken: 1
       }
@@ -131,7 +131,7 @@ citiesList(){
         date: "Oct 13",
         time: "11:00AM",
         address: "a/A office: 825 Battery Street, New York",
-        host_id: "https://i.imgur.com/AxPggXR.jpg",
+        host_image: "https://i.imgur.com/AxPggXR.jpg",
         max_cap: 6,
         seat_taken: 1
       },
@@ -139,7 +139,7 @@ citiesList(){
         date: "Oct 13",
         time: "11:00AM",
         address: "a/A office: 825 Battery Street, New York",
-        host_id: "https://i.imgur.com/CWbTORL.jpg",
+        host_image: "https://i.imgur.com/CWbTORL.jpg",
         max_cap: 6,
         seat_taken: 1
       }
@@ -181,7 +181,7 @@ events(city){
               <li>{detail.date}</li>
               <li>{detail.time}</li>
             </div>
-            <li className="card-host-image"><img src={detail.host_id} /></li>
+            <li className="card-host-image"><img src={detail.host_image} /></li>
           </div>
           <li className="card-address">{detail.address}</li>
           <li className="card-seats">{detail.max_cap - detail.seat_taken} seats left!</li>

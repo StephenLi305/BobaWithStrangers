@@ -1,0 +1,36 @@
+.boba-times-event-page-background{
+  background-color: $background;
+}
+.boba-times-event-container{
+  background-color: $background;
+  height:100%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  // flex-direction: column;
+  // text-align: center;
+}
+
+
+.boba-times-event-left{
+  width: 30%;
+  text-align: left;
+  margin-left: auto;
+}
+
+.boba-times-event-right{
+  margin:auto;
+  width: 50%;
+  text-align: left;
+}
+
+.boba-times-event-data{
+  border: 1px red solid;
+}
+.boba-times-event-signup{
+  border: 1px green solid;
+}
+.boba-times-event-host{
+  border: 1px blue solid;
+}

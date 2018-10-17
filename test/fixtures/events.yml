@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2018-10-16
+  time: 2018-10-16 11:42:23
+  host_id: 1
+  shop_id: 1
+  max_cap: 1
+
+two:
+  date: 2018-10-16
+  time: 2018-10-16 11:42:23
+  host_id: 1
+  shop_id: 1
+  max_cap: 1

@@ -7,7 +7,20 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
-  # add associations
+  has_many :guest_join_tables,
+  foreign_key: :event_id,
+  class_name: 'GuestJoinTable'
+
+  has_many :events_attending,
+  through: :guest_join_tables,
+  source: :event
+
+  has_many :events_hosting,
+  foreign_key: :host_id,
+  class_name: 'Event'
+
+
+
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
