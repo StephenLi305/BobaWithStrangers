@@ -987,7 +987,11 @@ function (_React$Component) {
           className: "right-nav"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
           className: "header-signed-in"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+          to: "/create"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "HOST EVENT")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+          to: "/profile"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "DASHBOARD")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
           to: "/boba_times"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "BOBA TIMES")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
           to: "/signup"
