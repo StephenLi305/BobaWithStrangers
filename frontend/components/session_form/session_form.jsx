@@ -11,6 +11,7 @@ class SessionForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderNameForm = this.renderNameForm.bind(this);
+    this.renderCityForm = this.renderCityForm.bind(this);
     this.demoLogin = this.demoLogin.bind(this);
   }
 
@@ -58,6 +59,19 @@ class SessionForm extends React.Component {
       )
     }
   }
+  renderCityForm(){
+    if (this.props.formType === "LET'S GET BOBA"){
+      return (
+        <div>
+          <select onChange={this.update('city')} className="session-city-selector">
+            <option value="San Francisco" >San Francisco</option>
+            <option value="Los Angeles">Los Angeles</option>
+            <option value="New York">New York</option>
+          </select><br/>
+        </div>
+      )
+    }
+  }
 
 
 
@@ -79,6 +93,8 @@ class SessionForm extends React.Component {
     )
   }
 }
+
+
 
   render(){
     return(
@@ -111,11 +127,12 @@ class SessionForm extends React.Component {
                 />
               </label><br />
 
-                <input className="session-submit"
-                type="submit"
-                value={this.props.formType}/>
+              {this.renderCityForm()}
 
-                {this.demoLogin()}
+              <input className="session-submit"
+              type="submit"
+              value={this.props.formType}/>
+              {this.demoLogin()}
 
             </div>
             <p className="alternate">{this.props.navLink}</p>

@@ -107,3 +107,16 @@ a:visited {
     justify-content: center;
     align-items: center;
 }
+
+
+.session-city-selector{
+  background-color: white;
+  width: 90%;
+  border: 1px solid grey;
+  height: 50px;
+  margin: 10px 0px;
+  font-size: 18px;
+  // border-radius: 6px;
+  font-family: $header-font;
+  // padding: 18px;
+}

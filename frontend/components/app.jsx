@@ -7,7 +7,7 @@ import {
   Link,
   HashRouter
  } from 'react-router-dom'
-import { AuthRoute } from '../util/route_util'
+import { AuthRoute, ProtectedRoute } from '../util/route_util'
 
 
 import SignUpFormContainer from './session_form/sign_UP_container'
@@ -24,13 +24,13 @@ const App = () => (
   <div className="app-container">
     <HeaderContainer />
     <Switch>
+      <Route exact path="/" component={SplashContainer} />
       <AuthRoute exact path="/signup" component={SignUpFormContainer} />
       <AuthRoute exact path="/signin" component={SignInFormContainer} />
-      <Route exact path="/boba_times" component={BobaTimesContainer} />
-      <Route exact path="/boba_times/:eventId" component={BobaTimesEventContainer} />
-      <Route exact path="/profile" component={ProfileContainer} />
-      <Route exact path="/create" component={CreateContainer} />
-      <Route exact path="/" component={SplashContainer} />
+      <ProtectedRoute exact path="/boba_times" component={BobaTimesContainer} />
+      <ProtectedRoute exact path="/boba_times/:eventId" component={BobaTimesEventContainer} />
+      <ProtectedRoute exact path="/profile" component={ProfileContainer} />
+      <ProtectedRoute exact path="/create" component={CreateContainer} />
       <Redirect to="/" />
     </Switch>
   </div>

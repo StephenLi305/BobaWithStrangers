@@ -2,6 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
 
+const mapStateToProps = state => ({
+  currentUser: state.entities.users[state.session.id],
+
+  })
 
   const SEED_EVENT_DATA = [
     {
@@ -31,13 +35,11 @@ import { connect } from 'react-redux';
         bio: "We talking about mayo and Pokemon",
         image: "this is an image of me"
       }
-
     }
-
   ]
 
 
-  const SEED_SESSION_DATA = { id: 7, name: "Danny da logged in person" };
+  // const SEED_SESSION_DATA = { id: 7, name: "Danny da logged in person" };
 
 
   class Profile extends React.Component {
@@ -49,7 +51,7 @@ import { connect } from 'react-redux';
   welcomeHome(){
     return(
       <div>
-        <h1>Welcome Home, {this.state.session.name}</h1>
+        <h1>Welcome Home, {this.props.currentUser.name}</h1>
         <br/>
         <p>What are you grateful for?</p>
       </div>
@@ -117,4 +119,4 @@ eventsAttending(){
 }
 
 
-export default Profile;
+export default connect(mapStateToProps, null)(Profile);

@@ -34,7 +34,7 @@ handleSubmit(){
 }
 
 handleLogout(){
-  this.props.logout().then(() => (<Link to="/signin"></Link>))
+  this.props.logout().then(() => (<Link to="/"></Link>))
 }
 // ^ THIS AINT LINKING TO SINGIN PAGE
 
@@ -100,7 +100,7 @@ rightNav() {
       <header className="main-nav">
 
         <nav className="left-nav" >
-          <Link to="/signup"
+          <Link to="/"
           className="boba-times-logo">
           <img src="https://i.imgur.com/YXpFZVK.png" />
           </Link>

@@ -304,7 +304,11 @@ __webpack_require__.r(__webpack_exports__);
 var App = function App() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "app-container"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header_header__WEBPACK_IMPORTED_MODULE_7__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_3__["AuthRoute"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header_header__WEBPACK_IMPORTED_MODULE_7__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+    exact: true,
+    path: "/",
+    component: _splash_page_splash__WEBPACK_IMPORTED_MODULE_6__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_3__["AuthRoute"], {
     exact: true,
     path: "/signup",
     component: _session_form_sign_UP_container__WEBPACK_IMPORTED_MODULE_4__["default"]
@@ -312,26 +316,22 @@ var App = function App() {
     exact: true,
     path: "/signin",
     component: _session_form_sign_IN_container__WEBPACK_IMPORTED_MODULE_5__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_3__["ProtectedRoute"], {
     exact: true,
     path: "/boba_times",
     component: _boba_times_boba_times__WEBPACK_IMPORTED_MODULE_8__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_3__["ProtectedRoute"], {
     exact: true,
     path: "/boba_times/:eventId",
     component: _boba_times_event_boba_times_event__WEBPACK_IMPORTED_MODULE_9__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_3__["ProtectedRoute"], {
     exact: true,
     path: "/profile",
     component: _profile_profile__WEBPACK_IMPORTED_MODULE_10__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_3__["ProtectedRoute"], {
     exact: true,
     path: "/create",
     component: _create_create_event__WEBPACK_IMPORTED_MODULE_11__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
-    exact: true,
-    path: "/",
-    component: _splash_page_splash__WEBPACK_IMPORTED_MODULE_6__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Redirect"], {
     to: "/"
   })));
@@ -579,6 +579,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
 /* harmony import */ var _actions_event_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/event_actions */ "./frontend/actions/event_actions.js");
+/* harmony import */ var react_time_format__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-time-format */ "./node_modules/react-time-format/lib/index.js");
+/* harmony import */ var react_time_format__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_time_format__WEBPACK_IMPORTED_MODULE_4__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -596,6 +598,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
 
 
 
@@ -670,9 +673,15 @@ function (_React$Component) {
         className: "event-card-host"
       }, "Join ", this.props.currentUser.name, " for Boba Time"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "event-card-datetime"
-      }, "\uD83D\uDCC5 ", this.props.thisEvent.date), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      }, "\uD83D\uDCC5 ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_time_format__WEBPACK_IMPORTED_MODULE_4___default.a, {
+        value: this.props.thisEvent.date,
+        format: "MM/DD/YYYY"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "event-card-datetime"
-      }, "\u23F0 ", this.props.thisEvent.time), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      }, "\u23F0 ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_time_format__WEBPACK_IMPORTED_MODULE_4___default.a, {
+        value: this.props.thisEvent.time,
+        format: "HH:MM"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "event-card-location"
       }, "\uD83D\uDCCD ", this.props.thisEvent.address), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "event-card-location"
@@ -705,7 +714,7 @@ function (_React$Component) {
         className: "boba-times-event-host-title"
       }, "Meet your host, ", this.props.currentUser.name, "."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "event-card-location"
-      }, "(It'll be helpful to know what they look like when you're looking for a group of confused strangers at the cafe.)."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      }, "(It'll be helpful to know what they look like when you're looking for a group of confused strangers at the boba shop.)."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "boba-times-event-host-image"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: this.props.currentUser.image
@@ -1059,7 +1068,7 @@ function (_React$Component) {
     value: function handleLogout() {
       this.props.logout().then(function () {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-          to: "/signin"
+          to: "/"
         });
       });
     } // ^ THIS AINT LINKING TO SINGIN PAGE
@@ -1116,7 +1125,7 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
         className: "left-nav"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/signup",
+        to: "/",
         className: "boba-times-logo"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: "https://i.imgur.com/YXpFZVK.png"
@@ -1165,6 +1174,13 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    currentUser: state.entities.users[state.session.id]
+  };
+};
+
 var SEED_EVENT_DATA = [{
   id: 3,
   date: "Oct 13",
@@ -1191,11 +1207,7 @@ var SEED_EVENT_DATA = [{
     bio: "We talking about mayo and Pokemon",
     image: "this is an image of me"
   }
-}];
-var SEED_SESSION_DATA = {
-  id: 7,
-  name: "Danny da logged in person"
-};
+}]; // const SEED_SESSION_DATA = { id: 7, name: "Danny da logged in person" };
 
 var Profile =
 /*#__PURE__*/
@@ -1218,7 +1230,7 @@ function (_React$Component) {
   _createClass(Profile, [{
     key: "welcomeHome",
     value: function welcomeHome() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Welcome Home, ", this.state.session.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "What are you grateful for?"));
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Welcome Home, ", this.props.currentUser.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "What are you grateful for?"));
     }
   }, {
     key: "bobaTimesButton",
@@ -1272,7 +1284,7 @@ function (_React$Component) {
   return Profile;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (Profile);
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, null)(Profile));
 
 /***/ }),
 
@@ -1359,6 +1371,7 @@ function (_React$Component) {
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     _this.renderNameForm = _this.renderNameForm.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _this.renderCityForm = _this.renderCityForm.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     _this.demoLogin = _this.demoLogin.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     return _this;
   }
@@ -1406,6 +1419,22 @@ function (_React$Component) {
           className: "session-form",
           required: true
         }));
+      }
+    }
+  }, {
+    key: "renderCityForm",
+    value: function renderCityForm() {
+      if (this.props.formType === "LET'S GET BOBA") {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+          onChange: this.update('city'),
+          className: "session-city-selector"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+          value: "San Francisco"
+        }, "San Francisco"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+          value: "Los Angeles"
+        }, "Los Angeles"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+          value: "New York"
+        }, "New York")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null));
       }
     }
   }, {
@@ -1457,7 +1486,7 @@ function (_React$Component) {
         onChange: this.update('password'),
         className: "session-form",
         required: true
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.renderCityForm(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "session-submit",
         type: "submit",
         value: this.props.formType
@@ -1968,12 +1997,13 @@ var fetchEvent = function fetchEvent(id) {
 /*!**************************************!*\
   !*** ./frontend/util/route_util.jsx ***!
   \**************************************/
-/*! exports provided: AuthRoute */
+/*! exports provided: AuthRoute, ProtectedRoute */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuthRoute", function() { return AuthRoute; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProtectedRoute", function() { return ProtectedRoute; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
@@ -1998,6 +2028,22 @@ var Auth = function Auth(_ref) {
   });
 };
 
+var Protected = function Protected(_ref2) {
+  var Component = _ref2.component,
+      path = _ref2.path,
+      loggedIn = _ref2.loggedIn,
+      exact = _ref2.exact;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+    path: path,
+    exact: exact,
+    render: function render(props) {
+      return loggedIn ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Component, props) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Redirect"], {
+        to: "signup"
+      });
+    }
+  });
+};
+
 var mapStateToProps = function mapStateToProps(state) {
   return {
     loggedIn: Boolean(state.session.id)
@@ -2005,6 +2051,7 @@ var mapStateToProps = function mapStateToProps(state) {
 };
 
 var AuthRoute = Object(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps)(Auth));
+var ProtectedRoute = Object(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps)(Protected));
 
 /***/ }),
 
@@ -29684,6 +29731,231 @@ var withRouter = function withRouter(Component) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (withRouter);
+
+/***/ }),
+
+/***/ "./node_modules/react-time-format/lib/index.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/react-time-format/lib/index.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /*
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * react-timer
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                *
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * handle show time format
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * format just like moment format function
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                *
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * todo 1. add offset attribte to custom show
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
+
+
+var FORMAT_REG = /(YYYY|YYY|YY|Y|MM|M|DD|D|HH|H|hh|h|mm|m|ss|s|.)/g;
+
+var Time = function (_React$Component) {
+	_inherits(Time, _React$Component);
+
+	function Time(props) {
+		_classCallCheck(this, Time);
+
+		var _this = _possibleConstructorReturn(this, (Time.__proto__ || Object.getPrototypeOf(Time)).call(this, props));
+
+		_this.displayName = 'Time';
+		return _this;
+	}
+
+	_createClass(Time, [{
+		key: 'formatTime',
+		value: function formatTime() {
+			var _props = this.props;
+			var _props$value = _props.value;
+			var value = _props$value === undefined ? '' : _props$value;
+			var format = _props.format;
+
+
+			return Time.format(value, format);
+		}
+	}, {
+		key: 'render',
+		value: function render() {
+			var _props2 = this.props;
+			var value = _props2.value;
+			var format = _props2.format;
+
+			var props = _objectWithoutProperties(_props2, ['value', 'format']);
+
+			return _react2.default.createElement(
+				'span',
+				props,
+				this.formatTime()
+			);
+		}
+	}]);
+
+	return Time;
+}(_react2.default.Component);
+
+//time format
+
+
+Time.format = function (value) {
+	var format = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'YYYY-MM-DD hh:mm:ss';
+
+	var ReplaceFunction = {};
+
+	if (!value) {
+		return '';
+	}
+	if ((typeof value === 'undefined' ? 'undefined' : _typeof(value)) !== 'object') {
+		value = new Date(value);
+	}
+
+	var matchResult = format.match(FORMAT_REG);
+
+	if (matchResult) {
+		return matchResult.map(function (item, index) {
+			if (!ReplaceFunction[item]) {
+				ReplaceFunction[item] = createReplaceFunction(item);
+			}
+
+			return ReplaceFunction[item]();
+		}).join('');
+	}
+
+	return format;
+
+	//create replace function
+	function createReplaceFunction(format) {
+		return function () {
+			switch (format) {
+				case "YYYY":
+					return getYear(4);
+					;
+				case "YYY":
+					return getYear(3);
+					;
+				case "YY":
+					return getYear(2);
+					;
+				case "Y":
+					return getYear(1);
+					;
+				case "MM":
+					return getMonth(2);
+					;
+				case "M":
+					return getMonth(1);
+					;
+				case "DD":
+					return getDay(2);
+					;
+				case "D":
+					return getDay(1);
+					;
+				case "hh":
+					return getHour(2);
+					;
+				case "h":
+					return getHour(1);
+					;
+				case "HH":
+					return getHour(2);
+					;
+				case "H":
+					return getHour(1);
+					;
+				case "mm":
+					return getMinute(2);
+					;
+				case "m":
+					return getMinute(1);
+					;
+				case "ss":
+					return getSecond(2);
+					;
+				case "s":
+					return getSecond(1);
+					;
+				default:
+					return format;
+					;
+			}
+		};
+
+		function getYear(num) {
+			var reg = new RegExp('^[0-9]{' + (4 - num) + '}');
+
+			return (value.getFullYear() + "").replace(reg, '');
+		}
+
+		function getMonth(num) {
+			var month = value.getMonth() + 1;
+
+			return getFormattedValue(month, num);
+		}
+
+		function getDay(num) {
+			var day = value.getDate();
+
+			return getFormattedValue(day, num);
+		}
+		function getHour(num) {
+			var hour = value.getHours();
+
+			return getFormattedValue(hour, num);
+		}
+		function getMinute(num) {
+			var hour = value.getMinutes();
+
+			return getFormattedValue(hour, num);
+		}
+		function getSecond(num) {
+			var seconds = value.getSeconds();
+
+			return getFormattedValue(seconds, num);
+		}
+
+		function getFormattedValue(value, num) {
+			if (num === 1) {
+				return value;
+			} else {
+				return fillZero(value);
+			}
+		}
+
+		function fillZero(num) {
+			return num >= 10 ? num : "0" + num;
+		}
+	}
+};
+
+exports.default = Time;
 
 /***/ }),
 

@@ -2,6 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link, withRouter, Redirect } from 'react-router-dom';
 import { requestEvent } from '../../actions/event_actions'
+import Time from 'react-time-format'
+
 
 const mapStateToProps = (state, ownProps) => {
   return({
@@ -52,19 +54,18 @@ class BobaTimesEvent extends React.Component{
 
 
 componentDidMount(){
-  
+
   this.props.requestEvent(this.props.match.params.eventId)
 }
 
 
 eventData(){
-
   return(
     <div className="boba-times-event-data">
       <ul>
         <li className="event-card-host">Join {this.props.currentUser.name} for Boba Time</li>
-        <li className="event-card-datetime">📅 {this.props.thisEvent.date}</li>
-        <li className="event-card-datetime">⏰ {this.props.thisEvent.time}</li>
+        <li className="event-card-datetime">📅 <Time value={this.props.thisEvent.date} format="MM/DD/YYYY"/></li>
+        <li className="event-card-datetime">⏰ <Time value={this.props.thisEvent.time} format="HH:MM"/></li>
         <li className="event-card-location">📍 {this.props.thisEvent.address}</li>
         <li className="event-card-location">🗺 {this.props.thisEvent.city}</li>
         <li className="event-card-seats">There are {this.props.thisEvent.max_cap - this.state.event.seat_taken} seats left!</li>
@@ -93,7 +94,7 @@ hostBio(){
     <div className="boba-times-event-host">
       <ul>
         <li className="boba-times-event-host-title">Meet your host, {this.props.currentUser.name}.</li>
-        <li className="event-card-location">(It'll be helpful to know what they look like when you're looking for a group of confused strangers at the cafe.).</li>
+        <li className="event-card-location">(It'll be helpful to know what they look like when you're looking for a group of confused strangers at the boba shop.).</li>
         <li className="boba-times-event-host-image"><img src={this.props.currentUser.image} /></li>
         <br/>
         <li className="boba-times-event-bio">
