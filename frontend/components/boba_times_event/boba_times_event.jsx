@@ -1,8 +1,20 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link, withRouter, Redirect } from 'react-router-dom';
+import { requestEvent } from '../../actions/event_actions'
 
+const mapStateToProps = (state, ownProps) => {
+  return({
+    thisEvent: state.entities.events[ownProps.match.params.eventId],
+    currentUser: state.entities.users[state.session.id]
+  })
+}
 
+const mapDispatchToProps = dispatch => {
+  return({
+    requestEvent: (id) => dispatch(requestEvent(id))
+  })
+}
 
 
 const SEED_EVENT_DATA =
@@ -21,7 +33,6 @@ const SEED_EVENT_DATA =
     }
   };
 
-
 const SEED_SESSION_DATA = { id: 7, name: "Danny da logged in person" };
 
 
@@ -31,21 +42,32 @@ const SEED_SESSION_DATA = { id: 7, name: "Danny da logged in person" };
 class BobaTimesEvent extends React.Component{
   constructor(props){
     super(props);
-    this.state = {event: SEED_EVENT_DATA, session: SEED_SESSION_DATA};
+
+    this.state = {event: SEED_EVENT_DATA, session: SEED_SESSION_DATA,};
     this.handleSubmit = this.handleSubmit.bind(this);
+    // this.props.requestEvent(this.props.match.params.eventId)
+
   }
 
 
+
+componentDidMount(){
+  
+  this.props.requestEvent(this.props.match.params.eventId)
+}
+
+
 eventData(){
+
   return(
     <div className="boba-times-event-data">
       <ul>
-        <li className="event-card-host">Join {this.state.event.host.name} for Boba Time</li>
-        <li className="event-card-datetime">📅 {this.state.event.date}</li>
-        <li className="event-card-datetime">⏰ {this.state.event.time}</li>
-        <li className="event-card-location">📍 {this.state.event.address}</li>
-        <li className="event-card-location">🗺 {this.state.event.city}</li>
-        <li className="event-card-seats">There are {this.state.event.max_cap - this.state.event.seat_taken} seats left!</li>
+        <li className="event-card-host">Join {this.props.currentUser.name} for Boba Time</li>
+        <li className="event-card-datetime">📅 {this.props.thisEvent.date}</li>
+        <li className="event-card-datetime">⏰ {this.props.thisEvent.time}</li>
+        <li className="event-card-location">📍 {this.props.thisEvent.address}</li>
+        <li className="event-card-location">🗺 {this.props.thisEvent.city}</li>
+        <li className="event-card-seats">There are {this.props.thisEvent.max_cap - this.state.event.seat_taken} seats left!</li>
       </ul>
     </div>
   );
@@ -62,6 +84,7 @@ signUpButton(){
 
 handleSubmit(){
   //post request that creates join table between this.state.session.id and this.state.event.id
+  console.log(this.props.currentUser);
   console.log("Signed Up!");
 }
 
@@ -69,13 +92,13 @@ hostBio(){
   return(
     <div className="boba-times-event-host">
       <ul>
-        <li className="boba-times-event-host-title">Meet your host, {this.state.event.host.name}.</li>
+        <li className="boba-times-event-host-title">Meet your host, {this.props.currentUser.name}.</li>
         <li className="event-card-location">(It'll be helpful to know what they look like when you're looking for a group of confused strangers at the cafe.).</li>
-        <li className="boba-times-event-host-image"><img src={this.state.event.host.host_image} /></li>
+        <li className="boba-times-event-host-image"><img src={this.props.currentUser.image} /></li>
         <br/>
         <li className="boba-times-event-bio">
         <h1>What's my story and what we might talk about?</h1>
-        {this.state.event.host.bio}.</li>
+        {this.props.currentUser.bio}.</li>
       </ul>
     </div>
   );
@@ -84,6 +107,9 @@ hostBio(){
 
 
 render(){
+  if(!this.props.thisEvent){
+    return null
+  }
   return(
     //Event information
     <div className="boba-times-event-page-background">
@@ -101,4 +127,4 @@ render(){
   );
   }
 }
-export default BobaTimesEvent;
+export default connect(mapStateToProps, mapDispatchToProps)(BobaTimesEvent);

@@ -1,11 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import { Link, Redirect } from 'react-router-dom';
-import { createEvent} from '../../actions/event_actions'
+import { createEvent } from '../../actions/event_actions';
+import { updateUser } from '../../actions/session_actions'
 
+
+const mapStateToProps = state => ({
+  userId: state.session.id
+  })
 
 const mapDispatchToProps = dispatch => ({
-  createEvent: (event) => dispatch(createEvent(event))
+  createEvent: (event) => dispatch(createEvent(event)),
+  updateUser: (user, userId) => dispatch(updateUser(user, userId))
   })
 
 
@@ -33,18 +39,21 @@ class CreateEvent extends React.Component{
   }
 
   handleSubmit(e){
+
     e.preventDefault()
-    // const eventId =
-    // debugger
-    this.props.createEvent(this.state).then( (res) => this.updateState(res))
-    // debugger
+    // const bio = this.state.bio
+    // const image = this.state.image
+    // const user = {bio, image}
+    // const userId = this.state.host_id
+    this.props.createEvent(this.state)
+    .then( this.props.updateUser(this.state, this.props.userId))
+    .then( (res) => this.updateState(res))
   }
 
   updateState(res) {
-    // debugger
     this.setState({eventId: res.event.id})
     this.setState({toEventPage: true})
-//
+
   }
 
   update(field){
@@ -56,7 +65,6 @@ class CreateEvent extends React.Component{
   render(){
     const { toEventPage, eventId } = this.state;
     if (toEventPage) {
-      // debugger
       return <Redirect to={`/boba_times/${eventId}`} />
     }
     return(
@@ -167,4 +175,4 @@ class CreateEvent extends React.Component{
   }
 }
 
-export default connect(null, mapDispatchToProps)(CreateEvent);
+export default connect(mapStateToProps, mapDispatchToProps)(CreateEvent);

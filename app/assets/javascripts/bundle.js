@@ -146,7 +146,7 @@ document.addEventListener("DOMContentLoaded", function () {
 /*!*******************************************!*\
   !*** ./frontend/actions/event_actions.js ***!
   \*******************************************/
-/*! exports provided: RECEIVE_EVENT, receiveEvent, createEvent */
+/*! exports provided: RECEIVE_EVENT, receiveEvent, createEvent, requestEvent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -154,6 +154,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_EVENT", function() { return RECEIVE_EVENT; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveEvent", function() { return receiveEvent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createEvent", function() { return createEvent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "requestEvent", function() { return requestEvent; });
 /* harmony import */ var _util_event_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/event_api_util */ "./frontend/util/event_api_util.js");
 
 var RECEIVE_EVENT = "RECEIVE_EVENT";
@@ -169,6 +170,13 @@ var createEvent = function createEvent(formEvent) {
       return dispatch(receiveEvent(event));
     });
   };
+};
+var requestEvent = function requestEvent(id) {
+  return function (dispatch) {
+    return _util_event_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchEvent"](id).then(function (event) {
+      return dispatch(receiveEvent(event));
+    });
+  };
 }; // err => (
 //   dispatch(receiveErrors(err.responseJSON)))
 
@@ -178,7 +186,7 @@ var createEvent = function createEvent(formEvent) {
 /*!*********************************************!*\
   !*** ./frontend/actions/session_actions.js ***!
   \*********************************************/
-/*! exports provided: RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER, RECEIVE_SESSION_ERRORS, CLEAR_ERRORS, clearErrors, receiveCurrentUser, logoutCurrentUser, receiveErrors, signup, signin, logout */
+/*! exports provided: RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER, RECEIVE_SESSION_ERRORS, CLEAR_ERRORS, clearErrors, receiveCurrentUser, logoutCurrentUser, receiveErrors, signup, signin, logout, updateUser */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -194,6 +202,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "signup", function() { return signup; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "signin", function() { return signin; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logout", function() { return logout; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateUser", function() { return updateUser; });
 /* harmony import */ var _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/session_api_util */ "./frontend/util/session_api_util.js");
 
 var RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
@@ -244,6 +253,13 @@ var logout = function logout() {
   return function (dispatch) {
     return _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchLogOut"]().then(function (user) {
       return dispatch(logoutCurrentUser());
+    });
+  };
+};
+var updateUser = function updateUser(user, userId) {
+  return function (dispatch) {
+    return _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__["updateUser"](user, userId).then(function (user) {
+      return dispatch(receiveCurrentUser(user));
     });
   };
 };
@@ -562,6 +578,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+/* harmony import */ var _actions_event_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/event_actions */ "./frontend/actions/event_actions.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -582,6 +599,23 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 
 
 
+
+
+
+var mapStateToProps = function mapStateToProps(state, ownProps) {
+  return {
+    thisEvent: state.entities.events[ownProps.match.params.eventId],
+    currentUser: state.entities.users[state.session.id]
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    requestEvent: function requestEvent(id) {
+      return dispatch(Object(_actions_event_actions__WEBPACK_IMPORTED_MODULE_3__["requestEvent"])(id));
+    }
+  };
+};
 
 var SEED_EVENT_DATA = {
   id: 3,
@@ -617,28 +651,34 @@ function (_React$Component) {
       event: SEED_EVENT_DATA,
       session: SEED_SESSION_DATA
     };
-    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_assertThisInitialized(_this))); // this.props.requestEvent(this.props.match.params.eventId)
+
     return _this;
   }
 
   _createClass(BobaTimesEvent, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.requestEvent(this.props.match.params.eventId);
+    }
+  }, {
     key: "eventData",
     value: function eventData() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "boba-times-event-data"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "event-card-host"
-      }, "Join ", this.state.event.host.name, " for Boba Time"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      }, "Join ", this.props.currentUser.name, " for Boba Time"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "event-card-datetime"
-      }, "\uD83D\uDCC5 ", this.state.event.date), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      }, "\uD83D\uDCC5 ", this.props.thisEvent.date), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "event-card-datetime"
-      }, "\u23F0 ", this.state.event.time), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      }, "\u23F0 ", this.props.thisEvent.time), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "event-card-location"
-      }, "\uD83D\uDCCD ", this.state.event.address), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      }, "\uD83D\uDCCD ", this.props.thisEvent.address), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "event-card-location"
-      }, "\uD83D\uDDFA ", this.state.event.city), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      }, "\uD83D\uDDFA ", this.props.thisEvent.city), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "event-card-seats"
-      }, "There are ", this.state.event.max_cap - this.state.event.seat_taken, " seats left!")));
+      }, "There are ", this.props.thisEvent.max_cap - this.state.event.seat_taken, " seats left!")));
     }
   }, {
     key: "signUpButton",
@@ -653,6 +693,7 @@ function (_React$Component) {
     key: "handleSubmit",
     value: function handleSubmit() {
       //post request that creates join table between this.state.session.id and this.state.event.id
+      console.log(this.props.currentUser);
       console.log("Signed Up!");
     }
   }, {
@@ -662,19 +703,23 @@ function (_React$Component) {
         className: "boba-times-event-host"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "boba-times-event-host-title"
-      }, "Meet your host, ", this.state.event.host.name, "."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      }, "Meet your host, ", this.props.currentUser.name, "."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "event-card-location"
       }, "(It'll be helpful to know what they look like when you're looking for a group of confused strangers at the cafe.)."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "boba-times-event-host-image"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: this.state.event.host.host_image
+        src: this.props.currentUser.image
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "boba-times-event-bio"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "What's my story and what we might talk about?"), this.state.event.host.bio, ".")));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "What's my story and what we might talk about?"), this.props.currentUser.bio, ".")));
     }
   }, {
     key: "render",
     value: function render() {
+      if (!this.props.thisEvent) {
+        return null;
+      }
+
       return (//Event information
         react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "boba-times-event-page-background"
@@ -692,7 +737,7 @@ function (_React$Component) {
   return BobaTimesEvent;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (BobaTimesEvent);
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, mapDispatchToProps)(BobaTimesEvent));
 
 /***/ }),
 
@@ -710,6 +755,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
 /* harmony import */ var _actions_event_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/event_actions */ "./frontend/actions/event_actions.js");
+/* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -735,10 +781,20 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 
 
 
+
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    userId: state.session.id
+  };
+};
+
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     createEvent: function createEvent(event) {
       return dispatch(Object(_actions_event_actions__WEBPACK_IMPORTED_MODULE_3__["createEvent"])(event));
+    },
+    updateUser: function updateUser(user, userId) {
+      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_4__["updateUser"])(user, userId));
     }
   };
 };
@@ -777,23 +833,24 @@ function (_React$Component) {
     value: function handleSubmit(e) {
       var _this2 = this;
 
-      e.preventDefault(); // const eventId =
-      // debugger
+      e.preventDefault(); // const bio = this.state.bio
+      // const image = this.state.image
+      // const user = {bio, image}
+      // const userId = this.state.host_id
 
-      this.props.createEvent(this.state).then(function (res) {
+      this.props.createEvent(this.state).then(this.props.updateUser(this.state, this.props.userId)).then(function (res) {
         return _this2.updateState(res);
-      }); // debugger
+      });
     }
   }, {
     key: "updateState",
     value: function updateState(res) {
-      // debugger
       this.setState({
         eventId: res.event.id
       });
       this.setState({
         toEventPage: true
-      }); //
+      });
     }
   }, {
     key: "update",
@@ -812,7 +869,6 @@ function (_React$Component) {
           eventId = _this$state.eventId;
 
       if (toEventPage) {
-        // debugger
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Redirect"], {
           to: "/boba_times/".concat(eventId)
         });
@@ -917,7 +973,7 @@ function (_React$Component) {
   return CreateEvent;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(null, mapDispatchToProps)(CreateEvent));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, mapDispatchToProps)(CreateEvent));
 
 /***/ }),
 
@@ -1883,12 +1939,13 @@ var configureStore = function configureStore() {
 /*!*****************************************!*\
   !*** ./frontend/util/event_api_util.js ***!
   \*****************************************/
-/*! exports provided: createEvent */
+/*! exports provided: createEvent, fetchEvent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createEvent", function() { return createEvent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchEvent", function() { return fetchEvent; });
 var createEvent = function createEvent(event) {
   return $.ajax({
     url: "/api/events",
@@ -1896,6 +1953,12 @@ var createEvent = function createEvent(event) {
     data: {
       event: event
     }
+  });
+};
+var fetchEvent = function fetchEvent(id) {
+  return $.ajax({
+    url: "/api/events/".concat(id),
+    method: "GET"
   });
 };
 
@@ -1949,7 +2012,7 @@ var AuthRoute = Object(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["withRouter
 /*!*******************************************!*\
   !*** ./frontend/util/session_api_util.js ***!
   \*******************************************/
-/*! exports provided: fetchSignUp, fetchSignIn, fetchLogOut */
+/*! exports provided: fetchSignUp, fetchSignIn, fetchLogOut, updateUser */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1957,6 +2020,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchSignUp", function() { return fetchSignUp; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchSignIn", function() { return fetchSignIn; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchLogOut", function() { return fetchLogOut; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateUser", function() { return updateUser; });
 var fetchSignUp = function fetchSignUp(user) {
   return $.ajax({
     url: "/api/users",
@@ -1979,6 +2043,15 @@ var fetchLogOut = function fetchLogOut() {
   return $.ajax({
     url: "/api/session",
     method: "DELETE"
+  });
+};
+var updateUser = function updateUser(user, userId) {
+  return $.ajax({
+    url: "/api/users/".concat(userId),
+    method: "PATCH",
+    data: {
+      user: user
+    }
   });
 };
 

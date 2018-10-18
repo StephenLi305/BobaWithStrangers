@@ -17,5 +17,13 @@ export const createEvent = formEvent => dispatch => (
   )
 )
 
+export const requestEvent = id => dispatch => (
+  APIUtil.fetchEvent(id).then(
+    event => (
+    dispatch(receiveEvent(event))
+    )
+  )
+)
+
 // err => (
 //   dispatch(receiveErrors(err.responseJSON)))

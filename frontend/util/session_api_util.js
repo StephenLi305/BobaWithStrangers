@@ -22,3 +22,11 @@ export const fetchLogOut = () => {
     method: "DELETE"
   })
 }
+
+export const updateUser = (user, userId) => {
+  return $.ajax({
+    url:`/api/users/${userId}`,
+    method: "PATCH",
+    data:{ user }
+  })
+}

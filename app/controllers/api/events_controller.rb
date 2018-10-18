@@ -31,7 +31,7 @@ class Api::EventsController < ApplicationController
     if @event.update(event_params)
       render "api/events/show"
     else
-      render json: ["you're not in this event"]
+      render json: ["you're not the host"]
     end
   end
 
