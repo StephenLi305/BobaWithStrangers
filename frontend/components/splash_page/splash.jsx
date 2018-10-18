@@ -98,10 +98,6 @@ whatIsBobaTime(){
   }
 }
 
-// <Link to="/signup">Sign Up</Link>
-// <br />
-// <br />
-// <Link to="/signin">Sign In</Link>
-// <br />
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(Splash)

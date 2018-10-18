@@ -1135,7 +1135,7 @@ function (_React$Component) {
     value: function bobaTimesButton() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: this.handleSubmit
-      }, "Go to Bobatimes"));
+      }, "Find another boba time"));
     }
   }, {
     key: "handleSubmit",
@@ -1143,16 +1143,42 @@ function (_React$Component) {
       console.log("You're going to the Bobatimes page");
     }
   }, {
+    key: "cancel",
+    value: function cancel() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: console.log("Cancel this Bobatime")
+      }, "Cancel my Boba time spot"));
+    }
+  }, {
     key: "eventsAttending",
     value: function eventsAttending() {
+      var _this2 = this;
+
       return this.state.events.map(function (event) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, event.date), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, event.time), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, event.address), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, event.host.name)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null));
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          key: event.id,
+          className: "profile-boba-event"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          className: "date"
+        }, event.date), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          className: "time"
+        }, event.time), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          className: "address"
+        }, event.address), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          className: "host"
+        }, "Hosted by ", event.host.name), _this2.cancel()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null));
       });
     }
   }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.welcomeHome(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.bobaTimesButton(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.eventsAttending());
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-left"
+      }, this.welcomeHome(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.bobaTimesButton()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-right"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Boba Times you're attending"), this.eventsAttending()));
     }
   }]);
 
@@ -1578,12 +1604,7 @@ function (_React$Component) {
   }]);
 
   return Splash;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component); // <Link to="/signup">Sign Up</Link>
-// <br />
-// <br />
-// <Link to="/signin">Sign In</Link>
-// <br />
-
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["connect"])(mapStateToProps, mapDispatchToProps)(Splash));
 

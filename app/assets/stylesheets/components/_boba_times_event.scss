@@ -96,10 +96,8 @@
 
 
 .boba-times-event-host{
-  // border: 1px blue solid;
   margin-right: -150px;
   margin-left:-10px;
-  // height:auto;
   margin-top: -211px;
 }
 
@@ -110,17 +108,12 @@
   font-size: 25px;
   line-height: 23px;
   color: $login-header;
-  // text-align:center;
-  // border-bottom: 1px solid $light-grey;
   padding: 10px;
 }
 
 
 .boba-times-event-host-image{
   width: 250px;
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
   text-align: center;
   margin:auto;
   border: 1px solid $light-grey;
@@ -135,7 +128,7 @@
   color: #333333;
   padding: 10px;
   padding-top: 20px;
-  background: $light-white;
+  background-color: white;
   font-family:$header-font;
   font-size: 14px;
   font-weight: 400;

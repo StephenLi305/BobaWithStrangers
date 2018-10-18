@@ -60,7 +60,7 @@ import { connect } from 'react-redux';
 bobaTimesButton(){
   return(
     <div>
-      <button onClick={this.handleSubmit}>Go to Bobatimes</button>
+      <button onClick={this.handleSubmit}>Find another boba time</button>
     </div>
   )
 }
@@ -69,16 +69,24 @@ handleSubmit(){
   console.log("You're going to the Bobatimes page");
 }
 
-eventsAttending(){
+cancel(){
+  return(
+    <div>
+      <button onClick={console.log("Cancel this Bobatime")}>Cancel my Boba time spot</button>
+    </div>
+  )
+}
 
+eventsAttending(){
   return this.state.events.map( event => {
     return(
-      <div>
+      <div key={event.id} className="profile-boba-event">
         <ul>
-          <li>{event.date}</li>
-          <li>{event.time}</li>
-          <li>{event.address}</li>
-          <li>{event.host.name}</li>
+          <li className="date">{event.date}</li>
+          <li className="time">{event.time}</li>
+          <li className="address">{event.address}</li>
+          <li className="host">Hosted by {event.host.name}</li>
+          {this.cancel()}
         </ul>
         <br/>
       </div>
@@ -92,12 +100,18 @@ eventsAttending(){
   render(){
     return(
 
-      <div>
-        {this.welcomeHome()}
-        <br/>
-        {this.bobaTimesButton()}
-        <br/>
-        {this.eventsAttending()}
+      <div className="profile-container">
+        <div className="profile-left">
+          {this.welcomeHome()}
+          <br/>
+          {this.bobaTimesButton()}
+        </div>
+
+        <div className="profile-right">
+          <h1>Boba Times you're attending</h1>
+          {this.eventsAttending()}
+        </div>
+
       </div>
     )
   }
