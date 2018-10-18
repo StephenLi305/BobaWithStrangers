@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import { withRouter } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { createEvent} from '../../actions/event_actions'
 
 
@@ -24,15 +24,27 @@ class CreateEvent extends React.Component{
       max_cap:'3',
       bio:'',
       image:'',
+      eventId: 0,
+      toEventPage: false
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.updateState = this.updateState.bind(this);
 
   }
 
   handleSubmit(e){
-    e.preventDefault();
-    // const user = Object.assign({}, this.state);
-    this.props.createEvent(this.state);
+    e.preventDefault()
+    // const eventId =
+    // debugger
+    this.props.createEvent(this.state).then( (res) => this.updateState(res))
+    // debugger
+  }
+
+  updateState(res) {
+    // debugger
+    this.setState({eventId: res.event.id})
+    this.setState({toEventPage: true})
+//
   }
 
   update(field){
@@ -42,6 +54,11 @@ class CreateEvent extends React.Component{
   }
 
   render(){
+    const { toEventPage, eventId } = this.state;
+    if (toEventPage) {
+      // debugger
+      return <Redirect to={`/boba_times/${eventId}`} />
+    }
     return(
       <div className="create-event-container">
         <form onSubmit={this.handleSubmit} className="create-event-form-box" >
@@ -53,7 +70,6 @@ class CreateEvent extends React.Component{
                 <h1 className="create-event-field-text">
                 Date of Boba Event!</h1>
                 <input type="date"
-                placeholder="01/01/2001"
                 value={this.state.date}
                 onChange={this.update('date')}
                 className="create-event-field"
@@ -65,7 +81,6 @@ class CreateEvent extends React.Component{
                 <h1 className="create-event-field-text">
                 Time of Boba Event!</h1>
                 <input type="time"
-                placeholder="6:30PM"
                 value={this.state.time}
                 onChange={this.update('time')}
                 className="create-event-field"

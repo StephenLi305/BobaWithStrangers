@@ -34,8 +34,9 @@ handleSubmit(){
 }
 
 handleLogout(){
-  this.props.logout().then(() => (<Link to="/signup"></Link>))
+  this.props.logout().then(() => (<Link to="/signin"></Link>))
 }
+// ^ THIS AINT LINKING TO SINGIN PAGE
 
 rightNav() {
   if(this.props.logged_in) {

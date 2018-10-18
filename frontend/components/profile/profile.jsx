@@ -44,7 +44,6 @@ import { connect } from 'react-redux';
     constructor(){
       super();
       this.state = {events: SEED_EVENT_DATA, session: SEED_SESSION_DATA };
-      this.handleSubmit = this.handleSubmit.bind(this)
     }
 
   welcomeHome(){
@@ -60,19 +59,19 @@ import { connect } from 'react-redux';
 bobaTimesButton(){
   return(
     <div>
-      <button onClick={this.handleSubmit}>Find another boba time</button>
+      <Link to="/boba_times">
+        <button>Find another boba time</button>
+      </Link>
     </div>
   )
 }
 
-handleSubmit(){
-  console.log("You're going to the Bobatimes page");
-}
+
 
 cancel(){
   return(
     <div>
-      <button onClick={console.log("Cancel this Bobatime")}>Cancel my Boba time spot</button>
+      <button onClick={() => console.log("Cancel this Bobatime")}>Cancel my Boba time spot</button>
     </div>
   )
 }

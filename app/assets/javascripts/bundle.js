@@ -523,9 +523,11 @@ function (_React$Component) {
           className: "card-address"
         }, detail.address), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           className: "card-seats"
-        }, detail.max_cap - detail.seat_taken, " seats left!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        }, detail.max_cap - detail.seat_taken, " seats left!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+          to: "/boba_times/".concat(detail.id)
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           className: "card-button"
-        }, "check it out"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null));
+        }, "check it out")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null));
       });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "event-card-container"
@@ -761,31 +763,61 @@ function (_React$Component) {
       city: 'San Francisco',
       max_cap: '3',
       bio: '',
-      image: ''
+      image: '',
+      eventId: 0,
+      toEventPage: false
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _this.updateState = _this.updateState.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     return _this;
   }
 
   _createClass(CreateEvent, [{
     key: "handleSubmit",
     value: function handleSubmit(e) {
-      e.preventDefault(); // const user = Object.assign({}, this.state);
+      var _this2 = this;
 
-      this.props.createEvent(this.state);
+      e.preventDefault(); // const eventId =
+      // debugger
+
+      this.props.createEvent(this.state).then(function (res) {
+        return _this2.updateState(res);
+      }); // debugger
+    }
+  }, {
+    key: "updateState",
+    value: function updateState(res) {
+      // debugger
+      this.setState({
+        eventId: res.event.id
+      });
+      this.setState({
+        toEventPage: true
+      }); //
     }
   }, {
     key: "update",
     value: function update(field) {
-      var _this2 = this;
+      var _this3 = this;
 
       return function (e) {
-        return _this2.setState(_defineProperty({}, field, e.target.value));
+        return _this3.setState(_defineProperty({}, field, e.target.value));
       };
     }
   }, {
     key: "render",
     value: function render() {
+      var _this$state = this.state,
+          toEventPage = _this$state.toEventPage,
+          eventId = _this$state.eventId;
+
+      if (toEventPage) {
+        // debugger
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Redirect"], {
+          to: "/boba_times/".concat(eventId)
+        });
+      }
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "create-event-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
@@ -801,7 +833,6 @@ function (_React$Component) {
         className: "create-event-field-text"
       }, "Date of Boba Event!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "date",
-        placeholder: "01/01/2001",
         value: this.state.date,
         onChange: this.update('date'),
         className: "create-event-field",
@@ -810,7 +841,6 @@ function (_React$Component) {
         className: "create-event-field-text"
       }, "Time of Boba Event!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "time",
-        placeholder: "6:30PM",
         value: this.state.time,
         onChange: this.update('time'),
         className: "create-event-field",
@@ -973,10 +1003,11 @@ function (_React$Component) {
     value: function handleLogout() {
       this.props.logout().then(function () {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-          to: "/signup"
+          to: "/signin"
         });
       });
-    }
+    } // ^ THIS AINT LINKING TO SINGIN PAGE
+
   }, {
     key: "rightNav",
     value: function rightNav() {
@@ -1067,13 +1098,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 
 
@@ -1125,7 +1156,6 @@ function (_React$Component) {
       events: SEED_EVENT_DATA,
       session: SEED_SESSION_DATA
     };
-    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     return _this;
   }
 
@@ -1137,20 +1167,17 @@ function (_React$Component) {
   }, {
     key: "bobaTimesButton",
     value: function bobaTimesButton() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        onClick: this.handleSubmit
-      }, "Find another boba time"));
-    }
-  }, {
-    key: "handleSubmit",
-    value: function handleSubmit() {
-      console.log("You're going to the Bobatimes page");
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/boba_times"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Find another boba time")));
     }
   }, {
     key: "cancel",
     value: function cancel() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        onClick: console.log("Cancel this Bobatime")
+        onClick: function onClick() {
+          return console.log("Cancel this Bobatime");
+        }
       }, "Cancel my Boba time spot"));
     }
   }, {

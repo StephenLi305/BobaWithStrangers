@@ -185,7 +185,9 @@ events(city){
           </div>
           <li className="card-address">{detail.address}</li>
           <li className="card-seats">{detail.max_cap - detail.seat_taken} seats left!</li>
-          <li className="card-button">check it out</li>
+          <Link to={`/boba_times/${detail.id}`}>
+            <li className="card-button">check it out</li>
+          </Link>
           <br/>
         </ul>
       )
