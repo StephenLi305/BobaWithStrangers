@@ -93,7 +93,7 @@ citiesList(){
         max_cap: 6,
         seat_taken: 1
       },
-      { id: 2,
+      { id: 9,
         date: "Oct 13",
         time: "11:00AM",
         address: "a/A office: 825 Battery Street, San Francisco",
@@ -101,7 +101,7 @@ citiesList(){
         max_cap: 6,
         seat_taken: 1
       },
-      { id: 5,
+      { id: 3,
         date: "Oct 13",
         time: "11:00AM",
         address: "a/A office: 825 Battery Street, San Francisco",
@@ -113,7 +113,7 @@ citiesList(){
     ]},
     {city_name: "Los Angeles",
     event_data:[
-      { id: 111,
+      { id: 4,
         date: "Oct 13",
         time: "11:00AM",
         address: "a/A office: 825 Battery Street, Los Angeles",
@@ -122,7 +122,7 @@ citiesList(){
         seat_taken: 1
       },
 
-      { id: 31,
+      { id: 5,
         date: "Oct 13",
         time: "11:00AM",
         address: "a/A office: 825 Battery Street, Los Angeles",
@@ -130,7 +130,7 @@ citiesList(){
         max_cap: 6,
         seat_taken: 2
       },
-      { id: 3,
+      { id: 6,
         date: "Oct 13",
         time: "11:00AM",
         address: "a/A office: 825 Battery Street, Los Angeles",
@@ -141,7 +141,7 @@ citiesList(){
     ]},
     {city_name: "New York",
     event_data:[
-      { id: 12,
+      { id: 7,
         date: "Oct 13",
         time: "11:00AM",
         address: "a/A office: 825 Battery Street, New York",
@@ -149,7 +149,7 @@ citiesList(){
         max_cap: 6,
         seat_taken: 1
       },
-      { id: 17,
+      { id: 8,
         date: "Oct 13",
         time: "11:00AM",
         address: "a/A office: 825 Battery Street, New York",

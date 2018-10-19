@@ -72,19 +72,10 @@ whatIsBobaTime(){
         {this.title()}
         {this.whatIsBobaTime()}
 
-        <br />
-          <Link to="/boba_times">BOBA TIMEE!!!</Link>
-        <br />
-        <br />
-          <Link to="/boba_times/1">BOBA TIMEE!!! SPECIFIC EVENT</Link>
-        <br />
-        <br />
-          <Link to="/profile">Your Profile</Link>
-        <br />
-        <br />
-          <Link to="/create">Host Event</Link>
-        <br />
-        <button onClick={this.handleSubmit}>Logout</button>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
         <br/>
         <br/>
         <br/>
@@ -98,6 +89,19 @@ whatIsBobaTime(){
   }
 }
 
+// <br />
+//   <Link to="/boba_times">BOBA TIMEE!!!</Link>
+// <br />
+// <br />
+//   <Link to="/boba_times/1">BOBA TIMEE!!! SPECIFIC EVENT</Link>
+// <br />
+// <br />
+//   <Link to="/profile">Your Profile</Link>
+// <br />
+// <br />
+//   <Link to="/create">Host Event</Link>
+// <br />
+// <button onClick={this.handleSubmit}>Logout</button>
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(Splash)

@@ -8,7 +8,7 @@ class Footer extends React.Component{
   render(){
     return(
       <div className="footer">
-        <a href="https://github.com/StephenLi305">GitHub</a>
+        <a href="https://github.com/StephenLi305"><i className="fab fa-github"></i></a>
         <br/>
         <a href="https://www.linkedin.com/in/stephenli305/"><i className="fab fa-linkedin-in"></i></a>
       </div>

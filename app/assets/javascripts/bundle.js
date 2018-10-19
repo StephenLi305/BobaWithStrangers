@@ -472,7 +472,7 @@ function (_React$Component) {
           max_cap: 6,
           seat_taken: 1
         }, {
-          id: 2,
+          id: 9,
           date: "Oct 13",
           time: "11:00AM",
           address: "a/A office: 825 Battery Street, San Francisco",
@@ -480,7 +480,7 @@ function (_React$Component) {
           max_cap: 6,
           seat_taken: 1
         }, {
-          id: 5,
+          id: 3,
           date: "Oct 13",
           time: "11:00AM",
           address: "a/A office: 825 Battery Street, San Francisco",
@@ -491,7 +491,7 @@ function (_React$Component) {
       }, {
         city_name: "Los Angeles",
         event_data: [{
-          id: 111,
+          id: 4,
           date: "Oct 13",
           time: "11:00AM",
           address: "a/A office: 825 Battery Street, Los Angeles",
@@ -499,7 +499,7 @@ function (_React$Component) {
           max_cap: 6,
           seat_taken: 1
         }, {
-          id: 31,
+          id: 5,
           date: "Oct 13",
           time: "11:00AM",
           address: "a/A office: 825 Battery Street, Los Angeles",
@@ -507,7 +507,7 @@ function (_React$Component) {
           max_cap: 6,
           seat_taken: 2
         }, {
-          id: 3,
+          id: 6,
           date: "Oct 13",
           time: "11:00AM",
           address: "a/A office: 825 Battery Street, Los Angeles",
@@ -518,7 +518,7 @@ function (_React$Component) {
       }, {
         city_name: "New York",
         event_data: [{
-          id: 12,
+          id: 7,
           date: "Oct 13",
           time: "11:00AM",
           address: "a/A office: 825 Battery Street, New York",
@@ -526,7 +526,7 @@ function (_React$Component) {
           max_cap: 6,
           seat_taken: 1
         }, {
-          id: 17,
+          id: 8,
           date: "Oct 13",
           time: "11:00AM",
           address: "a/A office: 825 Battery Street, New York",
@@ -1068,7 +1068,9 @@ function (_React$Component) {
         className: "footer"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "https://github.com/StephenLi305"
-      }, "GitHub"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fab fa-github"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "https://www.linkedin.com/in/stephenli305/"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fab fa-linkedin-in"
@@ -1806,22 +1808,25 @@ function (_React$Component) {
       var currentUser = this.props.currentUser;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "splash-page"
-      }, this.title(), this.whatIsBobaTime(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/boba_times"
-      }, "BOBA TIMEE!!!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/boba_times/1"
-      }, "BOBA TIMEE!!! SPECIFIC EVENT"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/profile"
-      }, "Your Profile"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/create"
-      }, "Host Event"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        onClick: this.handleSubmit
-      }, "Logout"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null));
+      }, this.title(), this.whatIsBobaTime(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null));
     }
   }]);
 
   return Splash;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component); // <br />
+//   <Link to="/boba_times">BOBA TIMEE!!!</Link>
+// <br />
+// <br />
+//   <Link to="/boba_times/1">BOBA TIMEE!!! SPECIFIC EVENT</Link>
+// <br />
+// <br />
+//   <Link to="/profile">Your Profile</Link>
+// <br />
+// <br />
+//   <Link to="/create">Host Event</Link>
+// <br />
+// <button onClick={this.handleSubmit}>Logout</button>
+
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["connect"])(mapStateToProps, mapDispatchToProps)(Splash));
 

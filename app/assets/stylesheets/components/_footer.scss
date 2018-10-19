@@ -1,7 +1,16 @@
 .footer{
   background: $header-footer;
   height: 80px;
+  display: flex;
+  padding-top: 10px;
+  padding-left: 50px;
   a{
     color:white;
+    font-size: 35px;
+    // padding: 100px;
+    // columns: 10px;
+    margin-top: 10px;
+    margin-left: 25px;
+    // display: flex;
   }
 }
