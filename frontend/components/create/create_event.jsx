@@ -35,7 +35,6 @@ class CreateEvent extends React.Component{
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateState = this.updateState.bind(this);
-
   }
 
   handleSubmit(e){

@@ -119,7 +119,7 @@ class SessionForm extends React.Component {
 
               <label>
                 <input type="password"
-                placeholder="Password"
+                placeholder="Password (6 charcaters minimum)"
                 value={this.state.password}
                 onChange={this.update('password')}
                 className="session-form"

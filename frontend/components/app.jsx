@@ -10,15 +10,28 @@ import {
 import { AuthRoute, ProtectedRoute } from '../util/route_util'
 
 
-import SignUpFormContainer from './session_form/sign_UP_container'
-import SignInFormContainer from './session_form/sign_IN_container'
-import SplashContainer from './splash_page/splash'
-import HeaderContainer from './header/header'
-import BobaTimesContainer from './boba_times/boba_times'
-import BobaTimesEventContainer from './boba_times_event/boba_times_event'
-import ProfileContainer from './profile/profile'
-import CreateContainer from './create/create_event'
-
+import SignUpFormContainer from './session_form/sign_UP_container';
+import SignInFormContainer from './session_form/sign_IN_container';
+import SplashContainer from './splash_page/splash';
+import HeaderContainer from './header/header';
+import BobaTimesContainer from './boba_times/boba_times';
+import BobaTimesEventContainer from './boba_times_event/boba_times_event';
+import ProfileContainer from './profile/profile';
+import CreateContainer from './create/create_event';
+import FooterContainer from './footer/footer';
+//
+// componentDidMount() {
+//   window.location.hash = window.decodeURIComponent(window.location.hash);
+//   const scrollToAnchor = () => {
+//     const hashParts = window.location.hash.split('#');
+//     if (hashParts.length > 2) {
+//       const hash = hashParts.slice(-1)[0];
+//       document.querySelector(`#${hash}`).scrollIntoView();
+//     }
+//   };
+//   scrollToAnchor();
+//   window.onhashchange = scrollToAnchor;
+// }
 
 const App = () => (
   <div className="app-container">
@@ -33,6 +46,7 @@ const App = () => (
       <ProtectedRoute exact path="/create" component={CreateContainer} />
       <Redirect to="/" />
     </Switch>
+    <FooterContainer />
   </div>
 )
 

@@ -105,10 +105,7 @@ rightNav() {
           <img src="https://i.imgur.com/YXpFZVK.png" />
           </Link>
         </nav>
-
         {this.rightNav()}
-
-
       </header>
 
     )

@@ -39,7 +39,7 @@ const mapStateToProps = state => ({
   ]
 
 
-  // const SEED_SESSION_DATA = { id: 7, name: "Danny da logged in person" };
+  const SEED_SESSION_DATA = { id: 7, name: "Danny da logged in person" };
 
 
   class Profile extends React.Component {
