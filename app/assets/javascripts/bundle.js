@@ -601,9 +601,183 @@ function (_React$Component) {
   !*** ./frontend/components/boba_times_event/boba_times_event.jsx ***!
   \*******************************************************************/
 /*! exports provided: default */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/stephenli/Desktop/BobaWithStrangers/frontend/components/boba_times_event/boba_times_event.jsx: JSX value should be either an expression or a quoted JSX text (68:105)\n\n\u001b[0m \u001b[90m 66 | \u001b[39m        \u001b[33m<\u001b[39m\u001b[33mli\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m\"event-card-host\"\u001b[39m\u001b[33m>\u001b[39m\u001b[33mJoin\u001b[39m {\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mprops\u001b[33m.\u001b[39mthisEvent\u001b[33m.\u001b[39mhost\u001b[33m.\u001b[39mname} \u001b[36mfor\u001b[39m \u001b[33mBoba\u001b[39m \u001b[33mTime\u001b[39m\u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mli\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 67 | \u001b[39m        \u001b[33m<\u001b[39m\u001b[33mli\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m\"event-card-datetime\"\u001b[39m\u001b[33m>\u001b[39m📅 \u001b[33m<\u001b[39m\u001b[33mTime\u001b[39m value\u001b[33m=\u001b[39m{\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mprops\u001b[33m.\u001b[39mthisEvent\u001b[33m.\u001b[39mdate} format\u001b[33m=\u001b[39m\u001b[32m\"MM/DD/YYYY\"\u001b[39m\u001b[33m/\u001b[39m\u001b[33m>\u001b[39m\u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mli\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 68 | \u001b[39m        \u001b[33m<\u001b[39m\u001b[33mli\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m\"event-card-datetime\"\u001b[39m\u001b[33m>\u001b[39m⏰ \u001b[33m<\u001b[39m\u001b[33mTime\u001b[39m value\u001b[33m=\u001b[39m{\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mprops\u001b[33m.\u001b[39mthisEvent\u001b[33m.\u001b[39mtime} format\u001b[33m=\u001b[39m\u001b[32m\"HH:MM\"\u001b[39m utc\u001b[33m=\u001b[39m\u001b[36mfalse\u001b[39m\u001b[33m/\u001b[39m\u001b[33m>\u001b[39m\u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mli\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m                                                                                                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 69 | \u001b[39m        \u001b[33m<\u001b[39m\u001b[33mli\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m\"event-card-location\"\u001b[39m\u001b[33m>\u001b[39m📍 {\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mprops\u001b[33m.\u001b[39mthisEvent\u001b[33m.\u001b[39maddress}\u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mli\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 70 | \u001b[39m        \u001b[33m<\u001b[39m\u001b[33mli\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m\"event-card-location\"\u001b[39m\u001b[33m>\u001b[39m🗺 {\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mprops\u001b[33m.\u001b[39mthisEvent\u001b[33m.\u001b[39mcity}\u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mli\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 71 | \u001b[39m        \u001b[33m<\u001b[39m\u001b[33mli\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m\"event-card-seats\"\u001b[39m\u001b[33m>\u001b[39m\u001b[33mThere\u001b[39m are {\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mprops\u001b[33m.\u001b[39mthisEvent\u001b[33m.\u001b[39mmax_cap \u001b[33m-\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mstate\u001b[33m.\u001b[39mevent\u001b[33m.\u001b[39mseat_taken} seats left\u001b[33m!\u001b[39m\u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mli\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n    at _class.raise (/Users/stephenli/Desktop/BobaWithStrangers/node_modules/@babel/parser/lib/index.js:3939:15)\n    at _class.jsxParseAttributeValue (/Users/stephenli/Desktop/BobaWithStrangers/node_modules/@babel/parser/lib/index.js:3469:22)\n    at _class.jsxParseAttribute (/Users/stephenli/Desktop/BobaWithStrangers/node_modules/@babel/parser/lib/index.js:3512:46)\n    at _class.jsxParseOpeningElementAfterName (/Users/stephenli/Desktop/BobaWithStrangers/node_modules/@babel/parser/lib/index.js:3532:30)\n    at _class.jsxParseOpeningElementAt (/Users/stephenli/Desktop/BobaWithStrangers/node_modules/@babel/parser/lib/index.js:3525:19)\n    at _class.jsxParseElementAt (/Users/stephenli/Desktop/BobaWithStrangers/node_modules/@babel/parser/lib/index.js:3557:33)\n    at _class.jsxParseElementAt (/Users/stephenli/Desktop/BobaWithStrangers/node_modules/@babel/parser/lib/index.js:3573:34)\n    at _class.jsxParseElementAt (/Users/stephenli/Desktop/BobaWithStrangers/node_modules/@babel/parser/lib/index.js:3573:34)\n    at _class.jsxParseElementAt (/Users/stephenli/Desktop/BobaWithStrangers/node_modules/@babel/parser/lib/index.js:3573:34)\n    at _class.jsxParseElement (/Users/stephenli/Desktop/BobaWithStrangers/node_modules/@babel/parser/lib/index.js:3626:19)\n    at _class.parseExprAtom (/Users/stephenli/Desktop/BobaWithStrangers/node_modules/@babel/parser/lib/index.js:3633:21)\n    at _class.parseExprSubscripts (/Users/stephenli/Desktop/BobaWithStrangers/node_modules/@babel/parser/lib/index.js:5924:21)\n    at _class.parseMaybeUnary (/Users/stephenli/Desktop/BobaWithStrangers/node_modules/@babel/parser/lib/index.js:5903:21)\n    at _class.parseExprOps (/Users/stephenli/Desktop/BobaWithStrangers/node_modules/@babel/parser/lib/index.js:5812:21)\n    at _class.parseMaybeConditional (/Users/stephenli/Desktop/BobaWithStrangers/node_modules/@babel/parser/lib/index.js:5784:21)\n    at _class.parseMaybeAssign (/Users/stephenli/Desktop/BobaWithStrangers/node_modules/@babel/parser/lib/index.js:5731:21)\n    at _class.parseParenAndDistinguishExpression (/Users/stephenli/Desktop/BobaWithStrangers/node_modules/@babel/parser/lib/index.js:6474:28)\n    at _class.parseExprAtom (/Users/stephenli/Desktop/BobaWithStrangers/node_modules/@babel/parser/lib/index.js:6284:21)\n    at _class.parseExprAtom (/Users/stephenli/Desktop/BobaWithStrangers/node_modules/@babel/parser/lib/index.js:3635:52)\n    at _class.parseExprSubscripts (/Users/stephenli/Desktop/BobaWithStrangers/node_modules/@babel/parser/lib/index.js:5924:21)\n    at _class.parseMaybeUnary (/Users/stephenli/Desktop/BobaWithStrangers/node_modules/@babel/parser/lib/index.js:5903:21)\n    at _class.parseExprOps (/Users/stephenli/Desktop/BobaWithStrangers/node_modules/@babel/parser/lib/index.js:5812:21)\n    at _class.parseMaybeConditional (/Users/stephenli/Desktop/BobaWithStrangers/node_modules/@babel/parser/lib/index.js:5784:21)\n    at _class.parseMaybeAssign (/Users/stephenli/Desktop/BobaWithStrangers/node_modules/@babel/parser/lib/index.js:5731:21)\n    at _class.parseExpression (/Users/stephenli/Desktop/BobaWithStrangers/node_modules/@babel/parser/lib/index.js:5684:21)\n    at _class.parseReturnStatement (/Users/stephenli/Desktop/BobaWithStrangers/node_modules/@babel/parser/lib/index.js:7497:28)\n    at _class.parseStatementContent (/Users/stephenli/Desktop/BobaWithStrangers/node_modules/@babel/parser/lib/index.js:7179:21)\n    at _class.parseStatement (/Users/stephenli/Desktop/BobaWithStrangers/node_modules/@babel/parser/lib/index.js:7145:17)\n    at _class.parseBlockOrModuleBlockBody (/Users/stephenli/Desktop/BobaWithStrangers/node_modules/@babel/parser/lib/index.js:7696:23)\n    at _class.parseBlockBody (/Users/stephenli/Desktop/BobaWithStrangers/node_modules/@babel/parser/lib/index.js:7683:10)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+/* harmony import */ var _actions_event_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/event_actions */ "./frontend/actions/event_actions.js");
+/* harmony import */ var react_time_format__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-time-format */ "./node_modules/react-time-format/lib/index.js");
+/* harmony import */ var react_time_format__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_time_format__WEBPACK_IMPORTED_MODULE_4__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+
+
+
+
+
+
+var mapStateToProps = function mapStateToProps(state, ownProps) {
+  return {
+    thisEvent: state.entities.events[ownProps.match.params.eventId],
+    currentUser: state.entities.users[state.session.id]
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    requestEvent: function requestEvent(id) {
+      return dispatch(Object(_actions_event_actions__WEBPACK_IMPORTED_MODULE_3__["requestEvent"])(id));
+    }
+  };
+};
+
+var SEED_EVENT_DATA = {
+  id: 3,
+  date: "Oct 13",
+  time: "11:00AM",
+  address: "a/A office: 825 Battery Street",
+  city: "New York City",
+  max_cap: 6,
+  seat_taken: 1,
+  host: {
+    name: "DWebz da host",
+    bio: "We talking about mayo and Pokemon",
+    host_image: "https://i.imgur.com/nYxqinx.jpg"
+  }
+};
+var SEED_SESSION_DATA = {
+  id: 7,
+  name: "Danny da logged in person"
+};
+
+var BobaTimesEvent =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(BobaTimesEvent, _React$Component);
+
+  function BobaTimesEvent(props) {
+    var _this;
+
+    _classCallCheck(this, BobaTimesEvent);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(BobaTimesEvent).call(this, props));
+    _this.state = {
+      event: SEED_EVENT_DATA,
+      session: SEED_SESSION_DATA
+    };
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_assertThisInitialized(_this))); // this.props.requestEvent(this.props.match.params.eventId)
+
+    return _this;
+  }
+
+  _createClass(BobaTimesEvent, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.requestEvent(this.props.match.params.eventId);
+    }
+  }, {
+    key: "eventData",
+    value: function eventData() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "boba-times-event-data"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "event-card-host"
+      }, "Join ", this.props.thisEvent.host.name, " for Boba Time"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "event-card-datetime"
+      }, "\uD83D\uDCC5 ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_time_format__WEBPACK_IMPORTED_MODULE_4___default.a, {
+        value: this.props.thisEvent.date,
+        format: "MM/DD/YYYY"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "event-card-datetime"
+      }, "\u23F0 ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_time_format__WEBPACK_IMPORTED_MODULE_4___default.a, {
+        value: this.props.thisEvent.time,
+        format: "HH:MM"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "event-card-location"
+      }, "\uD83D\uDCCD ", this.props.thisEvent.address), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "event-card-location"
+      }, "\uD83D\uDDFA ", this.props.thisEvent.city), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "event-card-seats"
+      }, "There are ", this.props.thisEvent.max_cap - this.state.event.seat_taken, " seats left!")));
+    }
+  }, {
+    key: "signUpButton",
+    value: function signUpButton() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "boba-times-event-signup"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.handleSubmit
+      }, "SIGN ME UP"));
+    }
+  }, {
+    key: "handleSubmit",
+    value: function handleSubmit() {
+      //post request that creates join table between this.state.session.id and this.state.event.id
+      console.log(this.props.currentUser);
+      console.log("Signed Up!");
+    }
+  }, {
+    key: "hostBio",
+    value: function hostBio() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "boba-times-event-host"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "boba-times-event-host-title"
+      }, "Meet your host, ", this.props.thisEvent.host.name, "."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "event-card-location"
+      }, "(It'll be helpful to know what they look like when you're looking for a group of confused strangers at the boba shop.)."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "boba-times-event-host-image"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: this.props.thisEvent.host.image
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "boba-times-event-bio"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "What's my story and what we might talk about?"), this.props.thisEvent.host.bio, ".")));
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      if (!this.props.thisEvent) {
+        return null;
+      }
+
+      return (//Event information
+        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "boba-times-event-page-background"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "boba-times-event-container"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "boba-times-event-left"
+        }, this.eventData(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.signUpButton()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "boba-times-event-right"
+        }, this.hostBio())))
+      );
+    }
+  }]);
+
+  return BobaTimesEvent;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, mapDispatchToProps)(BobaTimesEvent));
 
 /***/ }),
 
@@ -29663,6 +29837,231 @@ var withRouter = function withRouter(Component) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (withRouter);
+
+/***/ }),
+
+/***/ "./node_modules/react-time-format/lib/index.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/react-time-format/lib/index.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /*
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * react-timer
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                *
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * handle show time format
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * format just like moment format function
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                *
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * todo 1. add offset attribte to custom show
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
+
+
+var FORMAT_REG = /(YYYY|YYY|YY|Y|MM|M|DD|D|HH|H|hh|h|mm|m|ss|s|.)/g;
+
+var Time = function (_React$Component) {
+	_inherits(Time, _React$Component);
+
+	function Time(props) {
+		_classCallCheck(this, Time);
+
+		var _this = _possibleConstructorReturn(this, (Time.__proto__ || Object.getPrototypeOf(Time)).call(this, props));
+
+		_this.displayName = 'Time';
+		return _this;
+	}
+
+	_createClass(Time, [{
+		key: 'formatTime',
+		value: function formatTime() {
+			var _props = this.props;
+			var _props$value = _props.value;
+			var value = _props$value === undefined ? '' : _props$value;
+			var format = _props.format;
+
+
+			return Time.format(value, format);
+		}
+	}, {
+		key: 'render',
+		value: function render() {
+			var _props2 = this.props;
+			var value = _props2.value;
+			var format = _props2.format;
+
+			var props = _objectWithoutProperties(_props2, ['value', 'format']);
+
+			return _react2.default.createElement(
+				'span',
+				props,
+				this.formatTime()
+			);
+		}
+	}]);
+
+	return Time;
+}(_react2.default.Component);
+
+//time format
+
+
+Time.format = function (value) {
+	var format = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'YYYY-MM-DD hh:mm:ss';
+
+	var ReplaceFunction = {};
+
+	if (!value) {
+		return '';
+	}
+	if ((typeof value === 'undefined' ? 'undefined' : _typeof(value)) !== 'object') {
+		value = new Date(value);
+	}
+
+	var matchResult = format.match(FORMAT_REG);
+
+	if (matchResult) {
+		return matchResult.map(function (item, index) {
+			if (!ReplaceFunction[item]) {
+				ReplaceFunction[item] = createReplaceFunction(item);
+			}
+
+			return ReplaceFunction[item]();
+		}).join('');
+	}
+
+	return format;
+
+	//create replace function
+	function createReplaceFunction(format) {
+		return function () {
+			switch (format) {
+				case "YYYY":
+					return getYear(4);
+					;
+				case "YYY":
+					return getYear(3);
+					;
+				case "YY":
+					return getYear(2);
+					;
+				case "Y":
+					return getYear(1);
+					;
+				case "MM":
+					return getMonth(2);
+					;
+				case "M":
+					return getMonth(1);
+					;
+				case "DD":
+					return getDay(2);
+					;
+				case "D":
+					return getDay(1);
+					;
+				case "hh":
+					return getHour(2);
+					;
+				case "h":
+					return getHour(1);
+					;
+				case "HH":
+					return getHour(2);
+					;
+				case "H":
+					return getHour(1);
+					;
+				case "mm":
+					return getMinute(2);
+					;
+				case "m":
+					return getMinute(1);
+					;
+				case "ss":
+					return getSecond(2);
+					;
+				case "s":
+					return getSecond(1);
+					;
+				default:
+					return format;
+					;
+			}
+		};
+
+		function getYear(num) {
+			var reg = new RegExp('^[0-9]{' + (4 - num) + '}');
+
+			return (value.getFullYear() + "").replace(reg, '');
+		}
+
+		function getMonth(num) {
+			var month = value.getMonth() + 1;
+
+			return getFormattedValue(month, num);
+		}
+
+		function getDay(num) {
+			var day = value.getDate();
+
+			return getFormattedValue(day, num);
+		}
+		function getHour(num) {
+			var hour = value.getHours();
+
+			return getFormattedValue(hour, num);
+		}
+		function getMinute(num) {
+			var hour = value.getMinutes();
+
+			return getFormattedValue(hour, num);
+		}
+		function getSecond(num) {
+			var seconds = value.getSeconds();
+
+			return getFormattedValue(seconds, num);
+		}
+
+		function getFormattedValue(value, num) {
+			if (num === 1) {
+				return value;
+			} else {
+				return fillZero(value);
+			}
+		}
+
+		function fillZero(num) {
+			return num >= 10 ? num : "0" + num;
+		}
+	}
+};
+
+exports.default = Time;
 
 /***/ }),
 
