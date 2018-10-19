@@ -65,7 +65,7 @@ eventData(){
       <ul>
         <li className="event-card-host">Join {this.props.thisEvent.host.name} for Boba Time</li>
         <li className="event-card-datetime">📅 <Time value={this.props.thisEvent.date} format="MM/DD/YYYY"/></li>
-        <li className="event-card-datetime">⏰ <Time value={this.props.thisEvent.time} format="HH:MM"/></li>
+        <li className="event-card-datetime">⏰ <Time value={this.props.thisEvent.time} format="HH:MM" utc=false/></li>
         <li className="event-card-location">📍 {this.props.thisEvent.address}</li>
         <li className="event-card-location">🗺 {this.props.thisEvent.city}</li>
         <li className="event-card-seats">There are {this.props.thisEvent.max_cap - this.state.event.seat_taken} seats left!</li>

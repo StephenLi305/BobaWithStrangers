@@ -10,6 +10,8 @@ class Api::EventsController < ApplicationController
     @event = Event.new(event_params)
     @event.host_id = current_user.id
     if @event.save
+      # hours = @event.time.hours
+
       render "api/events/show"
     else
       render json: @event.errors.full_messages

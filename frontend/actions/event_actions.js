@@ -9,13 +9,18 @@ export const receiveEvent = event => ({
 })
 
 
-export const createEvent = formEvent => dispatch => (
-  APIUtil.createEvent(formEvent).then(
-    event => (
-    dispatch(receiveEvent(event))
+export const createEvent = formEvent => dispatch => {
+  return(
+    APIUtil.createEvent(formEvent).then(
+      event => {
+        return(
+          dispatch(receiveEvent(event))
+        )
+      }
     )
   )
-)
+}
+
 
 export const requestEvent = id => dispatch => (
   APIUtil.fetchEvent(id).then(
