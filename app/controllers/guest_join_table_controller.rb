@@ -1,4 +1,4 @@
-class Api:GuestJoinTableController < ApplicationController
+class Api::GuestJoinTableController < ApplicationController
 
 
   def create
