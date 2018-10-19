@@ -10,6 +10,20 @@ constructor(props){
   super(props);
 }
 
+
+componentDidMount(){
+  window.location.hash = window.decodeURIComponent(window.location.hash);
+  const scrollToAnchor = () => {
+    const hashParts = window.location.hash.split('#');
+    if (hashParts.length > 2) {
+      const hash = hashParts.slice(-1)[0];
+      document.querySelector(`#${hash}`).scrollIntoView();
+    }
+  };
+  scrollToAnchor();
+  window.onhashchange = scrollToAnchor;
+}
+
 title(){
   return(
     <div className="boba-times-title">
@@ -114,7 +128,7 @@ citiesList(){
         address: "a/A office: 825 Battery Street, Los Angeles",
         host_image: "https://i.imgur.com/y5jTA0P.jpg",
         max_cap: 6,
-        seat_taken: 9
+        seat_taken: 2
       },
       { id: 3,
         date: "Oct 13",

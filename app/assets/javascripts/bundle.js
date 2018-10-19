@@ -314,18 +314,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
  //
-// componentDidMount() {
-//   window.location.hash = window.decodeURIComponent(window.location.hash);
-//   const scrollToAnchor = () => {
-//     const hashParts = window.location.hash.split('#');
-//     if (hashParts.length > 2) {
-//       const hash = hashParts.slice(-1)[0];
-//       document.querySelector(`#${hash}`).scrollIntoView();
-//     }
-//   };
-//   scrollToAnchor();
-//   window.onhashchange = scrollToAnchor;
-// }
 
 var App = function App() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -414,6 +402,23 @@ function (_React$Component) {
   }
 
   _createClass(BobaTimes, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      window.location.hash = window.decodeURIComponent(window.location.hash);
+
+      var scrollToAnchor = function scrollToAnchor() {
+        var hashParts = window.location.hash.split('#');
+
+        if (hashParts.length > 2) {
+          var hash = hashParts.slice(-1)[0];
+          document.querySelector("#".concat(hash)).scrollIntoView();
+        }
+      };
+
+      scrollToAnchor();
+      window.onhashchange = scrollToAnchor;
+    }
+  }, {
     key: "title",
     value: function title() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -500,7 +505,7 @@ function (_React$Component) {
           address: "a/A office: 825 Battery Street, Los Angeles",
           host_image: "https://i.imgur.com/y5jTA0P.jpg",
           max_cap: 6,
-          seat_taken: 9
+          seat_taken: 2
         }, {
           id: 3,
           date: "Oct 13",
@@ -697,7 +702,7 @@ function (_React$Component) {
         className: "boba-times-event-data"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "event-card-host"
-      }, "Join ", this.props.currentUser.name, " for Boba Time"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      }, "Join ", this.props.thisEvent.host.name, " for Boba Time"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "event-card-datetime"
       }, "\uD83D\uDCC5 ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_time_format__WEBPACK_IMPORTED_MODULE_4___default.a, {
         value: this.props.thisEvent.date,
@@ -738,7 +743,7 @@ function (_React$Component) {
         className: "boba-times-event-host"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "boba-times-event-host-title"
-      }, "Meet your host, ", this.props.currentUser.name, "."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      }, "Meet your host, ", this.props.thisEvent.host.name, "."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "event-card-location"
       }, "(It'll be helpful to know what they look like when you're looking for a group of confused strangers at the boba shop.)."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "boba-times-event-host-image"
@@ -1065,7 +1070,9 @@ function (_React$Component) {
         href: "https://github.com/StephenLi305"
       }, "GitHub"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "https://www.linkedin.com/in/stephenli305/"
-      }, "LinkedIn"));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fab fa-linkedin-in"
+      })));
     }
   }]);
 

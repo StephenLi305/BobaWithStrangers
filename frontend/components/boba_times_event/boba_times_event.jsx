@@ -63,7 +63,7 @@ eventData(){
   return(
     <div className="boba-times-event-data">
       <ul>
-        <li className="event-card-host">Join {this.props.currentUser.name} for Boba Time</li>
+        <li className="event-card-host">Join {this.props.thisEvent.host.name} for Boba Time</li>
         <li className="event-card-datetime">📅 <Time value={this.props.thisEvent.date} format="MM/DD/YYYY"/></li>
         <li className="event-card-datetime">⏰ <Time value={this.props.thisEvent.time} format="HH:MM"/></li>
         <li className="event-card-location">📍 {this.props.thisEvent.address}</li>
@@ -93,7 +93,7 @@ hostBio(){
   return(
     <div className="boba-times-event-host">
       <ul>
-        <li className="boba-times-event-host-title">Meet your host, {this.props.currentUser.name}.</li>
+        <li className="boba-times-event-host-title">Meet your host, {this.props.thisEvent.host.name}.</li>
         <li className="event-card-location">(It'll be helpful to know what they look like when you're looking for a group of confused strangers at the boba shop.).</li>
         <li className="boba-times-event-host-image"><img src={this.props.currentUser.image} /></li>
         <br/>
