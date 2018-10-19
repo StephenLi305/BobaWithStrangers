@@ -52,7 +52,6 @@ class CreateEvent extends React.Component{
   updateState(res) {
     this.setState({eventId: res.event.id})
     this.setState({toEventPage: true})
-
   }
 
   update(field){
