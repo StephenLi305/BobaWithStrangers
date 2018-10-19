@@ -748,10 +748,10 @@ function (_React$Component) {
       }, "(It'll be helpful to know what they look like when you're looking for a group of confused strangers at the boba shop.)."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "boba-times-event-host-image"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: this.props.currentUser.image
+        src: this.props.thisEvent.host.image
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "boba-times-event-bio"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "What's my story and what we might talk about?"), this.props.currentUser.bio, ".")));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "What's my story and what we might talk about?"), this.props.thisEvent.host.bio, ".")));
     }
   }, {
     key: "render",

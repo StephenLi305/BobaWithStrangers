@@ -95,11 +95,11 @@ hostBio(){
       <ul>
         <li className="boba-times-event-host-title">Meet your host, {this.props.thisEvent.host.name}.</li>
         <li className="event-card-location">(It'll be helpful to know what they look like when you're looking for a group of confused strangers at the boba shop.).</li>
-        <li className="boba-times-event-host-image"><img src={this.props.currentUser.image} /></li>
+        <li className="boba-times-event-host-image"><img src={this.props.thisEvent.host.image} /></li>
         <br/>
         <li className="boba-times-event-bio">
         <h1>What's my story and what we might talk about?</h1>
-        {this.props.currentUser.bio}.</li>
+        {this.props.thisEvent.host.bio}.</li>
       </ul>
     </div>
   );
