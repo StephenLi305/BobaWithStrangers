@@ -1,9 +1,16 @@
 .footer{
   background: $header-footer;
   height: 80px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+
+  justify-content: center;
+  align-items: center;
+  margin: auto;
   display: flex;
-  padding-top: 10px;
-  padding-left: 50px;
   a{
     color:white;
     font-size: 35px;
