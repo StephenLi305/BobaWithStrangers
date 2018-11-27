@@ -11,11 +11,11 @@ export const receiveEvent = event => ({
 
 export const createEvent = formEvent => dispatch => {
   console.log("event action page");
-  debugger
+  // debugger
   return(
     APIUtil.createEvent(formEvent).then(
       event => {
-        debugger
+        // debugger
         return(
           dispatch(receiveEvent(event))
         )

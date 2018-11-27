@@ -45,7 +45,7 @@ class CreateEvent extends React.Component{
     // const user = {bio, image}
     // const userId = this.state.host_id
     console.log("handle submit");
-    debugger
+    // debugger
     this.props.createEvent(this.state)
     .then( this.props.updateUser(this.state, this.props.userId))
     .then( (res) => this.updateState(res))

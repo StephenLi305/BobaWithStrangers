@@ -63,6 +63,8 @@ componentDidMount(){
 eventData(){
   // <li className="event-card-datetime">📅 <Time value={this.props.thisEvent.date} format="MM/DD/YYYY"/></li>
   // <li className="event-card-datetime">⏰ <Time value={this.props.thisEvent.time} format="HH" /></li>
+  // <li className="event-card-datetime"> {this.props.thisEvent.boba_shop}</li>
+  // <li className="event-card-location">📍 </li>
   return(
     <div className="boba-times-event-data">
       <ul>
@@ -71,7 +73,7 @@ eventData(){
 
         <li className="event-card-datetime">⏰ {this.props.thisEvent.time}</li>
 
-        <li className="event-card-location">📍 {this.props.thisEvent.address}</li>
+        <li className="event-card-location">📍 {this.props.thisEvent.boba_shop} @ {this.props.thisEvent.address}</li>
         <li className="event-card-location">🗺 {this.props.thisEvent.city}</li>
         <li className="event-card-seats">There are {this.props.thisEvent.max_cap - this.state.event.seat_taken} seats left!</li>
       </ul>

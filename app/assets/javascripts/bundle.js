@@ -166,10 +166,10 @@ var receiveEvent = function receiveEvent(event) {
 };
 var createEvent = function createEvent(formEvent) {
   return function (dispatch) {
-    console.log("event action page");
-    debugger;
+    console.log("event action page"); // debugger
+
     return _util_event_api_util__WEBPACK_IMPORTED_MODULE_0__["createEvent"](formEvent).then(function (event) {
-      debugger;
+      // debugger
       return dispatch(receiveEvent(event));
     });
   };
@@ -455,53 +455,53 @@ function (_React$Component) {
       var seedData = [{
         city_name: "San Francisco",
         event_data: [{
-          id: 1,
-          date: "Oct 13",
-          time: "11:00AM",
-          address: "a/A office: 825 Battery Street, San Francisco",
+          id: 134,
+          date: "12/1/2018",
+          time: "16:00",
+          address: "DWebbz's Shop @ 123 BlueBird Street",
           host_image: "https://i.imgur.com/nYxqinx.jpg",
-          max_cap: 6,
+          max_cap: 4,
           seat_taken: 1
         }, {
-          id: 9,
-          date: "Oct 13",
-          time: "11:00AM",
-          address: "a/A office: 825 Battery Street, San Francisco",
+          id: 135,
+          date: "12/25/2018",
+          time: "15:00",
+          address: "Ronil's House of Boba @ 823 Battery Street",
           host_image: "https://i.imgur.com/SXA3Ihy.jpg",
           max_cap: 6,
           seat_taken: 1
         }, {
-          id: 3,
-          date: "Oct 13",
-          time: "11:00AM",
-          address: "a/A office: 825 Battery Street, San Francisco",
+          id: 136,
+          date: "12/28/2018",
+          time: "16:00",
+          address: "Starbucks @ 71 Battery Street",
           host_image: "https://i.imgur.com/7xEGbPX.jpg",
-          max_cap: 6,
+          max_cap: 5,
           seat_taken: 1
         }]
       }, {
         city_name: "Los Angeles",
         event_data: [{
-          id: 4,
-          date: "Oct 13",
-          time: "11:00AM",
-          address: "a/A office: 825 Battery Street, Los Angeles",
+          id: 137,
+          date: "12/4/2018",
+          time: "11:00",
+          address: "Elliot's shop @ 435 Fun street",
           host_image: "https://i.imgur.com/sbRXPj8.jpg",
+          max_cap: 5,
+          seat_taken: 1
+        }, {
+          id: 139,
+          date: "11/30/2018",
+          time: "14:00",
+          address: "Lizzle @ 196 Franchise Street",
+          host_image: "https://i.imgur.com/y5jTA0P.jpg",
           max_cap: 6,
           seat_taken: 1
         }, {
-          id: 5,
-          date: "Oct 13",
-          time: "11:00AM",
-          address: "a/A office: 825 Battery Street, Los Angeles",
-          host_image: "https://i.imgur.com/y5jTA0P.jpg",
-          max_cap: 6,
-          seat_taken: 2
-        }, {
-          id: 6,
-          date: "Oct 13",
-          time: "11:00AM",
-          address: "a/A office: 825 Battery Street, Los Angeles",
+          id: 140,
+          date: "12/31/2018",
+          time: "20:00",
+          address: "TPUMPS @ 572 Irving Street",
           host_image: "https://i.imgur.com/ywAiTk1.jpg",
           max_cap: 6,
           seat_taken: 1
@@ -509,20 +509,12 @@ function (_React$Component) {
       }, {
         city_name: "New York",
         event_data: [{
-          id: 7,
-          date: "Oct 13",
-          time: "11:00AM",
-          address: "a/A office: 825 Battery Street, New York",
-          host_image: "https://i.imgur.com/AxPggXR.jpg",
-          max_cap: 6,
-          seat_taken: 1
-        }, {
-          id: 8,
-          date: "Oct 13",
-          time: "11:00AM",
-          address: "a/A office: 825 Battery Street, New York",
+          id: 141,
+          date: "12/14/2018",
+          time: "15:00",
+          address: "JKen's House of Boba @ 762 Geary Street",
           host_image: "https://i.imgur.com/CWbTORL.jpg",
-          max_cap: 6,
+          max_cap: 4,
           seat_taken: 1
         }]
       }];
@@ -694,6 +686,8 @@ function (_React$Component) {
     value: function eventData() {
       // <li className="event-card-datetime">📅 <Time value={this.props.thisEvent.date} format="MM/DD/YYYY"/></li>
       // <li className="event-card-datetime">⏰ <Time value={this.props.thisEvent.time} format="HH" /></li>
+      // <li className="event-card-datetime"> {this.props.thisEvent.boba_shop}</li>
+      // <li className="event-card-location">📍 </li>
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "boba-times-event-data"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
@@ -704,7 +698,7 @@ function (_React$Component) {
         className: "event-card-datetime"
       }, "\u23F0 ", this.props.thisEvent.time), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "event-card-location"
-      }, "\uD83D\uDCCD ", this.props.thisEvent.address), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      }, "\uD83D\uDCCD ", this.props.thisEvent.boba_shop, " @ ", this.props.thisEvent.address), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "event-card-location"
       }, "\uD83D\uDDFA ", this.props.thisEvent.city), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "event-card-seats"
@@ -868,8 +862,8 @@ function (_React$Component) {
       // const user = {bio, image}
       // const userId = this.state.host_id
 
-      console.log("handle submit");
-      debugger;
+      console.log("handle submit"); // debugger
+
       this.props.createEvent(this.state).then(this.props.updateUser(this.state, this.props.userId)).then(function (res) {
         return _this2.updateState(res);
       });
@@ -2075,8 +2069,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createEvent", function() { return createEvent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchEvent", function() { return fetchEvent; });
 var createEvent = function createEvent(event) {
-  console.log("event api util page");
-  debugger;
+  console.log("event api util page"); // debugger
+
   return $.ajax({
     url: "/api/events",
     method: "POST",
