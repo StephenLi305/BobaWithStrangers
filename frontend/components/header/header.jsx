@@ -43,16 +43,16 @@ rightNav() {
     return (
       <nav className="right-nav">
         <ul className="header-signed-in" >
+          <Link to="/boba_times">
+          <li>BOBA TIMES</li>
+          </Link>
+
           <Link to="/create">
             <li>HOST EVENT</li>
           </Link>
 
           <Link to="/profile">
             <li>DASHBOARD</li>
-          </Link>
-
-          <Link to="/boba_times">
-            <li>BOBA TIMES</li>
           </Link>
 
           <Link to="/signup">

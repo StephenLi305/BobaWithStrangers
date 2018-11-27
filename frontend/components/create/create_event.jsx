@@ -29,7 +29,7 @@ class CreateEvent extends React.Component{
       city:'San Francisco',
       max_cap:'3',
       bio:'',
-      image:'',
+      image:'https://i.imgur.com/TsnWxhl.jpg',
       eventId: 0,
       toEventPage: false
     };
@@ -150,12 +150,14 @@ class CreateEvent extends React.Component{
 
               <label>
               <h1 className="create-event-field-text">
-              Image URL:</h1>
+              Image URL: (or use this defult image!)
+              </h1>
               <input type="text"
               value={this.state.image}
               placeholder="Paste a IMAGE URL of yourself!"
               onChange={this.update('image')}
               className="create-event-field"
+              // value={"https://i.imgur.com/TsnWxhl.jpg"}
               required
               />
               </label><br/>

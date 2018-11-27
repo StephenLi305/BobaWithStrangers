@@ -847,7 +847,7 @@ function (_React$Component) {
       city: 'San Francisco',
       max_cap: '3',
       bio: '',
-      image: '',
+      image: 'https://i.imgur.com/TsnWxhl.jpg',
       eventId: 0,
       toEventPage: false
     };
@@ -983,12 +983,13 @@ function (_React$Component) {
         required: true
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "create-event-field-text"
-      }, "Image URL:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, "Image URL: (or use this defult image!)"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         value: this.state.image,
         placeholder: "Paste a IMAGE URL of yourself!",
         onChange: this.update('image'),
-        className: "create-event-field",
+        className: "create-event-field" // value={"https://i.imgur.com/TsnWxhl.jpg"}
+        ,
         required: true
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "create-event-submit",
@@ -1171,12 +1172,12 @@ function (_React$Component) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
           className: "header-signed-in"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+          to: "/boba_times"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "BOBA TIMES")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
           to: "/create"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "HOST EVENT")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
           to: "/profile"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "DASHBOARD")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-          to: "/boba_times"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "BOBA TIMES")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
           to: "/signup"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           onClick: this.handleLogout
