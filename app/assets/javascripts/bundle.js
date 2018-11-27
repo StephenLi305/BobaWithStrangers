@@ -866,6 +866,7 @@ function (_React$Component) {
       // const user = {bio, image}
       // const userId = this.state.host_id
 
+      console.log("do you see me?");
       this.props.createEvent(this.state).then(this.props.updateUser(this.state, this.props.userId)).then(function (res) {
         return _this2.updateState(res);
       });
