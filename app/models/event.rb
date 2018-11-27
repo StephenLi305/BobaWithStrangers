@@ -1,6 +1,6 @@
 class Event < ApplicationRecord
 
-    validates :date, :time, :max_cap, :boba_shop, :address, :city, presence: true
+    validates :date, :time, :max_cap, :boba_shop, :address, :city, :bio, :image, presence: true
 
     belongs_to :host,
     foreign_key: :host_id,

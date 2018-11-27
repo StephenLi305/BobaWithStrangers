@@ -1,8 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link, withRouter, Redirect } from 'react-router-dom';
-import { requestEvent } from '../../actions/event_actions'
-import Time from 'react-time-format'
+import { requestEvent } from '../../actions/event_actions';
+import Time from 'react-time-format';
+import Moment from 'react-moment';
 
 
 const mapStateToProps = (state, ownProps) => {
@@ -60,12 +61,16 @@ componentDidMount(){
 
 
 eventData(){
+  // <li className="event-card-datetime">📅 <Time value={this.props.thisEvent.date} format="MM/DD/YYYY"/></li>
+  // <li className="event-card-datetime">⏰ <Time value={this.props.thisEvent.time} format="HH" /></li>
   return(
     <div className="boba-times-event-data">
       <ul>
         <li className="event-card-host">Join {this.props.thisEvent.host.name} for Boba Time</li>
-        <li className="event-card-datetime">📅 <Time value={this.props.thisEvent.date} format="MM/DD/YYYY"/></li>
-        <li className="event-card-datetime">⏰ <Time value={this.props.thisEvent.time} format="HH:MM" /></li>
+        <li className="event-card-datetime">📅 {this.props.thisEvent.date}</li>
+
+        <li className="event-card-datetime">⏰ {this.props.thisEvent.time}</li>
+
         <li className="event-card-location">📍 {this.props.thisEvent.address}</li>
         <li className="event-card-location">🗺 {this.props.thisEvent.city}</li>
         <li className="event-card-seats">There are {this.props.thisEvent.max_cap - this.state.event.seat_taken} seats left!</li>
@@ -95,11 +100,11 @@ hostBio(){
       <ul>
         <li className="boba-times-event-host-title">Meet your host, {this.props.thisEvent.host.name}.</li>
         <li className="event-card-location">(It'll be helpful to know what they look like when you're looking for a group of confused strangers at the boba shop.).</li>
-        <li className="boba-times-event-host-image"><img src={this.props.thisEvent.host.image} /></li>
+        <li className="boba-times-event-host-image"><img src={this.props.thisEvent.image} /></li>
         <br/>
         <li className="boba-times-event-bio">
         <h1>What's my story and what we might talk about?</h1>
-        {this.props.thisEvent.host.bio}.</li>
+        {this.props.thisEvent.bio}.</li>
       </ul>
     </div>
   );

@@ -24,11 +24,11 @@ class CreateEvent extends React.Component{
       host_id:'',
       date:'',
       time:'',
-      boba_shop:"",
-      address:'',
+      boba_shop:"testing",
+      address:'testing',
       city:'San Francisco',
       max_cap:'3',
-      bio:'',
+      bio:'testing',
       image:'https://i.imgur.com/TsnWxhl.jpg',
       eventId: 0,
       toEventPage: false
@@ -44,7 +44,8 @@ class CreateEvent extends React.Component{
     // const image = this.state.image
     // const user = {bio, image}
     // const userId = this.state.host_id
-    console.log("do you see me?");
+    console.log("handle submit");
+    debugger
     this.props.createEvent(this.state)
     .then( this.props.updateUser(this.state, this.props.userId))
     .then( (res) => this.updateState(res))
