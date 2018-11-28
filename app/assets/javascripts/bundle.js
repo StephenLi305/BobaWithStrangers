@@ -425,7 +425,7 @@ function (_React$Component) {
         className: "boba-times-body-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "boba-times-body"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "Boba With Strangers is boba, with strangers."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "For two hours, five-ish strangers sit at a boba shop (or some other public place) with a host to talk. Not about anything in particular. The circumstances are unsual, but that's the point.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "If none of these work for you, you can come back next month to see the boba times. You can create an event here!")));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "Boba With Strangers is boba, with strangers."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "For two hours, five-ish strangers sit at a boba shop (or some other public place) with a host to talk. Not about anything in particular. The circumstances are unusual, but that's the point.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "If none of these work for you, you can come back next month to see the boba times. You can create an event here!")));
     }
   }, {
     key: "cityListIndex",

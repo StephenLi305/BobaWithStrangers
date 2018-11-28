@@ -8,6 +8,7 @@ class BobaTimes extends React.Component{
 
 constructor(props){
   super(props);
+
 }
 
 
@@ -43,7 +44,7 @@ body(){
 
         <p>For two hours, five-ish strangers sit at a boba shop
         (or some other public place) with a host to talk. Not about
-         anything in particular. The circumstances are unsual, but
+         anything in particular. The circumstances are unusual, but
          that's the point.
          <br/>
          <br/>
