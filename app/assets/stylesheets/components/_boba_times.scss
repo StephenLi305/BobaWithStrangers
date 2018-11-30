@@ -6,7 +6,7 @@
 
 .boba-times-title{
   width: 100%;
-  height: 160px;
+  height: 250px;
   padding: 75px 0;
   display: flex;
   justify-content: center;
@@ -15,8 +15,9 @@
       rgba(231,191, 89, 0.45),
       rgba(231,191, 89, 0.45)
     ),
-    url(https://i.imgur.com/iRMvS1C.jpg);
-    background-position: -73px -43px;
+    url(https://i.imgur.com/nLEgn62.jpg);
+    // url(https://i.imgur.com/iRMvS1C.jpg);
+    background-position: 0px 800px;
 
 
   .boba-times-title-text{
@@ -125,7 +126,7 @@
 }
 
 .citys-event-card-container {
-  // width: 65%;
+  width: 65%;
   height: auto;
   margin: auto;
   // border: blue 1px solid;

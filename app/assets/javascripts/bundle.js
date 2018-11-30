@@ -457,7 +457,7 @@ function (_React$Component) {
         event_data: [{
           id: 134,
           date: "12/1/2018",
-          time: "16:00",
+          time: "4:00PM",
           address: "DWebbz's Shop @ 123 BlueBird Street",
           host_image: "https://i.imgur.com/nYxqinx.jpg",
           max_cap: 4,
@@ -465,7 +465,7 @@ function (_React$Component) {
         }, {
           id: 135,
           date: "12/25/2018",
-          time: "15:00",
+          time: "3:00PM",
           address: "Ronil's House of Boba @ 823 Battery Street",
           host_image: "https://i.imgur.com/SXA3Ihy.jpg",
           max_cap: 6,
@@ -473,7 +473,7 @@ function (_React$Component) {
         }, {
           id: 136,
           date: "12/28/2018",
-          time: "16:00",
+          time: "4:00PM",
           address: "Starbucks @ 71 Battery Street",
           host_image: "https://i.imgur.com/7xEGbPX.jpg",
           max_cap: 5,
@@ -484,7 +484,7 @@ function (_React$Component) {
         event_data: [{
           id: 137,
           date: "12/4/2018",
-          time: "11:00",
+          time: "11:00AM",
           address: "Elliot's shop @ 435 Fun street",
           host_image: "https://i.imgur.com/sbRXPj8.jpg",
           max_cap: 5,
@@ -492,7 +492,7 @@ function (_React$Component) {
         }, {
           id: 139,
           date: "11/30/2018",
-          time: "14:00",
+          time: "2:00PM",
           address: "Lizzle @ 196 Franchise Street",
           host_image: "https://i.imgur.com/y5jTA0P.jpg",
           max_cap: 6,
@@ -500,7 +500,7 @@ function (_React$Component) {
         }, {
           id: 140,
           date: "12/31/2018",
-          time: "20:00",
+          time: "8:00PM",
           address: "TPUMPS @ 572 Irving Street",
           host_image: "https://i.imgur.com/ywAiTk1.jpg",
           max_cap: 6,
@@ -511,7 +511,7 @@ function (_React$Component) {
         event_data: [{
           id: 141,
           date: "12/14/2018",
-          time: "15:00",
+          time: "3:00PM",
           address: "JKen's House of Boba @ 762 Geary Street",
           host_image: "https://i.imgur.com/CWbTORL.jpg",
           max_cap: 4,
@@ -1086,7 +1086,7 @@ function (_React$Component) {
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "https://stephenli.fun/"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        class: "fas fa-portrait"
+        className: "fas fa-portrait"
       })));
     }
   }]);
