@@ -671,7 +671,8 @@ function (_React$Component) {
       event: SEED_EVENT_DATA,
       session: SEED_SESSION_DATA
     };
-    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_assertThisInitialized(_this))); // this.props.requestEvent(this.props.match.params.eventId)
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _this.checkTime = _this.checkTime.bind(_assertThisInitialized(_assertThisInitialized(_this))); // this.props.requestEvent(this.props.match.params.eventId)
 
     return _this;
   }
@@ -680,6 +681,27 @@ function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.props.requestEvent(this.props.match.params.eventId);
+    }
+  }, {
+    key: "checkTime",
+    value: function checkTime(time) {
+      var hour = time.slice(0, 2);
+      var minute = time.slice(2, 5);
+      var day = "AM";
+
+      if (hour >= 12) {
+        if (hour > 12) {
+          hour -= 12;
+        }
+
+        day = "PM";
+      }
+
+      if (hour === "00") {
+        hour = 12;
+      }
+
+      return hour + minute + day;
     }
   }, {
     key: "eventData",
@@ -696,7 +718,7 @@ function (_React$Component) {
         className: "event-card-datetime"
       }, "\uD83D\uDCC5 ", this.props.thisEvent.date), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "event-card-datetime"
-      }, "\u23F0 ", this.props.thisEvent.time), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      }, "\u23F0 ", this.checkTime(this.props.thisEvent.time)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "event-card-location"
       }, "\uD83D\uDCCD ", this.props.thisEvent.boba_shop, " @ ", this.props.thisEvent.address), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "event-card-location"
@@ -1061,6 +1083,10 @@ function (_React$Component) {
         href: "https://www.linkedin.com/in/stephenli305/"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fab fa-linkedin-in"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "https://stephenli.fun/"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        class: "fas fa-portrait"
       })));
     }
   }]);

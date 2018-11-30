@@ -48,6 +48,7 @@ class BobaTimesEvent extends React.Component{
 
     this.state = {event: SEED_EVENT_DATA, session: SEED_SESSION_DATA,};
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.checkTime = this.checkTime.bind(this)
     // this.props.requestEvent(this.props.match.params.eventId)
 
   }
@@ -59,6 +60,24 @@ componentDidMount(){
   this.props.requestEvent(this.props.match.params.eventId)
 }
 
+checkTime(time){
+  let hour = time.slice(0,2)
+  let minute = time.slice(2,5)
+  let day = "AM"
+  if (hour >= 12 ) {
+    if (hour > 12) {
+      hour -= 12
+    }
+    day = "PM"
+  }
+
+  if (hour === "00") {
+    hour = 12
+  }
+
+  return hour + minute + day
+
+}
 
 eventData(){
   // <li className="event-card-datetime">📅 <Time value={this.props.thisEvent.date} format="MM/DD/YYYY"/></li>
@@ -70,9 +89,7 @@ eventData(){
       <ul>
         <li className="event-card-host">Join {this.props.thisEvent.host.name} for Boba Time</li>
         <li className="event-card-datetime">📅 {this.props.thisEvent.date}</li>
-
-        <li className="event-card-datetime">⏰ {this.props.thisEvent.time}</li>
-
+        <li className="event-card-datetime">⏰ {this.checkTime(this.props.thisEvent.time)}</li>
         <li className="event-card-location">📍 {this.props.thisEvent.boba_shop} @ {this.props.thisEvent.address}</li>
         <li className="event-card-location">🗺 {this.props.thisEvent.city}</li>
         <li className="event-card-seats">There are {this.props.thisEvent.max_cap - this.state.event.seat_taken} seats left!</li>
