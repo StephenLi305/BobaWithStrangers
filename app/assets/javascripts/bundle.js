@@ -1805,7 +1805,7 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Everyone is interesting"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "But you don\u2019t discover that when you\u2019re staring at a screen."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/boba_times",
         className: "splash-title-button"
-      }, "BOBA TIMEE!!!")));
+      }, "BOBA TIME!!!")));
     }
   }, {
     key: "whatIsBobaTime",

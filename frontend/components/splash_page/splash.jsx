@@ -38,7 +38,7 @@ title(){
       <div className="splash-title-text">
         <h3>Everyone is interesting</h3>
         <p>But you don’t discover that when you’re staring at a screen.</p>
-        <Link to="/boba_times" className="splash-title-button">BOBA TIMEE!!!</Link>
+        <Link to="/boba_times" className="splash-title-button">BOBA TIME!!!</Link>
       </div>
     </div>
   )
