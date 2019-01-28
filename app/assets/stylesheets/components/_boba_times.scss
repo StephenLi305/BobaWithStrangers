@@ -126,7 +126,7 @@
 }
 
 .citys-event-card-container {
-  width: 65%;
+  width: 80%;
   height: auto;
   margin: auto;
   // border: blue 1px solid;
@@ -147,6 +147,7 @@
   font-size: 20px;
   line-height: 28px;
   font-style: normal;
+  border-radius: 10px;
 }
 
 
@@ -164,6 +165,7 @@
     background-color: #FEFEFE;
     border: 1px solid #DDD;
     padding: 10px;
+    border-radius: 10px;
   }
 }
 
