@@ -86,7 +86,7 @@ citiesList(){
 
     {city_name: "San Francisco",
     event_data:[
-      { id: 28,
+      { id: 30,
         date: "12/1/2018",
         time: "4:00PM",
         address: "DWebbz's Shop @ 123 BlueBird Street",
@@ -94,7 +94,7 @@ citiesList(){
         max_cap: 4,
         seat_taken: 1
       },
-      { id: 135,
+      { id: 29,
         date: "12/25/2018",
         time: "3:00PM",
         address: "Ronil's House of Boba @ 823 Battery Street",
@@ -102,7 +102,7 @@ citiesList(){
         max_cap: 6,
         seat_taken: 1
       },
-      { id: 136,
+      { id: 31,
         date: "12/28/2018",
         time: "4:00PM",
         address: "Starbucks @ 71 Battery Street",
@@ -114,7 +114,7 @@ citiesList(){
     ]},
     {city_name: "Los Angeles",
     event_data:[
-      { id: 137,
+      { id: 32,
         date: "12/4/2018",
         time: "11:00AM",
         address: "Elliot's shop @ 435 Fun street",
@@ -123,15 +123,15 @@ citiesList(){
         seat_taken: 1
       },
 
-      { id: 139,
+      { id: 33,
         date: "11/30/2018",
         time: "2:00PM",
         address: "Lizzle @ 196 Franchise Street",
         host_image: "https://i.imgur.com/y5jTA0P.jpg",
         max_cap: 6,
-        seat_taken: 1
+        seat_taken: 2
       },
-      { id: 140,
+      { id: 34,
         date: "12/31/2018",
         time: "8:00PM",
         address: "TPUMPS @ 572 Irving Street",
@@ -142,7 +142,7 @@ citiesList(){
     ]},
     {city_name: "New York",
     event_data:[
-      { id: 141,
+      { id: 35,
         date: "12/14/2018",
         time: "3:00PM",
         address: "JKen's House of Boba @ 762 Geary Street",
