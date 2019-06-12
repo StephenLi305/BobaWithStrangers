@@ -86,7 +86,7 @@ citiesList(){
 
     {city_name: "San Francisco",
     event_data:[
-      { id: 134,
+      { id: 28,
         date: "12/1/2018",
         time: "4:00PM",
         address: "DWebbz's Shop @ 123 BlueBird Street",
