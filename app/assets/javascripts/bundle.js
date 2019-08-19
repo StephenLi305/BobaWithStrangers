@@ -455,7 +455,7 @@ function (_React$Component) {
       var seedData = [{
         city_name: "San Francisco",
         event_data: [{
-          id: 134,
+          id: 30,
           date: "12/1/2018",
           time: "4:00PM",
           address: "DWebbz's Shop @ 123 BlueBird Street",
@@ -463,7 +463,7 @@ function (_React$Component) {
           max_cap: 4,
           seat_taken: 1
         }, {
-          id: 135,
+          id: 29,
           date: "12/25/2018",
           time: "3:00PM",
           address: "Ronil's House of Boba @ 823 Battery Street",
@@ -471,7 +471,7 @@ function (_React$Component) {
           max_cap: 6,
           seat_taken: 1
         }, {
-          id: 136,
+          id: 31,
           date: "12/28/2018",
           time: "4:00PM",
           address: "Starbucks @ 71 Battery Street",
@@ -482,7 +482,7 @@ function (_React$Component) {
       }, {
         city_name: "Los Angeles",
         event_data: [{
-          id: 137,
+          id: 32,
           date: "12/4/2018",
           time: "11:00AM",
           address: "Elliot's shop @ 435 Fun street",
@@ -490,15 +490,15 @@ function (_React$Component) {
           max_cap: 5,
           seat_taken: 1
         }, {
-          id: 139,
+          id: 33,
           date: "11/30/2018",
           time: "2:00PM",
           address: "Lizzle @ 196 Franchise Street",
           host_image: "https://i.imgur.com/y5jTA0P.jpg",
           max_cap: 6,
-          seat_taken: 1
+          seat_taken: 2
         }, {
-          id: 140,
+          id: 34,
           date: "12/31/2018",
           time: "8:00PM",
           address: "TPUMPS @ 572 Irving Street",
@@ -509,7 +509,7 @@ function (_React$Component) {
       }, {
         city_name: "New York",
         event_data: [{
-          id: 141,
+          id: 35,
           date: "12/14/2018",
           time: "3:00PM",
           address: "JKen's House of Boba @ 762 Geary Street",
@@ -1087,7 +1087,11 @@ function (_React$Component) {
         href: "https://stephenli.fun/"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fas fa-portrait"
-      })));
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "https://angel.co/stephen-li-15",
+        target: "_blank",
+        class: "icon alt fa-angellist"
+      }));
     }
   }]);
 
